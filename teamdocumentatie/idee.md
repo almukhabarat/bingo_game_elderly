@@ -1,5 +1,5 @@
-Ons idee
-Mindmap
+## Ons idee
+### Mindmap
 
 ```mermaid
 mindmap
@@ -24,3 +24,9 @@ mindmap
       Draaien
       Geheugen
 ```
+
+### Waarom
+    Onze doelgroep zijn ouderen in de zorg, er is een hoog   
+    procent van de ouderen die bingo kennen dus wouden we ai 
+    implementeren in de zorg om de ouderen te entertainen.
+
