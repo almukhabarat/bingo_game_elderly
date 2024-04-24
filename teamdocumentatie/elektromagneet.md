@@ -4,7 +4,6 @@
 
 Wij gaan elektromagneten gebruiken om de ballen van bingo te kunnen pakken.
 
-
 #### **Aansluiten:**
 
 **Voeding:** De elektromagneet heeft waarschijnlijk een aparte 12V DC-voeding nodig, maar dat is nog niet zeker.
