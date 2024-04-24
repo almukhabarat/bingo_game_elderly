@@ -9,3 +9,4 @@ tts.say("hi ik werk")
 motion.wait(threadMove, 0)
 
 tts.say("hi ik werk")
+
