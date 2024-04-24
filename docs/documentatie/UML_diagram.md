@@ -1,14 +1,14 @@
 # UML diagram NAO6
 
-We gaan de robot programmeren in Python.
+We gaan de robot programmeren in Python. Het is nog een concept waar we kunnen onze classes ongeveer zo indelen.
 
 ```mermaid
     classDiagram
         Movement <|-- Walk
         Movement <|-- Gesture
 
-        Speech <|-- callNumber
-        Speech <|-- callWon
+        Speech <|-- CallNumber
+        Speech <|-- CallWon
 
         class Movement {
             
@@ -26,10 +26,10 @@ We gaan de robot programmeren in Python.
 
         }
 
-        class callNumber {
+        class CallNumber {
 
         }
 
-        class callWon {
+        class CallWon {
 
         }
