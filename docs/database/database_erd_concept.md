@@ -4,6 +4,7 @@ Voor dit project willen we een database opzetten waarin scores worden opgeslagen
     erDiagram
         TELLER ||--o{ NUMMMER : krijgt
         BINGO {
-            name string
+            id int
+            score int
         }
 

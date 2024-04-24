@@ -64,7 +64,22 @@ Je kunt in Visual Studio Code een python interpreter kiezen, oftewel, een specif
 
 4. Nu kun je de python SDK in Visual Studio Code gebruiken.
 
+Code die je kan gebruiken om de NAO6 te testen:
 
+```python
+from naoqi import ALProxy
+
+tts = ALProxy("ALTextToSpeech", "169.254.56.184", 9559)
+motion = ALProxy("ALMotion", "169.254.56.184", 9559)
+
+threadMove = motion.post.moveTo( 1.0, 0.0, 0.0 )
+tts.say("hi ik werk")
+
+motion.wait(threadMove, 0)
+
+tts.say("hi ik werk")
+
+```
 
 
 

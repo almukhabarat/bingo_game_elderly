@@ -1,22 +1,29 @@
-from naoqi import ALProxy
-tts = ALProxy("ALTextToSpeech", "145.3.253.53", 9559)
-tts.say("Hello, world!")
+class NAO:
+    def __init__(self):
+        pass
+    
+    def verbinden(self, ip, port):
+        # Implementeer de logica om verbinding te maken met de robot op het opgegeven ip en poort
+        pass
+    
+    def watKanIk(self):
+        # Implementeer de logica om de mogelijkheden van de robot op te halen
+        return "Mogelijkheden van de robot"
+    
+    def allesWatJeWil(self, beweging):
+        # Implementeer de logica om de opgegeven beweging uit te voeren
+        print("Ik voer de beweging uit: {beweging}")
 
-# // import com.aldebaran.qi.helper.proxies.ALMotion;
 
-# // import java.util.Scanner;
+def main():
+    nao = NAO()
+    nao.verbinden("169.254.56.184", 9559)  
+    print(nao.watKanIk())
+    print()
+    movement = input("Wat wil je dat ik doe: ")
+    nao.allesWatJeWil(movement)
 
-# // public class Main {
 
-# //     public static void main(String[] args) throws Exception {
-# //         NAO nao = new NAO();
-# //         Scanner scanner = new Scanner(System.in);
-# //         nao.verbinden("localhost",50109);   // verbinden met de virtuele robot in choreogrape
-# //         System.out.println(nao.watKanIk());
-# //         System.out.println();
-# //         System.out.print("Wat wil je dat ik doe: ");
-# //         String movement = scanner.nextLine();
-# //         nao.allesWatJeWil(movement);
-# //     }
-# // }
+if __name__ == "__main__":
+    main()
 
