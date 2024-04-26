@@ -4,33 +4,48 @@ We gaan de robot programmeren in Python. Het is nog een concept waar we kunnen o
 
 ```mermaid
     classDiagram
-        Movement <|-- Walk
-        Movement <|-- Gesture
+        movement <|-- performGesture
+        movement <|-- turnWheel
+        movement <|-- grabBall
+        movement <|-- discardBall
 
-        Speech <|-- CallNumber
-        Speech <|-- CallWon
+        speech <|-- callNumber
+        speech <|-- callWon
 
-        class Movement {
+        class getNumber {
+
+        }
+
+        class movement {
             
         }
 
-        class Walk {
+        class performGesture {
 
         }
 
-        class Gesture {
+        class turnWheel {
 
         }
 
-        class Speech {
+        class grabBall {
 
         }
 
-        class CallNumber {
+        class discardBall {
 
         }
 
-        class CallWon {
+        class speech {
 
         }
+
+        class callNumber {
+
+        }
+
+        class callWon {
+
+        }
+
 ```
