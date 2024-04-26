@@ -1,6 +1,6 @@
 ## Elektromagneet
 
-<img title="hardware" src="elektroimage.png">
+![electromagneet](../assets/elektroimage.png)
 
 Wij gaan elektromagneten gebruiken om de ballen van bingo te kunnen pakken.
 

@@ -3,8 +3,8 @@ Voor dit project willen we een database opzetten waarin scores worden opgeslagen
 ```mermaid
     erDiagram
         TELLER ||--o{ NUMMMER : krijgt
-        BINGO {
+        BINGO_WIN {
             id int
-            score int
+            name string
         }
-
+```

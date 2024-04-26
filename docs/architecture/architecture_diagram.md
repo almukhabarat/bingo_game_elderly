@@ -1,7 +1,7 @@
 
 # Sequence diagram
 
- Dit is een sequence diagram voor de verbindning van de Pi (database) met de nao robot en de pi, met de barcode, de bingo button en de electromagnet.  
+ Dit is een sequence diagram voor de verbinding van de Pi (database) met de nao robot en de pi, met de barcode, de bingo button en een electromagneet.  
 
 ```mermaid
 
