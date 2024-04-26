@@ -1,2 +1,7 @@
 nav:    
     - Samenwerkingsovereenkomst: samenwerkingsovereenkomst.md
+    - Concept mindmap: idee.md
+    - productomschrijving: productomschrijving.md
+    - NAO python: NAO_python_SDK_setup.md
+    - program UML: UML_diagram.md
+    - User test: Usertest.md

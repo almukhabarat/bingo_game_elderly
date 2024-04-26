@@ -6,7 +6,7 @@ copyright: Copyright 2023 Hogeschool van Amsterdam
 theme:
     name: material
     custom_dir: mdocotion/
-    logo: assets/robot.svg
+    logo: assets/projectLogoSmall.png
     sidebar_color: 'rgb(250, 240, 230)'
     favicon: assets/robot.svg
     features:
