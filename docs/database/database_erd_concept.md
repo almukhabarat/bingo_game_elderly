@@ -7,5 +7,4 @@ Voor dit project willen we een database opzetten waarin scores worden opgeslagen
             id int
             name string
         }
-
 ```
