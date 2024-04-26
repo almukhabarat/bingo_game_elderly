@@ -18,6 +18,7 @@ Eisen voor docent:
 - Het product moet een embedded layer bevatten.
 
 ## Concept
+
 Wij hebben het idee om het spel BINGO te maken met behulp van een NAO robot. De opstelling zal bestaan uit een NAO robot die voor een tafeltje staat. Op de tafel staat de Bingo ballen-kooi waar de NAO robot aan kan draaien. De NAO pakt de Bingo-ballen op en roept het nummer. Als iemand Bingo roept zal NAO stoppen en kijken naar een plek op de tafel waar de speler zijn of haar Bingokaart kan neerleggen. Dan scant NAO de barcode/QR-code op de Bingokaart en geeft hij aan of de speler heeft gewonnen of niet.
 
 ## Realisatie
@@ -69,6 +70,7 @@ De opstelling zal de volgende materialen bevatten. hier onze voorlopige BOM;
 De Raspberry Pi zal een database bevatten zodat de NAO geen internet verbinding nodig zal hebben om zijn taak uit te voeren.
 
 **Wij hebben 2 opties bedacht voor mogelijke databases;**
+
 1. De Raspberry Pi zal een database bevatten die de Bingo-kaarten en nummers zal opslaan.
 2. De Raspberry Pi zal een database bevatten die de scores zal opslaan.
 
