@@ -1,8 +1,8 @@
 # Sprint Report - Sprint X
-**Opdracht**: \
-**Sprint**: Sprint X \
-**Team**: \
-**Auteurs**:  \
+**Opdracht**: NAO Robot
+**Sprint**: Sprint 1
+**Team**: 3
+**Auteurs**:  Brian
 **Datum**:  \
 **Versie**: 
 
