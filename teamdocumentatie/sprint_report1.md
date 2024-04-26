@@ -1,4 +1,4 @@
-# Sprint Report - Sprint X
+# Sprint Report - Sprint 1
 **Opdracht**: NAO Robot\
 **Sprint**: Sprint 1 \
 **Team**: 3\

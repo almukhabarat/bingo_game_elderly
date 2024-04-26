@@ -13,6 +13,9 @@ print("Connected to NAO robot.")
 language = "Dutch"
 tts_proxy.setLanguage(language)
 
+#slower_rate = 0.5
+#tts_proxy.setParameter("speed", slower_rate)
+
 # Start autonomous life
 try:
     autonomous_life_proxy.setState("solitary")
@@ -42,18 +45,6 @@ def wave():
     motion_proxy.setAngles("RElbowRoll", 0.0, 0.2)      # Angle, speed
     motion_proxy.closeHand("RHand")
 
-# Example usage (loop)
-# if __name__ == "__main__":
-#     while True:
-#         # Example: Make the robot walk forward
-#         #motion_proxy.walkTo(-0.1, -0.1, 0)  # Distance in meters (x, y, theta)
-
-#         wave()
-
-
-#         tts_proxy.say("Ja broer ik ga niet voor je liegen mijn niffo is nog in scorro maar ik ben zelf aan het choenen ah zahbi, ik was die challah nog vergeten maar hij balt met die andere m'n kip ouleh")
-
-#         time.sleep(5)
 
 # Example usage
 if __name__ == "__main__":
@@ -62,8 +53,8 @@ if __name__ == "__main__":
 
     wave()
 
-    #tts_proxy.say("Ja broer ik ga niet voor je liegen mijn niffo is nog in scorro maar ik ben zelf aan het choenen ah zahbi, ik was die challah nog vergeten maar hij balt met die andere m'n kip ouleh")
+    tts_proxy.say("Ja broer ik ga niet voor je liegen mijn niffo is nog in scorro maar ik ben zelf aan het choenen ah zahbi, ik was die challah nog vergeten maar hij balt met die andere m'n kip ouleh")
     
-    tts_proxy.say("Hi ik ben en NAO. Dit is Ana, Brian, Tyler, Tess en Amine en ons project gaat over mij inzetten zodat ik bingo kan spelen met de ouderen die in het amstelhuis wonen. Ik noem de cijfers op en zij kleuren de cijfers in tot dat ze bingo hebben. Dan ga ik checken of dat ook zo is")
+    #tts_proxy.say("Hi ik ben NAO. Dit is Ana, Brian, Tyler, Tess en Amin en ons project gaat over mij inzetten zodat ik bingo kan spelen met de ouderen die in het amstelhuis wonen. Ik noem de cijfers op en zij kleuren de cijfers in tot dat ze bingo hebben. Dan ga ik checken of dat ook zo is")
 
     time.sleep(5)
