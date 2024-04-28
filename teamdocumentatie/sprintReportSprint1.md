@@ -1,4 +1,5 @@
 # Sprint Report - Sprint X
+
 **Opdracht**: NAO Robot
 **Sprint**: Sprint 1
 **Team**: 3
@@ -68,7 +69,7 @@ Afgelopen sprint was het bedenken van een goed en haalbaar idee erg belangrijk. 
 
 ![Retrospective sprint 1](Retrospective1.jpg)
 
-We hebben de zijlboot methode gehandeerd. 
+We hebben de zijlboot methode gehandeerd.
 
 Rock:
 
@@ -83,6 +84,7 @@ Anchor:
 - Software NAO (problemen met het werkende krijgen)
 
 Land:
+
 - MVP
 - Embedded software (esp32 magneet knop)
 - Vending machine
@@ -91,11 +93,16 @@ Land:
 - NAO moet cijfers opnoemen
 
 Wind:
+
 - Veel inspiratie
 - NAO documentatie
 - Aanwezigheid
 - Veel motivatie
 
-Wat moet er beter? Wat ging er goed? Welke SMART leerdoelen hebben jullie voor de volgende sprint?
+**Wat moet er beter? Wat ging er goed? Welke SMART leerdoelen hebben jullie voor de volgende sprint?**
 
-Hebben jullie nog vragen?
+ieder lid beantwoord deze vragen in zijn scorion formulier.
+
+**Hebben jullie nog vragen?**
+
+-
