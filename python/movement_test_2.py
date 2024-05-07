@@ -17,6 +17,8 @@ print("Connected to NAO robot.")
 # Text to speech taal voor de robot
 language = "Dutch"
 tts_proxy.setLanguage(language)
+speed = 80
+tts_proxy.setParameter("speed", speed)  # Set speech speed
 
 def turn_robot(angle):
     """
@@ -30,13 +32,6 @@ def move_arms(left_angles, right_angles):
     """
     motion_proxy.setAngles("LArm", left_angles, 0.5)
     motion_proxy.setAngles("RArm", right_angles, 0.5)
-
-def say_text(text, speed=250):
-    """
-    Make the robot speak the specified text with a specified speed.
-    """
-    tts_proxy.setParameter("speed", speed)  # Set speech speed
-    tts_proxy.say(text)
 
 # Example usage:
 def main():
@@ -52,10 +47,10 @@ def main():
     time.sleep(2)  # Adjust as needed
 
     # Speak slowly
-    tts_proxy.say("Hi ik ben NAO. Dit is Ana, Brian, Tyler, Tess en Amin en ons project gaat over mij inzetten zodat ik bingo kan spelen met de ouderen die in het amstelhuis wonen. Ik noem de cijfers op en zij kleuren de cijfers in tot dat ze bingo hebben. Dan ga ik checken of dat ook zo is", speed = 80)
+    tts_proxy.say("Hi ik ben NAO. Dit is Ana, Brian, Tyler, Tess en Amin en ons project gaat over mij inzetten zodat ik bingo kan spelen met de ouderen die in het amstelhuis wonen. Ik noem de cijfers op en zij kleuren de cijfers in tot dat ze bingo hebben. Dan ga ik checken of dat ook zo is")
     
     # Reset arms to the rest position
-    move_arms([0] * 6, [0] * 6)
+    # move_arms([0] * 6, [0] * 6)
 
 try:
     autonomous_life_proxy.setState("solitary")
