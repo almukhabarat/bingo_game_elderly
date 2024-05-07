@@ -1,4 +1,5 @@
-# Sprint Report - Sprint 1
+# Sprint Report - Sprint X
+
 **Opdracht**: NAO Robot
 **Sprint**: Sprint 1
 **Team**: 3
@@ -68,7 +69,7 @@ Afgelopen sprint was het bedenken van een goed en haalbaar idee erg belangrijk. 
 
 ![Retrospective sprint 1](Retrospective1.jpg)
 
-We hebben de zijlboot methode gehandeerd. 
+We hebben de zijlboot methode gehandeerd.
 
 Rock:
 
@@ -83,6 +84,7 @@ Anchor:
 - Software NAO (problemen met het werkende krijgen)
 
 Land:
+
 - MVP
 - Embedded software (esp32 magneet knop)
 - Vending machine
@@ -91,47 +93,16 @@ Land:
 - NAO moet cijfers opnoemen
 
 Wind:
+
 - Veel inspiratie
 - NAO documentatie
 - Aanwezigheid
 - Veel motivatie
 
----
+**Wat moet er beter? Wat ging er goed? Welke SMART leerdoelen hebben jullie voor de volgende sprint?**
 
-# Eigen reflectie (Brian Kirchoff)
+ieder lid beantwoord deze vragen in zijn scorion formulier.
 
-***Wat vond ik bij mezelf goed gaan tijdens deze sprint?***
+**Hebben jullie nog vragen?**
 
-Ik vond dat ik goede milestones voor mezelf had gesteld. De eerste sprints vind ik tot nu toe altijd een beetje tricky aangezien je dan vooral veel bezig bent met plannen en het uitdenken van het project, terwijl je constant zit te denken aan het opleveren van een 'minimal viable product'. In het begin had ik dus ook tegen m'n groepje gezegd dat het misschien een goed idee was om meteen te beginnen met het experimenteren van de robot. Door al vroeg te experimenteren met de robot konden we toch al iets laten zien in sprint 1.
-
----
-
-## Waar kan ik aan werken in de volgende sprints?
-
-Ik vond dat ik tijdens deze sprint nogal moeite had met het articuleren van ideeën. Ik vond het moeilijk om mee te denken tijdens een overleg met m'n team. Ik merkte af en toe dat andere teamleden wat meer input van mij verwachtte, wat ik volledig snap. Dit gebeurde vooral tijdens een groepsoverleg. Ik had het gevoel dat een aantal teamleden in mijn groepje af en toe een beetje verward raakte omdat ik minder snel m'n mening gaf over bepaalde kwesties in ons project. Ik hoop dat ik hier dus wat aan kan doen.
-
-Mijn persoonlijke leerdoel voor de volgende sprint is dan ook dat ik de communicatie tussen mezelf en mijn groepje wil verbeteren.
-
-Hoe ga ik dit doen?
-
-Ik moet iets assertiever worden. Dit houd in dat ik bijvoorbeeld aan teamgenoten sneller moet aangeven als ik iets niet snap. Ook moet ik meer vragen stellen, tijdens deze sprint deed ik dat minder uit angst dat ik misschien iets niet goed interpreteerde of dat dat zou leiden tot miscommunicatie. Ik vind het soms heel moeilijk om m'n mening te geven tijdens een groepsoverleg dus ik zat eraan te denken om bijvoorbeeld een kleine lijst te maken met vragen die betrekking hebben op het project. Deze vragen ik zou dan dus tijdens een standup, of op discord aan teamgenoten kunnen vragen. Ik vind het nogmaals belangrijk dat er grondig en regelmatig wordt gecommuniceerd. Hierdoor krijgt het team namelijk meer het gevoel dat ze door elkaar gesteund worden en elkaar beter kunnen vertrouwen, iets wat voor mijn gevoel dus minder goed ging in sprint 1.
-
-Extra methodes die ik kan gebruiken voor het realiseren van mijn doel (en voor m'n eigen reflectie)
-
-Ik kan in de volgende sprint een korte vragenlijst/formulier maken waarin ik aan teamgenoten ook kan vragen wat zij precies vonden van onze samenwerking. Hierin moet ik benadrukken dat de invuller dit formulier zo eerlijk en objectief mogelijk mag invullen. In dit formulier kunnen bijvoorbeeld vragen staan als:
-
-- Hoe vond je dat ik met jou had samengewerkt?
-- Vond je iets dat ik goed/niet goed deed op het gebied van samenwerken?
-- Zou je feedback kunnen geven op mijn gedrag binnen het groepje?
-
-Ik denk dat het ook handig zou zijn als iedereen voor zichzelf een korte vragenlijst zou maken en dat we deze dan door elkaar laten invullen, mits we daar tijd voor hebben natuurlijk.
-
-Wanneer ga ik dit doen?
-
-Het is sowieso de bedoeling om hier aan te werken in de volgende sprints (vooral sprint 2). In de volgende sprints gaan we ook echt aan de slag met het uitwerken van onze projectdoelen, dus dan kan ik ook beter letten op mijn communicatie vaardigheden. Daarnaast wil ik ook zelf in iedergeval zo'n vragenlijst gaan maken. Het is dan de bedoeling dat ik aan het eind van sprint 2 dit formulier door anderen binnen mijn groepje kan laten invullen, zodat ik me kan verbeteren op basis van de feedback die ik heb gekregen uit sprint 2 in combinatie met m'n eigen reflectie.
-
-Het laatste punt dat ik wil maken en dit is meer persoonlijk.
-
-Slapen is belangrijk, want ik denk dat dit een van de hoofdredenen is dat ik nogal moeite heb met concentreren. Ik moet elke dag 8 uur geslapen hebben, waarom? Zodat ik minder snel tegen concentratie- en stemming problemen loop. Wanneer ga ik dat doen? Tijdens de mei vakantie.
-
-Fijne Vakantie!
+-
