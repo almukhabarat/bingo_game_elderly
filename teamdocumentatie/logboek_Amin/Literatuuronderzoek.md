@@ -60,3 +60,21 @@ Autonomie: Het recht en de capaciteit van een individu om zelfstandig beslissing
 
 Hoe beïnvloedt de interactie met robots de autonomie van ouderen binnen zorginstellingen?
  - Deze vraag richt zich op het vermogen van ouderen om zelfstandige keuzes te maken en in hoeverre interactie met robots dit kan bevorderen of beperken.
+
+Wat zijn de potentiële voordelen van het gebruik van robots voor sociale interacties met ouderen in zorginstellingen?
+ - Hier onderzoek ik de positieve aspecten van robotinteracties, zoals verbeterde sociale betrokkenheid en mogelijkheden voor entertainment en gezelschap.
+
+Welke ethische risico's zijn verbonden aan het inzetten van robots voor sociale interacties met ouderen?
+ - Hier wordt gefocust op de mogelijke negatieve gevolgen, zoals afname van menselijk contact en het risico van afhankelijkheid van technologie.
+
+**Bronnen:**
+
+Draper, H., & Sorell, T. (2016). Ethical values and social care robots for older people: an international qualitative study. Ethics And Information Technology, 19(1), 49–68. https://doi.org/10.1007/s10676-016-9413-1
+
+Körtner, T. (2016). Ethical challenges in the use of social service robots for elderly people. Zeitschrift Für Gerontologie Und Geriatrie, 49(4), 303–307. https://doi.org/10.1007/s00391-016-1066-5
+
+Sharkey, A. J. C., & Sharkey, N. (2010). Granny and the robots: ethical issues in robot care for the elderly. Ethics And Information Technology, 14(1), 27–40. https://philpapers.org/archive/SHAGAT.pdf
+
+Misselhorn, C., Pompe, U., & Stapleton, M. (2013). Ethical Considerations Regarding the Use of Social Robots in the Fourth Age. GeroPsych, 26(2), 121–133. https://doi.org/10.1024/1662-9647/a000088
+
+Vandemeulebroucke, T., De Casterlé, B. D., & Gastmans, C. (2019). Ethics of socially assistive robots in aged-care settings: a socio-historical contextualisation. Journal Of Medical Ethics, 46(2), 128–136. https://doi.org/10.1136/medethics-2019-105615
