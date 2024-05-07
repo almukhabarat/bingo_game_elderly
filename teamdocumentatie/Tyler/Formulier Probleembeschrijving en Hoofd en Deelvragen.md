@@ -27,7 +27,7 @@ Waarom is het op dit moment in de tijd nuttig om over dit vraagstuk na te denken
 **C. AFBAKENING – Binnen dit thema beperk ik mij tot het aspect:**
 Waar leg je de focus op?
 
-Het ethisch kwestie van de vervanging van verzorgers voor ouderen. Met nadruk op de voor- en nadelen hiervan. Hierbij worden verschillende onderwerpen besproken, zoals de;
+De ethisch kwestie van de vervanging van verzorgers voor ouderen. Met nadruk op de voor- en nadelen hiervan. Hierbij worden verschillende onderwerpen besproken, zoals de;
 
 - mentale gevolgen op de ouderen,
 - efficiëntie van zorgverlening,
@@ -37,7 +37,7 @@ Het ethisch kwestie van de vervanging van verzorgers voor ouderen. Met nadruk op
 **D. DOELSTELLING – Het onderzoek levert het volgende op (bijv. kennis die er nu nog niet is in de vorm van een voorstel/ontwerp, of een diagnose van het probleem):**
 Wat bereik je met je onderzoek?
 
-De hoofdvraag is een evaluatieve hoofdvraag, waardoor het onderzoek als doel de informatie [verzameld, interpreteert en presenteert teneinde de waarde van een resultaat of proces te bepalen.](https://nl.wikipedia.org/wiki/Evaluatie) Het onderzoek zal dus een vogelvlucht perspectief geven van de ethische voor- en nadelen van het probleem.
+De hoofdvraag is een evaluatieve hoofdvraag, waardoor het onderzoek als doel de informatie [verzameld, interpreteert en presenteert teneinde de waarde van een resultaat of proces te bepalen.](https://nl.wikipedia.org/wiki/Evaluatie) Het onderzoek zal dus een vogelvluchtperspectief geven van de ethische voor- en nadelen van het probleem.
 
 **C. ETHISCH/MAATSCHAPPELIJK ISSUE – Het voor mijn publiek interessante issue dat op het gebied van het afgebakende thema speelt is:**
 Welke ethische kwestie kaart je aan in je betoog?
@@ -62,7 +62,7 @@ Naar mijn weten voldoet de volgende hoofdvraag aan die condities:
 Na evaluatie tijdens de tweede workshop heb ik een verbeterde hoofdvraag opgesteld:
 *Wat zijn de ethische voor- en nadelen van de substitutie van ouderenverzorgers met robots voor de eenzaamheid van de ouderen?*
 
-> Deze verbeterde hoofdvraag is geinspireerd door een van de voorbeeldvragen gegeven op Workshop 2.pptx op slide 4.
+> Deze verbeterde hoofdvraag is geïnspireerd door een van de voorbeeldvragen gegeven op Workshop 2.pptx op slide 4.
 
 Tijdens de tweede workshop is het me duidelijk geworden dat mijn bespreekpunten te globaal zijn. Hier de oude bespreekpunten;
 
@@ -85,16 +85,16 @@ Omdat de hoofdvraag best beknopt is, zal ik wat toelichting geven bij de gebruik
 |-|-|
 | ethische voor- en nadelen | omdat het vraagstuk moraal tweeledig kan zijn, worden beide kanten bestudeerd |
 | substitutie | de vervanging van |
-| ouderenverzorgers | in de context van de vraag worden hierbij alleen mensenlijke verzorgers getelt |
+| ouderenverzorgers | in de context van de vraag worden hierbij alleen menselijke verzorgers geteld |
 | robots | zowel humanoïde robots als interactieve schermen |
-| eenzaamheid | zowel lichamelijk als sychische klachten als gevolg van niet verbonden zijn met je medemensen|
+| eenzaamheid | zowel lichamelijk als psychische klachten als gevolg van niet verbonden zijn met je medemensen|
 | de ouderen | specifiek *de* ouderen, omdat hier alleen gekeken wordt naar de ouderen die dus in contact komen met de robots in plaats van zorgverleners |
 
 **I. VRAAGSTELLING 2 - De deelvragen van mijn onderzoek zijn:**
 
 Welke logische stappen ga je zetten om je vraag te beantwoorden?
 
-Zoals eerder gezegt, mijn hoofvraag is een evaluatieve hoofdvraag. Mijn deelvragen zullen dus grotendeels de volgende structuur aannemen;
+Zoals eerder gezegd, mijn hoofvraag is een evaluatieve hoofdvraag. Mijn deelvragen zullen dus grotendeels de volgende structuur aannemen;
 
 - Wat zijn de nadelen...?
 - Wat zijn de voordelen...?
@@ -117,4 +117,4 @@ Hieronder links naar 6 bruikbare bronnen. Ik heb geprobeerd de bronnen recent te
 - [2024](https://arxiv.org/pdf/2404.14134)
 - [2024](https://journals.lww.com/inr/fulltext/2024/03000/aging_with_robots__a_brief_review_on_eldercare.7.aspx)
 
-Mogelijk kunnen er veranderingen komen in de bronnen die ik zal gebruiken. In mijn betoog zal ik gebruik maken van APA regeling.
+Mogelijk kunnen er veranderingen komen in de bronnen die ik zal gebruiken. In mijn betoog zal ik gebruik maken van APA-regeling.
