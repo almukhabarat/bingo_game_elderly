@@ -47,10 +47,19 @@ De Hoofdvraag van mijn onderzoek is:
 
 Wat voor invloed heeft de overname van menselijke taken door robotica op de ouderenzorg.
 
-## H. BEGRIPSOMSCHRIJVING
-
-De volgende begrippen uit mijn vraagstelling definieer ik als:
-
 ## I. VRAAGSTELLING 2**
 
 De deelvragen van mijn onderzoek zijn:
+
+- Wat voor robots worden er nu al gebruikt in de ouderenzorg.
+- Wat zijn de belangrijkste taken van hulpverleners die worden overgenomen door robots.
+- Wat voor effect hebben sociale robots op ouderen in de zorg.
+
+
+Bronnen:
+
+- https://digitcult.lim.di.unimi.it/index.php/dc/article/view/54
+- https://ii.tudelft.nl/~joostb/files/Broekens%20Heerink%20Rosendal%202009.pdf
+- https://link.springer.com/chapter/10.1007/978-981-13-7725-9_10
+- https://www.tandfonline.com/doi/full/10.1080/17483107.2020.1773549
+- https://lib.hva.nl/discovery/fulldisplay?docid=cdi_hbokennisbank_primary_oai_surfsharekit_nl_0cc17626_ddd7_43dc_b55c_d52d13a7e0e6&context=PC&vid=31UKB_UAM2_INST:HVA&lang=nl&search_scope=DN_and_CI_and_EXT&adaptor=Primo%20Central&tab=Everything&query=any,contains,robots%20ouderenzorg&offset=0
