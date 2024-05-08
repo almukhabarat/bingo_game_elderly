@@ -18,6 +18,7 @@ Wij zullen deze robot Bingo laten spelen. Hij zal aan de Bingomolen draaien en d
   - Spreekt de robot duidelijk genoeg?
   - Is het handig om nummers vaker te herhalen?
   - Staat de robot hard genoeg om het te kunnen horen?
+  - Wilt u verduidelijking van het nummer met behulp van een scherm?
 
 # In het vervolg zal er een demostratie volgen van ons prototype
 
