@@ -29,6 +29,27 @@ Zodat de NAO consistent de Bingo-ballen kan oppakken maken we gebruik van een el
 
 ![NAO connectie diagram](../assets/naoConnectionDiagram.png)
 
+Tijdens de feedback van ons sprintreview is ons duidelijk geworden dat we een extra embedded hardware moeten toevoegen. Wij gaan dus een een ESP 23 S3 toevoegen die kan praten met de Raspberry Pi.
+
+![NAO connectie diagram](../assets/naoConnectionDiagramv2.png)
+
+### Prijzen uitgeven
+
+Als toevoeging bij het spel willen wij prijzen uitgeven wanneer iemand wint. Dit zal gebeuren met behulp van een snoepautomaat die verbonden is met de Raspberry Pi.
+
+![Idee snoepautomaat](../assets/OntwerpPrijzenUitgeven.png)
+
+We zullen het standaart ontwerp hanteren voor een *spiraalautomaat*, waarbij met behulp van een stepper motor snoep wordt geleverd aan de winnaar. Hieronder een Pinout diagram voor dit embedded systeem;
+
+![Pindiagram ESP](../assets/pinoutDiagram.png)
+
+De aangegeven componenten zijn als volgt;
+
+- ESP32 S3
+- Usb Charger 5V 2A - Power Adapter 100V-240V
+- Stepper motor 28byj-48-5V
+- ULN2003 Stepper Motor Driver Board
+
 ### Bingo ballen oppakken
 
 De NAO fingergrip is niet exact genoeg om Bingo-ballen op te pakken. Om consistent de Bingo-ballen op te pakken maken we gebruik van een elektromagneet. **LET OP: De Bingo-ballen moeten Ferromagnetisch zijn.** Dit elektromagneet word gepositioneerd in de linker- of rechterhand van de NAO met behulp van een 3d print.
