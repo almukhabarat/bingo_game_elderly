@@ -2,7 +2,8 @@
 
 *ONDERWERP – Het thema/vraagstuk van het onderzoek is:*
 
-"De inzet van robots binnen de ouderenzorg en eenzaamheid bij ouderen."
+***De inzet van robots binnen de ouderenzorg en eenzaamheid bij ouderen.***
+
 ---
 
 **AANLEIDING – De aanleiding en/of context van het thema/vraagstuk is:**
@@ -33,7 +34,7 @@ De inzet van robotica zou kunnen leiden tot een verdere toename van eenzaamheid 
 
 **VRAAGSTELLING 1 - De Hoofdvraag van mijn onderzoek is:** *Welke vraag ga je beantwoorden in je betoog?*
 
-Hoe wordt het gevoel van eenzaamheid bij ouderen beïnvloedt bij de inzet van robots binnen de ouderenzorg? 
+Hoe wordt het gevoel van eenzaamheid bij ouderen beïnvloedt bij de inzet van robots in bejaardentehuizen? 
 
 ---
 
@@ -60,5 +61,5 @@ Hoe wordt het gevoel van eenzaamheid bij ouderen beïnvloedt bij de inzet van ro
 **VRAAGSTELLING 2 - De deelvragen van mijn onderzoek zijn:** *Welke logische stappen ga je zetten om je vraag te beantwoorden?*
 
 1. Wat is eenzaamheid en hoe wordt dit ervaren bij ouderen? 
-2. Hoe zouden robots met ouderen kunnen interacteren? 
-3. Zou eenzaamheid bij ouderen kunnen toenemen door inzet van robots? 
+2. Wat voor robots kunnen er worden ingezet in verzorgshuizen, en op welke manier kunnen deze met ouderen interacteren? 
+3. Zou eenzaamheid bij ouderen kunnen toenemen door inzet van robots?
