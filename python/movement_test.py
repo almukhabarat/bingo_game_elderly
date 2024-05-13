@@ -17,8 +17,7 @@ except Exception as e:
 
 
 # Text to speech taal voor de robot
-language = "Dutch"
-tts_proxy.setLanguage(language)
+tts_proxy.setLanguage("Dutch")
 
 # Define joint names for the arms
 left_arm_joints = ["LShoulderPitch", "LShoulderRoll", "LElbowYaw", "LElbowRoll", "LWristYaw"]
@@ -30,9 +29,7 @@ left_arm_angles = [0.5, 0.2, 0.3, -0.5, 0.0]  # Example angles for the left arm
 right_arm_angles = [0.5, -0.2, -0.3, 0.5, 0.0]  # Example angles for the right arm
 
 # Set angles for the arms
-motion_proxy.setAngles(left_arm_joints, left_arm_angles, 0.5)  # Last argument is the speed
-motion_proxy.setAngles(right_arm_joints, right_arm_angles, 0.5)  # Last argument is the speed
-
-tts_proxy.say("Ik vraag me af of ik nederlands kan praten, ik heb anders te weinig getjoent ah zahbi, heb jij nog jallas ouleh?")
+motion_proxy.setAngles(left_arm_joints, left_arm_angles, 0.6)  # Last argument is the speed
+motion_proxy.setAngles(right_arm_joints, right_arm_angles, 0.6)  # Last argument is the speed
 
 tts_proxy.say("Het was vrijdagavond in het gezellige Stonybrook. De ouderen verzamelden zich in het gemeenschapscentrum voor een potje bingo. Mevrouw Jenkins, met haar bril en gebloemde jurk, zat naast meneer Thompson. Het was haar tachtigste verjaardag en de sfeer was feestelijk. Ze riep Bingo! en de zaal barstte los in applaus. Na afloop vierden ze haar verjaardag met taart en lieten ze de echte schat van het leven zien: vriendschap en plezier.")

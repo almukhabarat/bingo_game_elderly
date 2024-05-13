@@ -1,4 +1,4 @@
-Voor dit project willen we een database opzetten waarin scores worden opgeslagen en verdeeld.
+Ons originele idee bevat een database waarin scores worden opgeslagen en verdeeld.
 
 ```mermaid
     erDiagram
@@ -8,3 +8,5 @@ Voor dit project willen we een database opzetten waarin scores worden opgeslagen
             name string
         }
 ```
+
+Ons huidige idee bevat een database die de Bingo-nummers zal opslaan zodat de NAO weet welke nummers al zijn opgenoemd.
