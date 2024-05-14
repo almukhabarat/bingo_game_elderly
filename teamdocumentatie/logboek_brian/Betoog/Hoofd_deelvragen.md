@@ -34,7 +34,7 @@ De inzet van robotica zou kunnen leiden tot een verdere toename van eenzaamheid 
 
 **VRAAGSTELLING 1 - De Hoofdvraag van mijn onderzoek is:** *Welke vraag ga je beantwoorden in je betoog?*
 
-Hoe wordt het gevoel van eenzaamheid bij ouderen beïnvloedt bij de inzet van robots in bejaardentehuizen? 
+Hoe kan de inzet van robotica in bejaardentehuizen het gevoel van eenzaamheid bij ouderen beïnvloeden? 
 
 ---
 

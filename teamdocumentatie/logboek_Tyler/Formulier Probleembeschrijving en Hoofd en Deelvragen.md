@@ -106,7 +106,7 @@ Mijn deelvragen zijn;
 - *Wat zijn de ethische nadelen van de substitutie van ouderenverzorgers met robots voor de eenzaamheid van de ouderen?*
 - *Wat zijn de ethische voordelen van de substitutie van ouderenverzorgers met robots voor de eenzaamheid van de ouderen?*
 - *In hoeverre kunnen robots de plaats van ouderenverzorgers overnemen?*
-- *In hoeverre beïnvloeden ouderenverzorgers de eenzaamheid van de ouderen*
+- *In hoeverre beïnvloeden ouderenverzorgers de eenzaamheid van de ouderen?*
 
 Hieronder links naar 6 bruikbare bronnen. Ik heb geprobeerd de bronnen recent te houden.
 
