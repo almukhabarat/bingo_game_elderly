@@ -58,14 +58,42 @@ Autonomie: Het recht en de capaciteit van een individu om zelfstandig beslissing
 
 **I. VRAAGSTELLING 2 - De deelvragen van mijn onderzoek zijn:**
 
-Hoe beïnvloedt de interactie met robots de autonomie van ouderen binnen zorginstellingen?
- - Deze vraag richt zich op het vermogen van ouderen om zelfstandige keuzes te maken en in hoeverre interactie met robots dit kan bevorderen of beperken.
-
 Wat zijn de potentiële voordelen van het gebruik van robots voor sociale interacties met ouderen in zorginstellingen?
  - Hier onderzoek ik de positieve aspecten van robotinteracties, zoals verbeterde sociale betrokkenheid en mogelijkheden voor entertainment en gezelschap.
 
 Welke ethische risico's zijn verbonden aan het inzetten van robots voor sociale interacties met ouderen?
  - Hier wordt gefocust op de mogelijke negatieve gevolgen, zoals afname van menselijk contact en het risico van afhankelijkheid van technologie.
+
+Hoe beïnvloedt de interactie met robots de autonomie van ouderen binnen zorginstellingen?
+ - Deze vraag richt zich op het vermogen van ouderen om zelfstandige keuzes te maken en in hoeverre interactie met robots dit kan bevorderen of beperken.
+  
+
+  
+**Inleiding**
+
+De vergrijzing van de wereldbevolking zet de ouderenzorg onder toenemende druk. Innovaties in robotica bieden mogelijkheden om deze druk te verlichten door ondersteuning in sociale interacties te bieden, wat de vraag oproept naar de ethische verantwoordelijkheid van hun gebruik.
+
+Dit literatuuronderzoek toetst de implicaties van het gebruik van robots in de sociale omgang met ouderen in zorginstellingen. De hoofdvraag van dit onderzoek is: "In hoeverre is het ethisch verantwoord om robots in te zetten voor sociale interacties met ouderen, gezien de gevolgen voor hun welzijn en autonomie?"
+
+Dit onderzoek zal de volgende deelvragen behandelen:
+ - Wat zijn de potentiële voordelen van het gebruik van robots voor sociale interacties met ouderen in zorginstellingen?
+ - Welke ethische risico's zijn verbonden aan het inzetten van robots voor sociale interacties met ouderen?
+ - Hoe beïnvloedt de interactie met robots de autonomie van ouderen binnen zorginstellingen?
+
+Dit onderzoek is opgezet als een literatuurstudie, met als doel het bieden van inzicht en richting aan beleidsmakers en zorgverleners.
+
+**Voordelen van Robotica in de Sociale Ondersteuning van Ouderen**
+
+Nu de vergrijzing toeneemt biedt robotica nieuwe mogelijkheden om de druk op de ouderenzorg te verlichten. Er zal onderzoek gedaan worden naar de ethische implicaties van het gebruik van robots voor sociale interacties in ouderenzorginstellingen, met een focus op de impact op welzijn en autonomie van ouderen. De centrale vraag van dit onderzoek is: "In hoeverre is het ethisch verantwoord om robots in te zetten voor sociale interacties met ouderen, gezien de gevolgen voor hun welzijn en autonomie?"
+
+Potentiële Voordelen van Robots voor Sociale Interacties met Ouderen
+Het gebruik van robots in ouderenzorginstellingen kan significante voordelen bieden. Studies zoals die van Draper en Sorell (2016) benadrukken dat robots in staat zijn om gezelschap te bieden en gevoelens van eenzaamheid te verminderen, vooral belangrijk in omgevingen waar menselijk contact beperkt is. Robots faciliteren interactie via gesprekken, spelletjes en communicatieinterfaces, wat essentieel is voor het verhogen van sociale betrokkenheid en het verbeteren van de geestelijke gezondheid van ouderen (Sharkey & Sharkey, 2010).
+
+Verder bieden robots emotionele ondersteuning door emotionele nood te herkennen en hierop te reageren met geprogrammeerde reacties, wat de emotionele stabiliteit van ouderen ondersteunt (Körtner, 2016). Dit aspect van robotica in de zorg draagt bij aan een betere emotionele gezondheid wat op zijn beurt weer kan helpen bij het omgaan met stress en depressie bij ouderen.
+
+Robots bieden ook verstandelijke stimulatie die verstandelijke achteruitgang kan vertragen. Dit aspect is van onmisbaar voor het behouden van cognitieve functies bij ouderen, waardoor hun algemene levenskwaliteit verbetert (Misselhorn et al., 2013). Het is echter cruciaal dat deze technologieën de menselijke zorg aanvullen en niet vervangen om te verzekeren dat de persoonlijke interactie en menselijke waardigheid bewaard blijven (Vandemeulebroucke, De Casterlé, & Gastmans, 2019).
+
+De voordelen van het gebruik van robots in de ouderenzorg tonen aan dat deze technologieën de potentie hebben om de sociale betrokkenheid en emotionele welzijn van ouderen behoorlijk te verbeteren. De ethische implementatie vereist echter een zorgvuldige afweging om te zorgen dat robots een aanvulling zijn op en geen vervanging voor menselijke zorgverleners. Het gebruik van robots moet daarom altijd binnen de context van ethische richtlijnen en respect voor de menselijke waarden plaatsvinden.
 
 **Bronnen:**
 
