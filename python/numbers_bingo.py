@@ -33,7 +33,7 @@ def call_number(numbers_called):
 
 # Main Bingo game loop
 def play_bingo():
-    numbers_called = []
+    numbers_called = [] 
     while True:
         number = call_number(numbers_called)
         # Check for player wins
