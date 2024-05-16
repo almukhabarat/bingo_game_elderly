@@ -8,7 +8,7 @@
 flowchart LR
     subgraph RaspberryPi["Raspberry Pi\nController"]
         MySQL["MySQL Database"]
-    end
+    end 
 
     RaspberryPi <--> NAO_Robot
     RaspberryPi -->|Power Control| Electromagnet
