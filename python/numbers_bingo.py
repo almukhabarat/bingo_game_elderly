@@ -1,58 +1,61 @@
 from naoqi import ALProxy
 import random
 
-# Connect to NAOqi
-ip = "nao.local"
-port = 9559
-speech_proxy = ALProxy("ALTextToSpeech", ip, port)
-autonomous_life_proxy = ALProxy("ALAutonomousLife", ip, port)
+class BingoSpel:
+    def __init__(self, ip="nao.local", port=9559):
+        self.ip = ip
+        self.port = port
+        #   NAOqi proxies (ingebouwde events)
+        self.speech_proxy = ALProxy("ALTextToSpeech", ip, port)
+        self.autonomous_life_proxy = ALProxy("ALAutonomousLife", ip, port)
+        # de nummers van het bingobord
+        self.bingo_bord = [
+            [1, 2, 3, 4, 5],
+            [6, 7, 8, 9, 10],
+            [11, 12, 13, 14, 15],
+            [16, 17, 18, 19, 20],
+            [21, 22, 23, 24, 25]
+        ]
 
-try:
-    autonomous_life_proxy.setState("solitary")
-    print("Autonomous life started.")
-except Exception as e:
-    print("Error starting autonomous life:", e)
+    def start_spel(self):
+        try:
+            # Starten van de autonomous life 
+            self.autonomous_life_proxy.setState("solitary")
+            print("Autonomous life started")
+        except Exception as e:
+            print("Fout bij het starten van autonomous life:", e)
 
-# Initialize Bingo board
-bingo_board = [
-    [1, 2, 3, 4, 5],
-    [6, 7, 8, 9, 10],
-    [11, 12, 13, 14, 15],
-    [16, 17, 18, 19, 20],
-    [21, 22, 23, 24, 25]
-]
+        # Begroeting van spelers
+        self.speech_proxy.say("Welkom bij Bingo!")
 
-# Function to call out a random number
-def call_number(numbers_called):
-    while True:
-        number = random.randint(1, 25)
-        if number not in numbers_called:
-            numbers_called.append(number)
-            speech_proxy.say("The next number is " + str(number))
-            return number
+        # Starten van het Bingo spel
+        self.speel_bingo()
 
-# Main Bingo game loop
-def play_bingo():
-    numbers_called = [] 
-    while True:
-        number = call_number(numbers_called)
-        # Check for player wins
-        if check_for_win(bingo_board, numbers_called):
-            speech_proxy.say("Bingo! We have a winner!")
-            break
+    def roep_nummer_op(self, opgeroepen_nummers):
+        while True:
+            # kiest een willekeurig nummer
+            nummer = random.randint(1, 25)
+            if nummer not in opgeroepen_nummers:
+                opgeroepen_nummers.append(nummer)
+                # Aankondigen van het nummer
+                self.speech_proxy.say("Het volgende nummer is " + str(nummer))
+                return nummer
 
-# Function to check for a winning pattern
-def check_for_win(board, numbers_called):
-    # Implement win-checking logic here
-    return False  # Placeholder for now
+    def speel_bingo(self):
+        opgeroepen_nummers = [] 
+        while True:
+            nummer = self.roep_nummer_op(opgeroepen_nummers)
+            # Controleren op winnende patroon
+            if self.controleer_winst(self.bingo_bord, opgeroepen_nummers):
+                # Aankondigen van de winnaar
+                self.speech_proxy.say("Bingo! We hebben een winnaar!")
+                break
 
-# Main function
-def main():
-    try:
-        speech_proxy.say("Welcome to Bingo!")
-        play_bingo()
-    except Exception as e:
-        print("Error:", e)
+    def controleer_winst(self, bord, opgeroepen_nummers):
+        # placeholder  om later de qr code te kunnen zetten 
+        return False  
 
 if __name__ == "__main__":
-    main()
+    # melden van BingoSpel en starten van het spel
+    bingo_spel = BingoSpel()
+    bingo_spel.start_spel()
