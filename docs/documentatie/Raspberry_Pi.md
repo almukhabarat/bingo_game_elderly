@@ -5,9 +5,9 @@ Password: N02A5
 
 ## phpmyadmin
 
-MySQL application password: 
+MySQL application password: 9NOLX410
 
-GRANT ALL PRIVILEGES ON *.* TO 'ti3groep'@'localhost' IDENTIFIED BY 'BG32L2D' WITH GRANT OPTION;
+`GRANT ALL PRIVILEGES ON *.* TO 'ti3groep'@'localhost' IDENTIFIED BY 'BG32L2D' WITH GRANT OPTION;`
 
 username: ti3groep
 password: BG32L2D
@@ -24,7 +24,9 @@ Its is simple.
 On normal situation, http daemon run as some user and group, www-data on debian (raspbian).
 Standard html files are stored on /var/www/, owned by root:root, with permissive permission, all can read, but only root can write.
 To ordinary user write to /var/www need to takeover it. Supposed the use is pi.
-sudo chown -R pi:www-data /var/www
+
+`sudo chown -R ti3groep:www-data /var/www`
+
 Also, need to set user and group permission:
 sudo chmod u+rxw,g+rx-w,o-rwx /var/www
 
