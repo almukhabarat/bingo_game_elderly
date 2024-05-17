@@ -4,7 +4,7 @@
     erDiagram
         GAMESTATE ||--o| BINGO : heeft
         BINGO ||--o| BINGO_CHART : bevat
-        NUMBER_CALLED ||--o{ BINGO_CHART : contains
+        NUMBER_CALLED ||--o{ BINGO_CHART : geldt
 
         BINGO_CHART {
             Number STRING PK
