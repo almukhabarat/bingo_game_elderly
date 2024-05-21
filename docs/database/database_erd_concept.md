@@ -38,6 +38,30 @@ Een database moet opslaan welke getallen al zijn omgeroepen en welke niet >>>
 
 Een database kan weten hoe vaak een bingo al is omgeroepen en eventueel om welke getal combinaties het gaat >>>
 
+## v2
 
+Idee 1
 
-        
+```mermaid
+    erDiagram
+        BingoCard ||--o{ Won : heeft
+        Game ||--|| Won : heeft
+
+        BingoCard {
+            cardId INT PK
+            cardNumber INT
+        }
+
+        Game {
+            gameId INT PK
+            gameDate TIMESTAMP 
+        }
+
+        Won {
+            WonId INT PK
+            cardId INT FK
+            gameId INT FK
+            WonCount INT
+            WonDate INT 
+        }
+```
