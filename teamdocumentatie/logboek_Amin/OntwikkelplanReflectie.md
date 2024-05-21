@@ -29,10 +29,14 @@ Gedurende dit blok heb ik mijzelf ontwikkeld op structueel vlak. Zo heb ik nog n
 ## Blok 2: Game TI Controller
 
 **Waar stond ik:**
-Ik ben dit blok in gestapt met kennis van het manier waarop 
+Ik begon dit blok met een basiskennis van projectmanagement, waaronder het stellen van prioriteiten en het beoordelen van de haalbaarheid van taken. Hoewel ik theoretische kennis had over projectmanagement, had ik nog nooit de kans gehad om in een team te werken. Het werken in een duo was daarom een volledig nieuwe ervaring voor mij, en ik was benieuwd naar hoe deze dynamiek zou verlopen aangezien ik mijn teamgenoot al lang ken.
 
 **Wat heb ik geleerd:**
+Gedurende dit blok heb ik waardevolle lessen geleerd, vooral over het belang van initiatief nemen binnen een team. Ik ontdekte dat als niemand de leiding neemt, er weinig tot niets wordt bereikt. Deze realisatie heeft mijn begrip van teamwork aanzienlijk verdiept. Ik heb geleerd dat effectief samenwerken zowel voordelen als uitdagingen met zich meebrengt. Voordelen zijn onder andere het kunnen delen van ideeën en het gezamenlijk oplossen van problemen, terwijl nadelen kunnen zijn dat taken soms ongelijk verdeeld worden.
 
+Ondanks dat er binnen ons team duidelijke taakverdelingen waren en we regelmatig met elkaar afstemden, merkte ik dat ik vaak het gevoel had dat ik te veel alleen deed. Dit bracht me tot het inzicht dat goede communicatie en taakverdeling cruciaal zijn om echt als een team te kunnen functioneren.
+
+Al met al heb ik niet alleen mijn technische vaardigheden uitgebreid, maar ook mijn inzicht in teamwork en projectmanagement verdiept. Ik ben nu beter uitgerust om in toekomstige projecten zowel individueel als in teamverband effectief bij te dragen.
 
 ### Retrospectives Feedback
 ---
@@ -53,10 +57,16 @@ samenwerking gaat goed, taken verdeeld in het team en afstemming met elkaar
 ## Blok 3: Comfortabele Studie Omgeving (OSO)
 
 **Waar stond ik:**
-
+Aan het begin van dit blok was ik nog steeds bezig met het verbeteren van mijn vaardigheden op het gebied van projectmanagement en teamwork. Hoewel ik al enige ervaring had opgedaan in het werken in een team, moest ik nog veel leren over effectieve samenwerking en communicatie binnen een teamomgeving. Ik had duidelijke leerdoelen gesteld voor mezelf met betrekking tot scrum en communicatie, en was vastberaden om hierin te groeien.
 
 **Wat heb ik geleerd:**
+Tijdens deze sprint heb ik geleerd hoe belangrijk het is om proactief te zijn in de communicatie en samenwerking binnen het team. In plaats van af te wachten ben ik actief gaan kijken waar mijn teamgenoten mee bezig waren en waar ze vastliepen. Dit heeft mijn eigen productiviteit aanzienlijk verhoogd en ervoor gezorgd dat ik mijn werk beter kon afstemmen op het team.
 
+Ik heb ontdekt dat regelmatige afstemming binnen het team helpt om verschillende delen van het product beter op elkaar aan te laten sluiten. Door regelmatig te communiceren kreeg iedereen meer inzicht in het geheel, wat de samenwerking verbeterde.
+
+Tijdsdruk heeft me geholpen om me te concentreren op mijn eigen werk en minder bezig te zijn met minder prioritaire vragen van anderen. Ik heb geleerd dat het belangrijk is om deze focus te behouden, door bewust tijd voor mezelf te claimen om door te werken.
+
+Mijn leerdoelen met betrekking tot scrum en communicatie zijn in deze sprint verbeterd. Ik heb ook geleerd om rekening te houden met de persoonlijke behoeften en karakters van mijn teamgenoten. Dit heeft mijn vermogen om effectief samen te werken en te communiceren versterkt. Ik ben nu zelfverzekerder in mijn rol binnen het team en kijk ernaar uit om deze vaardigheden verder te ontwikkelen.
 
 ### Retrospectives Feedback
 ---
