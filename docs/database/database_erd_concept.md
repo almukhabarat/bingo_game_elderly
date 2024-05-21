@@ -1,12 +1,43 @@
-Ons originele idee bevat een database waarin scores worden opgeslagen en verdeeld.
+# ERD Concept
 
 ```mermaid
     erDiagram
-        TELLER ||--o{ NUMMMER : krijgt
-        BINGO_WIN {
-            id int
-            name string
+        GAMESTATE ||--o| BINGO : heeft
+        BINGO ||--o| BINGO_CHART : bevat
+        NUMBER_CALLED ||--o{ BINGO_CHART : geldt
+
+        BINGO_CHART {
+            Number STRING PK
+        }
+
+        NUMBER_CALLED {
+            Called STRING PK
+        }
+
+        BINGO {
+            WonId INT PK
+            Time TIMESTAMP
+            Number STRING FK
+        }
+
+        GAMESTATE {
+            GameId INT PK
+            Start TIMESTAMP
+            End TIMESTAMP
+            WonId INT FK
         }
 ```
 
-Ons huidige idee bevat een database die de Bingo-nummers zal opslaan zodat de NAO weet welke nummers al zijn opgenoemd.
+Qr code bevat bingo getallen >>> 
+
+Nao6 krijgt getallen van raspi en noemt deze op >>> 
+
+Raspberry Pi genereert getallen (van bijvoorbeeld 1 tot 50) >>>
+
+Een database moet opslaan welke getallen al zijn omgeroepen en welke niet >>>
+
+Een database kan weten hoe vaak een bingo al is omgeroepen en eventueel om welke getal combinaties het gaat >>>
+
+
+
+        
