@@ -21,6 +21,12 @@ Eisen voor docent:
 
 Wij hebben het idee om het spel BINGO te maken met behulp van een NAO robot. De opstelling zal bestaan uit een NAO robot die voor een tafeltje staat. Op de tafel staat de Bingo ballen-kooi waar de NAO robot aan kan draaien. De NAO pakt de Bingo-ballen op en roept het nummer. Als iemand Bingo roept zal NAO stoppen en kijken naar een plek op de tafel waar de speler zijn of haar Bingokaart kan neerleggen. Dan scant NAO de barcode/QR-code op de Bingokaart en geeft hij aan of de speler heeft gewonnen of niet.
 
+## StoryBoard
+
+Om het gebruik van ons product makkelijk uit te leggen hebben we een storyboard gemaakt van de verschillende taken die worden uitgevoerd.
+
+![Storyboard](../assets/storyboard.png)
+
 ## Realisatie
 
 ### Connectie met Raspberry Pi
