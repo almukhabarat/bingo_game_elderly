@@ -4,7 +4,7 @@
 
 const char* ssid = "Pokimane, mijn knuffelmarokkaan!";
 const char* pass = "i7mgmz3sahu3c7f";
-const char* serverAddress = "http://145.92.8.134"
+const char* serverAddress = "http://145.92.8.134";
 
 // Defines the number of steps per rotation
 const int stepsPerRevolution = 2048;
