@@ -1,12 +1,10 @@
 #include <WiFi.h>
-#include <ArduinoJson.h>
-#include <ArduinoJson.hpp>
 #include <HTTPClient.h>
 #include <Stepper.h>
 
 const char* ssid = "Pokimane, mijn knuffelmarokkaan!";
 const char* pass = "i7mgmz3sahu3c7f";
-const char* serverUrl = "http://145.92.8.134:5000/instructions"
+const char* serverAddress = "http://145.92.8.134"
 
 // Defines the number of steps per rotation
 const int stepsPerRevolution = 2048;
@@ -26,48 +24,48 @@ void setup() {
     Serial.print(".");
   }
   Serial.println("Wi-Fi verbonden.");
+  Serial.println("IP adres: ");
+  Serial.println(WiFi.localIP());
 
   // Laat motor roteren met 10 rpm
   candyMotor.setSpeed(10);
   candyMotor.step(stepsPerRevolution);
-
-
 }
 
 void loop() {
-  // Check if we're connected to Wi-Fi
-  if (WiFi.status() == WL_CONNECTED) {
-    // Make a GET request to the server
-    HTTPClient http;
-    http.begin(serverUrl);
-    int httpResponseCode = http.GET();
-
-    if (httpResponseCode == HTTP_CODE_OK) {
-      // Parse the response
-      DynamicJsonDocument doc(1024);
-      deserializeJson(doc, http.getString());
-      
-      // Check if there are instructions
-      if (doc.size() > 0) {
-        // Process instructions
-        for (int i = 0; i < doc.size(); i++) {
-          String instruction = doc[i]["instruction"];
-          // Implement logic to act based on the received instruction
-          if (instruction == "move_motor") {
-                myStepper.setSpeed(10);
-                myStepper.step(stepsPerRevolution);
-                delay(1000);
-          // Additional instructions can be added as needed
-        }
-      }
-    } else {
-      Serial.print("Error in HTTP request: ");
-      Serial.println(httpResponseCode);
-    }
-    
-    http.end();
+  // Send HTTP GET request to start the motor
+  if(sendHttpRequest("/start_motor")) {
+    Serial.println("Motor started!");
+  } else {
+    Serial.println("Failed to start motor!");
   }
+  
+  delay(5000); // Wait for 5 seconds
+}
 
-  // Wait before making the next request
-  delay(5000); // Adjust this delay according to your needs
+bool sendHttpRequest(String endpoint) {
+  HTTPClient http;
+  
+  // Construct the full URL
+  String url = serverAddress + endpoint;
+  
+  // Send GET request
+  http.begin(url);
+  int httpCode = http.GET();
+  
+  if(httpCode > 0) {
+    // Check for successful response
+    if(httpCode == HTTP_CODE_OK) {
+      http.end();
+      return true;
+    } else {
+      Serial.printf("HTTP request failed with error code %d\n", httpCode);
+      http.end();
+      return false;
+    }
+  } else {
+    Serial.println("HTTP request failed");
+    http.end();
+    return false;
+  }
 }

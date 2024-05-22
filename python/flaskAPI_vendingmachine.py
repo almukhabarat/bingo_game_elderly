@@ -1,24 +1,20 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 
 app = Flask(__name__)
 
-# This variable will store the current command for the stepper motor
-command = ""
+# Endpoint to start the motor
+@app.route('/start_motor', methods=['GET'])
+def start_motor():
+    # Add your code here to start the motor
+    # For now, let's just return a success message
+    return 'Motor started!'
 
-@app.route('/control', methods=['GET'])
-def control():
-    global command
-    return jsonify({"command": command})
-
-@app.route('/set_command', methods=['POST'])
-def set_command():
-    global command
-    data = request.get_json()
-    if 'command' in data:
-        command = data['command']
-        return jsonify({"status": "success", "command": command})
-    else:
-        return jsonify({"status": "error", "message": "No command provided"}), 400
+# Endpoint to stop the motor
+@app.route('/stop_motor', methods=['GET'])
+def stop_motor():
+    # Add your code here to stop the motor
+    # For now, let's just return a success message
+    return 'Motor stopped!'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=80, debug=True)
