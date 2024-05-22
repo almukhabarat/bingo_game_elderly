@@ -1,8 +1,15 @@
 # Aandrijving klep vendingmachine
 
+**Inleiding probleembeschrijving**
+
+In dit project gaan we een bingo spel maken voor ouderen met behulp van een Aldebaran NAO6 (H25) robot en verschillende actuatoren die bijvoorbeeld de bingobal laten draaien of een snoepjesmachine die een snoepje kan afgeven zodra iemand een bingo heeft gescoord. Tijdens het spelen van de bingo willen we ouderen de mogelijkheid bieden om op meerdere manieren te kunnnen interacteren met het bingospel.
+
+---
+
 In dit project willen we een vendingmachine gaan maken die een prijs (snoepje) kan uitdelen zodra een van de deelnemers een bingo scoort. Suiker is niet goed voor ouderen, maar het gezondheidsaspect komt helaas niet aanbod binnen dit project. Het is de bedoeling dat de vending machine kleine snoepjes kan uitdelen zoals een mini snickers of een caramelsnoepje. Het formaat van de vendingmachine hoeft dus niet heel groot en complex te zijn. We willen de functies van de vending machine volledig automatiseren zodat het spel eenvoudig en vloeiend te spelen is.
 
 ## Informatie over concept behuizing vending machine
+
 ```
 We hebben verschillende ideeën en manieren om de vendingmachine uit te werken. Een concept die we hebben is dat we een kartonnen doos maken met een gat in waar je het snoep in valt zodra er iemand een bingo scoort. De kartonnen doos die we nu hebben als concept is groot voor het idee dat we in gedachte hadden. Voordelen voor het kartonnen doos concept is dat je simpele- en goedkope materialen kunt gebruiken voor het ontwikkelen van de vendingmachine. Een nadeel is dat dit ontwerp minder stabiel kan zijn en moeilijker is om in elkaar te zetten. Het kan bijvoorbeeld ingewikkelder zijn om een servo- of stepper motor te installeren. 
 
@@ -41,7 +48,6 @@ We hebben gekeken naar een paar soorten draaimotoren.
 
 - Servomotor
 - Steppermotor
-
 
 ## Steppermotor 28BYJ-48 (met ULN2003 Driver)
 
