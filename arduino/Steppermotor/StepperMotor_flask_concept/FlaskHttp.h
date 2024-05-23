@@ -2,6 +2,8 @@
 #define FLASK_HTTP_H
 
 #include <HTTPClient.h>
+#include <ArduinoJson.h>
+#include <ArduinoJson.hpp>
 
 class FlaskHttp {
   private:

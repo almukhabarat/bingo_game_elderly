@@ -31,20 +31,22 @@ void setup() {
   Serial.println("IP adres: ");
   Serial.println(WiFi.localIP());
 
-  // Laat motor roteren met 10 rpm
-  candyMotor.setSpeed(10);
-  candyMotor.step(stepsPerRevolution);
-
   flaskHttp.begin();
 }
 
 void loop() {
     // Stuurt een HTTP GET request naar een flask api op de webserver
-    String responsePayload = flaskHttp.processCommand();
-    if (!responsePayload.isEmpty()) {
-      Serial.println("response ontvangen: " + responsePayload);
-    } else {
-      Serial.println("No command received or error occurred.");
+    String response = flaskHttp.processCommand();
+
+    if (response.isEmpty()) {
+      Serial.println("Geen response of foutmelding ontvangen.");
+      
+    } else if (response == "geef snoepje ah zahbi") {
+      Serial.println("response ontvangen: " + response);
+      
+      // Laat motor roteren met 10 rpm
+      candyMotor.setSpeed(10);
+      candyMotor.step(stepsPerRevolution);
     }
 
     // update interval

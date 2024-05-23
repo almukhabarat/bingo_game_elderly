@@ -14,13 +14,20 @@ String FlaskHttp::processCommand() {
   int httpResponseCode = httpClient.GET();
 
   String payload;
+  String decodedString;
 
   if (httpResponseCode > 0) {
     payload = httpClient.getString();
+
+    // Json parsen
+    DynamicJsonDocument doc(1024);
+    const char* command = doc["command"];
+    decodedString = String(command);
+
   } else {
     Serial.println("Error: HTTP response code " + String(httpResponseCode));
   }
   httpClient.end();
 
-  return payload;
+  return decodedString;
 }
