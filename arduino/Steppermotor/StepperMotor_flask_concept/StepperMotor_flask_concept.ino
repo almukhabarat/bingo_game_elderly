@@ -33,39 +33,37 @@ void setup() {
 }
 
 void loop() {
-  // Send HTTP GET request to start the motor
-  if(sendHttpRequest("/start_motor")) {
-    Serial.println("Motor started!");
-  } else {
-    Serial.println("Failed to start motor!");
-  }
-  
-  delay(5000); // Wait for 5 seconds
-}
+    if (WiFi.status() == WL_CONNECTED) {
+        HTTPClient http;
 
-bool sendHttpRequest(String endpoint) {
-  HTTPClient http;
-  
-  // Construct the full URL
-  String url = serverAddress + endpoint;
-  
-  // Send GET request
-  http.begin(url);
-  int httpCode = http.GET();
-  
-  if(httpCode > 0) {
-    // Check for successful response
-    if(httpCode == HTTP_CODE_OK) {
-      http.end();
-      return true;
-    } else {
-      Serial.printf("HTTP request failed with error code %d\n", httpCode);
-      http.end();
-      return false;
+        // Your Flask API endpoint
+        http.begin("http://145.92.8.134/give_candy");
+
+        // Send HTTP GET request
+        int httpResponseCode = http.GET();
+
+        if (httpResponseCode > 0) {
+            // Print the HTTP response code
+            Serial.print("HTTP Response code: ");
+            Serial.println(httpResponseCode);
+
+            // Get the response payload
+            String payload = http.getString();
+            Serial.println("Response payload: ");
+            Serial.println(payload);
+        }
+        else {
+            Serial.print("Error code: ");
+            Serial.println(httpResponseCode);
+        }
+
+        // Free resources
+        http.end();
     }
-  } else {
-    Serial.println("HTTP request failed");
-    http.end();
-    return false;
-  }
+    else {
+        Serial.println("WiFi Disconnected");
+    }
+
+    // Add a delay before sending the next request
+    delay(5000); // 5 seconds
 }
