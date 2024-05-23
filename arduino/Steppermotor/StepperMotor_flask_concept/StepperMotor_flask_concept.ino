@@ -1,10 +1,12 @@
 #include <WiFi.h>
-#include <HTTPClient.h>
+#include "FlaskHttp.h"
 #include <Stepper.h>
 
 const char* ssid = "Pokimane, mijn knuffelmarokkaan!";
 const char* pass = "i7mgmz3sahu3c7f";
-const char* serverAddress = "http://145.92.8.134";
+
+#define SERVER "http://145.92.8.134"
+#define END_POINT "/give_candy"
 
 // Defines the number of steps per rotation
 const int stepsPerRevolution = 2048;
@@ -12,6 +14,8 @@ const int stepsPerRevolution = 2048;
 // Creates an instance of stepper class
 // Pins entered in sequence IN1-IN3-IN2-IN4 for proper step sequence
 Stepper candyMotor = Stepper(stepsPerRevolution, 8, 10, 9, 11);
+
+FlaskHttp flaskHttp(SERVER, END_POINT);
 
 void setup() {
   // Seriële monitor
@@ -33,37 +37,12 @@ void setup() {
 }
 
 void loop() {
-    if (WiFi.status() == WL_CONNECTED) {
-        HTTPClient http;
-
-        // Your Flask API endpoint
-        http.begin("http://145.92.8.134/give_candy");
-
-        // Send HTTP GET request
-        int httpResponseCode = http.GET();
-
-        if (httpResponseCode > 0) {
-            // Print the HTTP response code
-            Serial.print("HTTP Response code: ");
-            Serial.println(httpResponseCode);
-
-            // Get the response payload
-            String payload = http.getString();
-            Serial.println("Response payload: ");
-            Serial.println(payload);
-        }
-        else {
-            Serial.print("Error code: ");
-            Serial.println(httpResponseCode);
-        }
-
-        // Free resources
-        http.end();
-    }
-    else {
-        Serial.println("WiFi Disconnected");
+    // Stuurt een HTTP GET request naar een flask api op de webserver
+    String responsePayload = flaskHttp.processCommand();
+    if (!responsePayload.isEmpty()) {
+      Serial.println("response ontvangen: " + responsePayload);
     }
 
-    // Add a delay before sending the next request
-    delay(5000); // 5 seconds
+    // update interval
+    delay(1000);
 }
