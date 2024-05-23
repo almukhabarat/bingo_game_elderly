@@ -28,7 +28,7 @@ class NaoRobot:
     def wave(self):
         # Implementeer de zwaaiende beweging van de robot
         
-    def start_autonomous_life(self):
+    #def start_autonomous_life(self):
         try:
             # Start de autonomie van de robot
             self.autonomous_life_proxy.setState("solitary")
