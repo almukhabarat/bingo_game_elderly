@@ -4,7 +4,9 @@ app = Flask(__name__)
 
 # Endpoint to start the motor
 @app.route('/start_motor', methods=['GET'])
-def start_motor():
+def bingo_verified():
+    # plaats hier if else statement logica voor het ontvangen van NAO6 bingo verificatie
+    # 
     # Add your code here to start the motor
     # For now, let's just return a success message
     return 'Motor started!'
