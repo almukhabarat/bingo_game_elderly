@@ -6,7 +6,7 @@ const char* ssid = "Pokimane, mijn knuffelmarokkaan!";
 const char* pass = "i7mgmz3sahu3c7f";
 
 #define SERVER "http://145.92.8.134"
-#define END_POINT "/give_candy"
+#define END_POINT "/get_command"
 
 // Defines the number of steps per rotation
 const int stepsPerRevolution = 2048;
@@ -34,6 +34,8 @@ void setup() {
   // Laat motor roteren met 10 rpm
   candyMotor.setSpeed(10);
   candyMotor.step(stepsPerRevolution);
+
+  flaskHttp.begin();
 }
 
 void loop() {
@@ -41,6 +43,8 @@ void loop() {
     String responsePayload = flaskHttp.processCommand();
     if (!responsePayload.isEmpty()) {
       Serial.println("response ontvangen: " + responsePayload);
+    } else {
+      Serial.println("No command received or error occurred.");
     }
 
     // update interval

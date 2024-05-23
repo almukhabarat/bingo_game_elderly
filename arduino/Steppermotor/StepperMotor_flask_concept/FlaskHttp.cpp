@@ -8,11 +8,19 @@ void FlaskHttp::begin() {
 }
 
 String FlaskHttp::processCommand() {
-  uint16_t httpResponseCode = httpClient.GET();
+  // Optional: Set a custom timeout
+  httpClient.setTimeout(30000);  // Set timeout to 30 seconds
+
+  int httpResponseCode = httpClient.GET();
+
   String payload;
-  if (httpResponseCode == 200) {
+
+  if (httpResponseCode > 0) {
     payload = httpClient.getString();
+  } else {
+    Serial.println("Error: HTTP response code " + String(httpResponseCode));
   }
   httpClient.end();
+
   return payload;
 }
