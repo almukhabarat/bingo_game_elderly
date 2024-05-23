@@ -11,7 +11,7 @@ class Buzzer {
     }
 
     void playTone(int frequency, int duration) {
-      ledcWriteTone(channel, frequency); // Play tone
+      ledcWriteTone(channel, frequency);  // Play tone
       delay(duration);
       ledcWriteTone(channel, 0); // Stop tone
     }
