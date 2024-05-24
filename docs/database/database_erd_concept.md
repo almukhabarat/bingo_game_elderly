@@ -40,12 +40,12 @@ Een database kan weten hoe vaak een bingo al is omgeroepen en eventueel om welke
 
 ## v2
 
-Idee 1
+Idee 1 
 
 ```mermaid
     erDiagram
         BingoCard ||--o{ Won : heeft
-        Game ||--|| Won : heeft
+        Game ||--|| Won : bevat
 
         BingoCard {
             cardId INT PK
@@ -65,3 +65,4 @@ Idee 1
             WonDate INT 
         }
 ```
+
