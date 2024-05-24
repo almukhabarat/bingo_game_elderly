@@ -1,4 +1,4 @@
-# Sprint Report - Sprint X
+# Sprint Report - Sprint 2
 
 **Opdracht**: NAO Robot
 **Sprint**: Sprint 2

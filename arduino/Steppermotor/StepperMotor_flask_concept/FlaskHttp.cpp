@@ -3,13 +3,13 @@
 FlaskHttp::FlaskHttp(const char* baseAddress, const char* endPoint) : baseAddress(baseAddress), endPoint(endPoint) {}
 
 void FlaskHttp::begin() {
-    String url = String(baseAddress) + endPoint;
+    String url = String(baseAddress) + String(endPoint);
     httpClient.begin(url);
 }
 
 // haalt JSON op door middel van HTTP GET request en decodeert het bericht, functie geeft een string terug met daarin de instructie voor het aansturen van de snoepautomaat
 String FlaskHttp::getCommand() {
-  String url = String(baseAddress) + endPoint;
+  String url = String(baseAddress) + String(endPoint);
   httpClient.begin(url);
 
   // Set timeout (for HTTP long poll)
@@ -17,7 +17,7 @@ String FlaskHttp::getCommand() {
 
   int httpResponseCode = httpClient.GET();
 
-  String payload; // 
+  String payload; 
   String decodedString; 
 
   if (httpResponseCode > 0) {
@@ -26,14 +26,16 @@ String FlaskHttp::getCommand() {
 
     // Json parsen
     DynamicJsonDocument doc(1024);
+    // kijkt voor fouten en print deze
     DeserializationError error = deserializeJson(doc, payload);
     if (error) {
         Serial.print(F("deserializeJson() failed: "));
         Serial.println(error.c_str());
         decodedString = "";
     } else {
-        const char* command = doc["command"];
-        decodedString = String(command);
+      // parst JSON
+      const char* command = doc["command"];
+      decodedString = String(command);
     }
   } else {
     Serial.println("Error: HTTP response code " + String(httpResponseCode));
