@@ -19,8 +19,8 @@ def generate_card(grid_size):
     for i in range(grid_size):
         for j in range(grid_size):
             while True:
-                number = random.randint(i*5+1, i*5+5)
-                if number not in used_numbers and number != 0:
+                number = random.randint(1, 19)
+                if number not in used_numbers:
                     card[i][j] = number
                     used_numbers.add(number)
                     break
@@ -85,7 +85,7 @@ def play_bingo(grid_size, num_cards):
     generate_pdf(cards)
         
 # Play bingo with multiple cards
-play_bingo(3, 15)
+play_bingo(3, 5)
 
 
 
