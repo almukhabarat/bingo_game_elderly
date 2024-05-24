@@ -10,3 +10,5 @@ Op de achterkant staat een qr code, als deze gescant word door de nao robot, kan
 De bingokaarten worden gegenereerd met een python script.
 
 In het script kan aangepast worden hoeveel kaarten er moeten worden gegenereerd. Ook kan de hoevelheid getallen aangepast worden.
+
+![alt text](bingokaart.png)
