@@ -33,24 +33,24 @@ String FlaskHttp::getCommand() {
   return decodedString;
 }
 
-void FlaskHttp::postCommand(const char* sendMessage) {
+// void FlaskHttp::postCommand(const char* sendMessage) {
 
-  httpClient.addHeader("Content-Type", "application/json");
+//   httpClient.addHeader("Content-Type", "application/json");
 
-  // String wordt in JSON verpakt
-  DynamicJsonDocument doc(1024);
-  // String wordt verstuurd onder het "command" object (dus je krijgt: {"command": "dit is het bericht"})
-  doc["command"] = sendMessage;
-  String requestBody;
-  serializeJson(doc, requestBody);
+//   // String wordt in JSON verpakt
+//   DynamicJsonDocument doc(1024);
+//   // String wordt verstuurd onder het "command" object (dus je krijgt: {"command": "dit is het bericht"})
+//   doc["command"] = sendMessage;
+//   String requestBody;
+//   serializeJson(doc, requestBody);
 
-  // Verstuurt HTTP POST request
-  int httpResponseCode = httpClient.POST(requestBody);
+//   // Verstuurt HTTP POST request
+//   int httpResponseCode = httpClient.POST(requestBody);
 
-  if (httpResponseCode > 0) {
-    Serial.print("HTTP Response code: ");
-    Serial.println(httpResponseCode);
+//   if (httpResponseCode > 0) {
+//     Serial.print("HTTP Response code: ");
+//     Serial.println(httpResponseCode);
 
-  }
-  httpClient.end();
-}
+//   }
+//   httpClient.end();
+// }
