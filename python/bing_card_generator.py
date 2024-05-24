@@ -4,19 +4,20 @@ from fpdf import FPDF
 
 pdf = FPDF()
 
-bingo_rules = {
-    "A": 3,
-    "B": 3,
-    "C": 3,
-}
+
+# bingo_rules = {
+#     "A": 3,
+#     "B": 3,
+#     "C": 3,
+# }
 
 # Generate a bingo card
-def generate_card():
-    card = [[0]*3 for i in range(3)]
+def generate_card(grid_size):
+    card = [[0]*grid_size for i in range(grid_size)]
     used_numbers = set()
 
-    for i in range(3):
-        for j in range(3):
+    for i in range(grid_size):
+        for j in range(grid_size):
             while True:
                 number = random.randint(i*5+1, i*5+5)
                 if number not in used_numbers and number != 0:
@@ -70,12 +71,11 @@ def generate_pdf(cards):
         
 
     pdf.output("bingo_cards.pdf")
-           
-   
+        
 
 # Play bingo with a given number of cards, main function
-def play_bingo(num_cards):
-    cards = [generate_card() for i in range(num_cards)]
+def play_bingo(grid_size, num_cards):
+    cards = [generate_card(grid_size) for i in range(num_cards)]
     for i, card in enumerate(cards):
         print(f"Bingo card {i + 1}:")
         for row in card:
@@ -85,7 +85,7 @@ def play_bingo(num_cards):
     generate_pdf(cards)
         
 # Play bingo with multiple cards
-play_bingo(5)
+play_bingo(3, 15)
 
 
 
