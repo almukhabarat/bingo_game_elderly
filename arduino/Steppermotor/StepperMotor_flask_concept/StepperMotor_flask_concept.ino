@@ -1,9 +1,7 @@
 #include <WiFi.h>
+#include "kl3z5mgm.h"
 #include "FlaskHttp.h"
 #include <Stepper.h>
-
-const char* ssid = "Pokimane, mijn knuffelmarokkaan!";
-const char* pass = "i7mgmz3sahu3c7f";
 
 #define SERVER "http://145.92.8.134"
 #define END_POINT "/get_command"
@@ -22,7 +20,7 @@ void setup() {
   Serial.begin(115200);
 
   // Wifi configuratie
-  WiFi.begin(ssid, pass);
+  WiFi.begin(H_N, H_A);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -40,10 +38,11 @@ void loop() {
 
     if (response.isEmpty()) {
       Serial.println("Geen response of foutmelding ontvangen.");
-      
+
     } else if (response == "geef snoepje ah zahbi") {
       Serial.println("response ontvangen: " + response);
       
+      // ik denk dat de logica voor de steppermotor misschien nog verder moet worden uitgebreid, voor nu is het prima
       // Laat motor roteren met 10 rpm
       candyMotor.setSpeed(10);
       candyMotor.step(stepsPerRevolution);

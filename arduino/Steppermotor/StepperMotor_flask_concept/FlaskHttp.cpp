@@ -7,14 +7,15 @@ void FlaskHttp::begin() {
     httpClient.begin(url);
 }
 
+// haalt JSON op door middel van HTTP GET request en decodeert het bericht, functie geeft een string terug met daarin de instructie voor het aansturen van de snoepautomaat
 String FlaskHttp::processCommand() {
-  // Optional: Set a custom timeout
-  httpClient.setTimeout(30000);  // Set timeout to 30 seconds
+  // timeout (voor HTTP long poll)
+  httpClient.setTimeout(30000);  // nu ingesteld op 30 seconden, dezelfde timeout als in de flask api
 
   int httpResponseCode = httpClient.GET();
 
-  String payload;
-  String decodedString;
+  String payload; // hierin komt de rauwe http response binnen in JSON
+  String decodedString; // hierin komt de string van alleen het stukje na 'command'
 
   if (httpResponseCode > 0) {
     payload = httpClient.getString();
