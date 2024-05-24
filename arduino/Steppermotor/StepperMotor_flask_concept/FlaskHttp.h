@@ -13,7 +13,8 @@ class FlaskHttp {
   public:
     FlaskHttp(const char* baseAddress, const char* endPoint);
     void begin();
-    String processCommand();
+    String getCommand();
+    // void postCommand();
 };
 
 #endif

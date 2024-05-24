@@ -8,7 +8,7 @@ void FlaskHttp::begin() {
 }
 
 // haalt JSON op door middel van HTTP GET request en decodeert het bericht, functie geeft een string terug met daarin de instructie voor het aansturen van de snoepautomaat
-String FlaskHttp::processCommand() {
+String FlaskHttp::getCommand() {
   // timeout (voor HTTP long poll)
   httpClient.setTimeout(30000);  // nu ingesteld op 30 seconden, dezelfde timeout als in de flask api
 

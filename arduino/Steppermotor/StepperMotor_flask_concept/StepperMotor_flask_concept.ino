@@ -34,7 +34,7 @@ void setup() {
 
 void loop() {
     // Stuurt een HTTP GET request naar een flask api op de webserver
-    String response = flaskHttp.processCommand();
+    String response = flaskHttp.getCommand();
 
     if (response.isEmpty()) {
       Serial.println("Geen response of foutmelding ontvangen.");
