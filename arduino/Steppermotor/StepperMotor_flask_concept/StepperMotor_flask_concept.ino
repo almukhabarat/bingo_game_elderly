@@ -7,7 +7,7 @@ const char* pass = "i7mgmz3sahu3c7f";
 
 #define SERVER "http://145.92.8.134"
 #define END_POINT "/get_command"
-
+c:\Hogeschool van Amsterdam\HBO-ICT\Projecten\nooraamooquu78\arduino\knop.cpp
 // Defines the number of steps per rotation
 const int stepsPerRevolution = 2048;
 
