@@ -1,48 +1,20 @@
 #include <WiFi.h>
 #include "FlaskHttp.h"
+#include "MijnGeheim.h"
+
+#include "Buzzer.h"
+#include "BingoButton.h"
 
 #define SERVER "http://145.92.8.134"
-
-class Buzzer {
-  private:
-    int pin;
-    int channel;
-
-  public:
-    Buzzer(int pin, int channel) : pin(pin), channel(channel) {
-      pinMode(pin, OUTPUT);
-      ledcSetup(channel, 2000, 8); // Channel 0, 2kHz frequency, 8-bit resolution
-      ledcAttachPin(pin, channel); // Attach pin to the channel
-    }
-
-    void playTone(int frequency, int duration) {
-      ledcWriteTone(channel, frequency); // Play tone
-      delay(duration);
-      ledcWriteTone(channel, 0); // Stop tone
-    }
-
-    void stopTone() {
-      ledcWriteTone(channel, 0); // Stop tone
-    }
-};
-
-class Button {
-  private:
-    int pin;
-
-  public:
-    Button(int pin) : pin(pin) {
-      pinMode(pin, INPUT_PULLUP);
-    }
-
-    bool isPressed() {
-      return digitalRead(pin) == LOW;
-    }
-};
+#define END_POINT "/send_bingo"
 
 Buzzer buzzer1(15, 0); // Instantiate Buzzer object with pin 15 and channel 0
 Buzzer buzzer2(6, 1);  // Instantiate second Buzzer object with pin 6 and channel 1
-Button button(14);     // Instantiate Button object with pin 14
+
+// buzzer1 en 2 worden in een array gestopt zodat ze makkelijk selecteerbaar zijn
+Buzzer buzzers[] = {buzzer1, buzzer2};
+
+BingoButton bingoButton(14);     // Instantiate Button object with pin 14
 
 FlaskHttp flaskHttp(SERVER, END_POINT);
 
@@ -64,22 +36,22 @@ void setup() {
 }
 
 void loop() {
-  if (button.isPressed()) {
-    buzzer1.playTone(2000, 100);
-    buzzer2.playTone(2000, 100);
-    buzzer1.playTone(1000, 100);
-    buzzer2.playTone(1000, 100);
-    buzzer1.playTone(1500, 100);
-    buzzer2.playTone(1500, 100);
-    buzzer1.playTone(3000, 100);
-    buzzer2.playTone(3000, 100);
-    buzzer1.playTone(500, 100);
-    buzzer2.playTone(500, 100);
+  if (bingoButton.isPressed()) {
+    // geluidspatroon voor 2 buzzers
+    for (uint8_t i = 0; i < 2; i++) {
+      buzzers[i].playTone(2000, 100);
+      buzzers[i].playTone(1000, 100);
+      buzzers[i].playTone(1500, 100);
+      buzzers[i].playTone(3000, 100);
+      buzzers[i].playTone(500, 100);
+      buzzers[i].stopTone();
+    }
 
     flaskHttp.postCommand("button_pressed");
   } else {
-    buzzer1.stopTone();
-    buzzer2.stopTone();
+    for (uint8_t i = 0; i < 2; i++) {
+      buzzers[i].stopTone();
+    }
   }
 
   delay(50);

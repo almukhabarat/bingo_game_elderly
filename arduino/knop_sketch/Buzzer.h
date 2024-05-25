@@ -1,14 +1,16 @@
 #ifndef BUZZER_H
 #define BUZZER_H
 
+#include <Arduino.h>
+
 class Buzzer {
   private:
-    uint8_t pin
-    uint8_t channel
+    const uint8_t pin;
+    const uint8_t channel;
   public:
-    Buzzer(uint8_t pin, uint8_t channel);
-    void playTone();
+    Buzzer(const uint8_t pin, const uint8_t channel);
+    void playTone(uint16_t frequency, uint16_t duration);
     void stopTone();
-}
+};
 
 #endif
