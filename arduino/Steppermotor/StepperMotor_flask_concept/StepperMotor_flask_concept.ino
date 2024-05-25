@@ -1,10 +1,11 @@
 #include <WiFi.h>
 #include "FlaskHttp.h"
+#include "kl3z5mgm.h" 
 #include <Stepper.h>
 
 #define SERVER "http://145.92.8.134"
 #define END_POINT "/get_command"
-c:\Hogeschool van Amsterdam\HBO-ICT\Projecten\nooraamooquu78\arduino\knop.cpp
+
 // Defines the number of steps per rotation
 const int stepsPerRevolution = 2048;
 
@@ -36,14 +37,14 @@ void loop() {
     // Stuurt een HTTP GET request naar een flask api op de webserver
     String response = flaskHttp.getCommand();
 
-    if (response.isEmpty()) {
-      Serial.println("Geen response of foutmelding ontvangen.");
-      
-    } else if (response == "geef snoepje ah zahbi") {
+    if (response == "geef snoepje ah zahbi") {
       Serial.println("response ontvangen: " + response);
       // Laat motor roteren met 10 rpm
       candyMotor.setSpeed(10);
       candyMotor.step(-stepsPerRevolution);
+
+    } else if (response.isEmpty()) {
+      Serial.println("Geen response of foutmelding ontvangen.");
     }
     // update interval
     delay(1000);

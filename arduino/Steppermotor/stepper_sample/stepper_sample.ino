@@ -9,10 +9,11 @@ const int stepsPerRevolution = 2048;
 Stepper candyMotor = Stepper(stepsPerRevolution, 12, 10, 11, 9);
 
 void setup() {
-    // Nothing to do (Stepper Library sets pins as outputs)
+    Serial.begin(115200);
 }
 
 void loop() {
+    Serial.println("Looping...");
     // Rotate CW slowly at 5 RPM
     candyMotor.setSpeed(10);
     candyMotor.step(-stepsPerRevolution);
