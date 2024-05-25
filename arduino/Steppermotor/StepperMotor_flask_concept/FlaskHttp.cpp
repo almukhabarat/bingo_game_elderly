@@ -12,21 +12,23 @@ String FlaskHttp::getCommand() {
   String url = String(baseAddress) + String(endPoint);
   httpClient.begin(url);
 
-  // Set timeout (for HTTP long poll)
-  httpClient.setTimeout(30000);  // Set to 30 seconds, same as in the Flask API
+  // Timeout voor HTTP long poll
+  httpClient.setTimeout(30000);  // Nu ingesteld op 30 seconden, dit is de timeout die ook de flask api hanteert
 
   int httpResponseCode = httpClient.GET();
 
   String payload; 
   String decodedString; 
 
+  // kijkt of de responscode groter is dan 0 en haalt vervolgens de HTTP request binnen
+  // http response code is iets complexer vanwege debugging
   if (httpResponseCode > 0) {
     payload = httpClient.getString();
     Serial.println("Response payload: " + payload);
 
     // Json parsen
     DynamicJsonDocument doc(1024);
-    // kijkt voor fouten en print deze
+    // kijkt voor fouten bij inkomende JSON pakket
     DeserializationError error = deserializeJson(doc, payload);
     if (error) {
         Serial.print(F("deserializeJson() failed: "));
@@ -38,6 +40,7 @@ String FlaskHttp::getCommand() {
       decodedString = String(command);
     }
   } else {
+    // geeft foutmelding aan 
     Serial.println("Error: HTTP response code " + String(httpResponseCode));
     decodedString = "";
   }
