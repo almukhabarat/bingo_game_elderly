@@ -19,8 +19,8 @@ void loop() {
     candyMotor.step(-stepsPerRevolution);
     delay(1000);
     
-    // // Rotate CCW quickly at 10 RPM
-    // candyMotor.setSpeed(10);
-    // candyMotor.step(-stepsPerRevolution);
-    // delay(1000);
+    // Rotate CCW quickly at 10 RPM
+    candyMotor.setSpeed(10);
+    candyMotor.step(-stepsPerRevolution);
+    delay(1000);
 }
