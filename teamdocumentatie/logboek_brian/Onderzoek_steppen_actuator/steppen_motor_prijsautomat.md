@@ -1,8 +1,8 @@
 # Prijsautomaat
 
-**Inleiding probleembeschrijving**
+**Inleiding**
 
-In dit project gaan we een bingo spel maken voor ouderen met behulp van een Aldebaran NAO6 (H25) robot en verschillende actuatoren die bijvoorbeeld de bingobal laten draaien of een snoepjesmachine die een snoepje kan afgeven zodra iemand een bingo heeft gescoord. Tijdens het spelen van de bingo willen we ouderen de mogelijkheid bieden om op meerdere manieren te kunnnen interacteren met het bingospel.
+In dit project gaan we een bingo spel maken voor ouderen met behulp van een Aldebaran NAO6 (H25) robot en verschillende geautomatiseerde spel onderdelen zoals bijvoorbeeld een bingobal die automatisch kan spinnen of een knop waarmee aan de robot kan worden aangegeven zodra er een bingo wordt gescoord . Tijdens het spelen van de bingo willen we ouderen de mogelijkheid bieden om op meerdere manieren te kunnnen interacteren met het bingospel. Het is de bedoeling dat we hiermee de ouderen kunnen entertainen door middel van de robot en de bijbehorende randapparatuur. We willen met dit project aan onze opdrachtgever en onze eindgebruiker laten zien welke mogelijkheden er zijn met de technologie waar wij op dit moment mee werken.
 
 In dit project willen we een prijsautomaat gaan maken die een prijs (snoepje) kan uitdelen zodra een van de deelnemers een bingo scoort. Suiker is niet goed voor ouderen, maar het gezondheidsaspect komt helaas niet aanbod binnen dit project. Het is de bedoeling dat de vending machine kleine snoepjes kan uitdelen zoals een mini snickers of een caramelsnoepje. Het formaat van de prijsautomaat hoeft dus niet heel groot en complex te zijn. We willen de functies van de vending machine volledig automatiseren zodat het spel eenvoudig te spelen is.
 
@@ -10,7 +10,7 @@ In dit project willen we een prijsautomaat gaan maken die een prijs (snoepje) ka
 
 ## Overzicht | Aansluitschema steppermotor 28BYJ-48 + ULN2003 Driver met ESP32-S3 microcontroller
 
-<img src="images/vending_machine_actuator_bb.svg" width=40%>
+<img src="images/vending_machine_actuator_bb.svg" width=100%>
 
 Op dit schema kun je zien welke onderdelen met elkaar zijn aangesloten. De breadboard van de prijsautomaat bevat 4 onderdelen: ESP32-S3 microcontroller, ULN2003 motor drive, 28BYJ-48 steppermotor, 9V alkaline batterij. 
 
@@ -68,7 +68,7 @@ De **ULN2003** motor driver wordt gebruikt om de stepper motor via een digitale 
 - **Ratio:** 1/64
 - **Step hoek:** 5.625 x 1/64
 
-### Voorbeeld code die gebruikt kan worden om de steppermotor te testen
+### Code die gebruikt kan worden om de steppermotor te testen
 
 ```cpp
 //Includes the Arduino Stepper Library
