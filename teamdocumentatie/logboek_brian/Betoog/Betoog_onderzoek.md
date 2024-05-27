@@ -66,6 +66,8 @@ Robots die op dit moment veel gebruikt worden voor experimenten in de ouderenzor
 
 https://eit.europa.eu/news-events/news/pandemic-hitting-nursing-homes-saras-robots-are-growing-demand
 
+
+
 https://www.theatlantic.com/family/archive/2024/03/robots-have-not-revolutionized-caregiving-elder-care/677820/
 
 
