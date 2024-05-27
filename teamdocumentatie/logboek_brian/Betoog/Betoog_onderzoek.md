@@ -14,6 +14,12 @@ Langdurige eenzaamheid kan een aanzienlijke invloed hebben op het mentale welzij
 
 Eenzaamheid zou in de ergste gevallen kunnen leiden tot depressie en stress. Zeker langdurige (chronische) stress kan bepaalde gevolgen hebben op iemands fysieke gezondheid, zeker bij ouderen. Het gaat dan vooral over hart- en vaatziekten, maar ook dementie.
 
+https://www.psychologytoday.com/us/basics/loneliness
+
+https://www.cigna.com/knowledge-center/chronic-loneliness
+
+https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/loneliness-in-older-people/
+
 **Alleen zijn, en eenzaamheid ervaren**
 
 Ondanks dat de mens een sociaal wezen is, moet wel benadrukt worden dat als iemand alleen is niet meteen betekent dat iemand zich ook daadwerkelijk eenzaam voelt. Bij eenzaamheid gaat het vaak om een gebrek aan sociale verbondenheid met anderen. Iemand kan soms alleen zijn zonder dat het direct bepaalde gevolgen kan hebben op iemands emotionele gesteldheid.
