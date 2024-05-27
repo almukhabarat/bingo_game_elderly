@@ -10,7 +10,7 @@ In dit project willen we een prijsautomaat gaan maken die een prijs (snoepje) ka
 
 ## Overzicht | Aansluitschema steppermotor 28BYJ-48 + ULN2003 Driver met ESP32-S3 microcontroller
 
-<img src="images/vending_machine_actuator_bb.svg" width=100%>
+<img src="../assets//vending_machine_actuator_bb.svg" width=100%>
 
 Op dit schema kun je zien welke onderdelen met elkaar zijn aangesloten. De breadboard van de prijsautomaat bevat 4 onderdelen: ESP32-S3 microcontroller, ULN2003 motor drive, 28BYJ-48 steppermotor, 9V alkaline batterij. 
 
@@ -30,7 +30,7 @@ Een aantal punten/eigenschappen die we belangrijk vonden voor het kiezen van een
 
 ## Steppermotor 28BYJ-48 (met ULN2003 Driver)
 
-<img src="images/stepper.png" width=40%>
+<img src="../assets//stepper.png" width=40%>
 
 Voor het aandraaien van de spiraal hadden we gekozen voor de **28BYJ-48** steppermotor. Deze wordt aangestuurd door middel van een ULN2003 motor driver. We hadden gekozen voor deze stepper motor omdat deze motor sterk genoeg was om de spiraal goed te kunnen laten draaien met snoepjes erin. 
 
@@ -40,12 +40,12 @@ De steppermotor werkt op 5V DC en de steppermotor wordt op dit moment aangedreve
 
 ## ULN2003 Driver
 
-<img src="images/motor_driver.png" width=40%>
+<img src="../assets//motor_driver.png" width=40%>
 
 De **ULN2003** motor driver wordt gebruikt om de stepper motor via een digitale bron aan te sturen en van stroom te voorzien. De steppermotor is via deze motor driver verbonden met een ESP32-S3 microcontroller met 4 pinnen (IN1, IN2 IN3 IN4).
 **28BYJ-48 Pinout** | De stepper motor is met 5 draadjes verbonden met de ULN2003 Driver, 4 draadjes voor de coils (elke 1 coil) en 1 draadje voor stroom (5V). Elke coil kan via de motor driver met de IN (1-4) pinnen door de ESP32 microcontroller digitaal worden aangestuurd. <br>
 
-<img src="images/stepper_out.png" width=70%>
+<img src="../assets//stepper_out.png" width=70%>
 
 ---
 
