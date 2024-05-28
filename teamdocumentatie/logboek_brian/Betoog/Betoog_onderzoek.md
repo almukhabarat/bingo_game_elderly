@@ -1,5 +1,10 @@
 # Betoog
 
+
+
+
+
+
 ## Wat is eenzaamheid en hoe wordt dit ervaren bij ouderen in verzorgingshuizen?
 
 Om erachter te komen hoe eenzaamheid beïnvloed kan worden bij ouderen is het eerst belangrijk om duidelijk vast te leggen hoe dit onderwerp in dit onderzoek wordt behandeld. Wat is eenzaamheid precies, en hoe komt eenzaamheid voor bij ouderen? Bij deze deelvraag wordt dit onderwerp behandeld in aansluiting tot andere deelvragen.
@@ -24,7 +29,7 @@ https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-sympt
 
 Ondanks dat de mens een sociaal wezen is, moet wel benadrukt worden dat als iemand alleen is niet meteen betekent dat iemand zich ook daadwerkelijk eenzaam voelt. Bij eenzaamheid gaat het vaak om een gebrek aan sociale verbondenheid met anderen. Iemand kan soms alleen zijn zonder dat het direct bepaalde gevolgen kan hebben op iemands emotionele gesteldheid.
 
-### Hoe wordt eenzaamheid ervaren bij ouderen in verzorgingshuizen?
+### Oorzaken
 
 In dit onderzoek wordt de nadruk primair gelegd op eenzaamheid bij ouderen in verzorgingshuizen.
 
