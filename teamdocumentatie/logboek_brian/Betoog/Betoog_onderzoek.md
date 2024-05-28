@@ -59,7 +59,7 @@ https://research.vu.nl/ws/portalfiles/portal/73664713/2007+vTilburg+dJongGiervel
 
 Veel verzorgingshuizen kampen op dit moment met personeelstekorten. De vraag naar zorgpersoneel zal in de komende periode alleen maar stijgen vanwege de toenemende vergrijzing. Het idee achter de inzet van robots in verzorgingshuizen is dan ook dat repetitieve taken bijvoorbeeld kunnen worden overgenomen om de werkdruk bij zorgpersoneel te verlagen. Hierdoor zouden zij meer tijd kunnen besteden aan complexere taken. 
 
-Om te weten op welke manieren robotica eenzaamheid bij ouderen kan beïnvloeden, kan er eerst gekeken worden naar de huidige ontwikkelingen binnen de tak van robotica op het gebied van ouderenzorg. De robots waar we in dit onderzoek op gaan focussen zijn robots die met ouderen kunnen interacteren door middel van spraak is of visuele waarnemingen. Het gaat hierbij om robots waar op dit moment geëxperimenteerd mee wordt in verzoringshuizen. Deze robots kunnen worden ingedeeld onder twee categorieën, "nursing robots" en "assistive robots".
+Om te weten op welke manieren robotica eenzaamheid bij ouderen kan beïnvloeden, kan er eerst gekeken worden naar de huidige ontwikkelingen binnen de tak van robotica op het gebied van ouderenzorg. De robots waar we in dit onderzoek op gaan focussen zijn robots die met ouderen kunnen interacteren door middel van spraak is of visuele waarnemingen. Deze robots kunnen worden ingedeeld onder twee categorieën, "nursing robots" en "assistive robots".
 
 ### Nursing robots (verpleegkundige robots)
 
@@ -88,11 +88,9 @@ Deze robots kunnen verder worden opgedeeld in twee sub categorieën.
 
 **Socially-assistive:** Anderzijds gaat het om robots die ouderen kunnen helpen via sociale interacties met als doel de mentale- of fysieke gezondheid te verbeteren.
 
-**Voorbeelden van robots die in deze categorie vallen**
-
 `Aldebaran Robotics`
 
-Robots die op dit moment veel gebruikt worden voor experimenten in de ouderenzorg zijn onder andere de robots van Aldebaran Robotics, het gaat hierbij vooral om de Pepper en de NAO robots. Het zijn humanoïde robots vanwege hun menselijk ontwerp aangezien de robots vooral zijn ontworpen voor sociale interacties met mensen. Deze robots vallen dan ook onder de "socially-assistive" categorie. Vooral in Japan zijn er veel experimenten gedaan met ouderen in verzorgingshuizen met de NAO en Pepper robots en ze worden ook op dit moment gebruikt in verzorgingshuizen in Nederland.
+Robots die op dit moment veel gebruikt worden voor experimenten in de ouderenzorg zijn onder andere de robots van Aldebaran Robotics, het gaat hierbij vooral om de Pepper en de NAO robots. Het zijn humanoïde robots vanwege hun menselijk uiterlijk, de robots zijn namelijk vooral ontworpen voor sociale interacties met mensen. Deze robots vallen dan ook onder de "socially-assistive" categorie. Vooral in Japan zijn er veel experimenten gedaan met ouderen in verzorgingshuizen met de NAO en Pepper robots en ze worden ook op dit moment gebruikt in verzorgingshuizen in Nederland.
 
 https://www.technologyreview.com/2023/01/09/1065135/japan-automating-eldercare-robots/
 
@@ -101,6 +99,10 @@ https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2020.
 
 https://www.researchprotocols.org/2023/1/e50626
 
+https://www.theatlantic.com/family/archive/2024/03/robots-have-not-revolutionized-caregiving-elder-care/677820/
 
+---
 
+## Wat voor effect kunnen de robots hebben op eenzaamheid bij ouderen?
 
+Nursing robots zoals SARA kunnen worden ingezet in verzorgingshuizen om enerzijds de werkdruk van zorgpersoneel te verlagen, maar ook om eenzaamheid onder ouderen te bestrijden. 

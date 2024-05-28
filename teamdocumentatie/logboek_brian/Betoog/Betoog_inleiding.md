@@ -16,11 +16,11 @@ Bij dit onderdeel wordt er ingegaan op alléén het sociaal-emotionele aspect. E
 
 2. **Wat voor soort robots worden er nu ingezet in verzorgingshuizen?**
 
-Ik wil kijken welke robots op dit moment worden ingezet binnen verzorgingshuizen en wat voor experimenten er op dit moment worden gedaan.
+Welke robots worden op dit moment ingezet binnen verzorgingshuizen en wat voor experimenten worden er op dit moment gedaan?
 
 3. **Wat voor effect kunnen de robots hebben op eenzaamheid bij ouderen?**
 
-Hoe kunnen ouderen met robots interacteren? Kunnen zij dit doen door middel van fysieke input of kunnen zij ook hun stem gebruiken of gebaren maken? Hoe denken ouderen zelf over het interacteren met een robot binnen een verzorgingstehuis?
+Hoe denken ouderen zelf over het interacteren met een robot binnen een verzorgingstehuis en wat effect kan dit hebben op eenzaamheid bij ouderen?
 
 **De onderzoeksmethode die in dit betoog wordt toegepast is in de vorm van een literatatuuronderzoek.**
 
