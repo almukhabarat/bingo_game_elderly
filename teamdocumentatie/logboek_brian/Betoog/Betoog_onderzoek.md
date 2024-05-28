@@ -105,4 +105,26 @@ https://www.theatlantic.com/family/archive/2024/03/robots-have-not-revolutionize
 
 ## Wat voor effect kunnen de robots hebben op eenzaamheid bij ouderen?
 
-Nursing robots zoals SARA kunnen worden ingezet in verzorgingshuizen om enerzijds de werkdruk van zorgpersoneel te verlagen, maar ook om eenzaamheid onder ouderen te bestrijden. 
+Zorgrobots zoals SARA kunnen worden ingezet in verzorgingshuizen om enerzijds de werkdruk van zorgpersoneel te verlagen, maar ook om eenzaamheid onder ouderen te bestrijden. 
+
+Een hypothese die echter gesteld kan worden is dat eenzaamheid bij ouderen zou kunnen toenemen zodra robots vaker worden ingezet in verzorgingshuizen.
+
+Er hangen namelijk ook een aantal ethische kwesties rondom de inzet van robotica in de ouderenzorg. Zo zouden robots nog een gebrek hebben aan emotionele inlevingsvermogen of menselijke waarden.
+
+De robots die worden ingezet in verzorgingshuizen zijn niet perfect. Veel van deze robots moeten constant in de gaten gehouden worden door zorgpersoneel. Ook moet zorgpersoneel getrained worden om met de robots te kunnen omgaan. Robots zouden hierdoor bijvoorbeeld de werkdruk bij zorgpersoneel juist kunnen verhogen, doordat zij meer tijd kwijt zijn aan het onderhouden en aansturen van robots. Hierdoor zouden zij bijvoorbeeld minder tijd kunnen besteden aan patiënten die complexe aandacht vereisen. In veel andere studies op het gebied van robotica in de zorg wordt dit aspect veel besproken.
+
+https://journals.sagepub.com/doi/10.1177/20556683221106917 [zie Increased workload]
+
+Anderzijds komen er ook positieve resulataten binnen vanuit experimenten met robots in de ouderenzorg. Sommige ouderen ervaren hun interactie met een zorgrobot als positief. De robots kunnen in eerste instantie entertainment bieden aan ouderen om de tijd door te  brengen. Ook kunnen ouderen door middel van de robots videobellen met familie zonder dat zij hiervoor een tablet of smartphone hoeven te bedienen. 
+
+Daarnaast speelt artificial intelligence ook een belangrijke rol in robotica. De ontwikkelingen in artificial intelligence zijn in recente jaren aanzienlijk verbeterd. Robots zouden door middel van artificial intelligence in de toekomt beter kunnen interacteren met ouderen
+
+https://link.springer.com/article/10.1007/s42087-020-00125-7
+
+```
+Daarnaast zou een robot ook een praatje kunnen maken met ouderen of simpele taken voor hen kunnen verrichten. Deze complexe vorm van functionaliteit kan er toe leiden dat ouderen een band kunnen ontwikkelen met een zorgrobot. 
+```
+
+## Conclusie
+
+Hoe robots de eenzaamheid van ouderen in de zorg kan beïnvloeden is dus afhankelijk van verschillende variabelen zoals vanuit welk perspectief er wordt gekeken en om wat voor soort robot het gaat en hoe geavanceerd deze is.
