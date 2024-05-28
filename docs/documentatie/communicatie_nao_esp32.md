@@ -9,15 +9,34 @@ Op deze rasberry pi 3 draait een apache webserver met daarop een flask API. Het 
 ```mermaid
 sequenceDiagram
     participant ESP32-S3
-    participant WiFi netwerk
+    participant Wi-Fi netwerk
     participant FlaskAPI
 
-    ESP32-S3->>WiFi netwerk: Verbinden met Wi-Fi
+    ESP32-S3->>Wi-Fi netwerk: Verbinden met Wi-Fi
     ESP32-S3->>FlaskAPI: Stuurt een HTTP GET request naar /get_command
-    NAO robot->>FlaskAPI: Send HTTP POST /set_command
+    NAO robot->>FlaskAPI: Verstuurt een instructie met HTTP POST naar /set_command
     FlaskAPI-->>NAO robot: Bevestiging dat bericht is ontvangen door API
     FlaskAPI-->>ESP32-S3: Krijgt een HTTP response terug die afkomstig is van /set_command
     Note over ESP32-S3: Instructie wordt ontvangen als JSON
     Note over NAO robot: Instructie wordt verzonden als JSON
-    Note over FlaskAPI: De Flask API maakt gebruik van HTTP long polling
+    Note over FlaskAPI: De Flask API houdt de GET request vast (HTTP long polling)
+```
+---
+
+## Communicatie tussen bingo knop en NAO
+
+```mermaid
+sequenceDiagram
+    participant ESP32-S3
+    participant Wi-Fi netwerk
+    participant Flask API
+    participant NAO robot
+
+    NAO robot->>Flask API: Stuurt een HTTP GET request naar webserver
+    ESP32-S3->>Wi-Fi netwerk: verbinden met Wi-Fi
+    ESP32-S3->>Flask API: Stuurt een HTTP POST request naar webserver
+    Flask API-->>ESP32-S3: stuurt bevestiging naar ESP32 na succesvolle POST
+    Flask API-->>NAO robot: ontvangt HTTP response met daarin de POST van de ESP32-S3 (bingo knop) 
+    note over Flask API: De Flask API houdt de GET request vast (HTTP long polling)
+
 

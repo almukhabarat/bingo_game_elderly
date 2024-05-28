@@ -28,7 +28,7 @@ Ondanks dat de mens een sociaal wezen is, moet wel benadrukt worden dat als iema
 
 In dit onderzoek wordt de nadruk primair gelegd op eenzaamheid bij ouderen in verzorgingshuizen.
 
-Er kunnen allerlei (of meerdere) redenen zijn die ervoor kunnen zorgen dat ouderen een gevoel van eenzaamheid ervaren. De voorbeelden die worden opgenoemd kunnen vooral relevant zijn bij ouderen in verzorgingshuizen.
+Er kunnen allerlei (of meerdere) redenen zijn die ervoor kunnen zorgen dat ouderen een gevoel van eenzaamheid ervaren. De voorbeelden die worden opgenoemd kunnen vooral relevant zijn bij deze groep.
 
 - **Het verliezen van een partner** De kans dat iemand zijn of haar partner verliest is op oudere leeftijd een stuk hoger dan op jongere leeftijd, dit kan de kans op gevoel van eenzaamheid bij ouderen sterk laten toenemen.
 

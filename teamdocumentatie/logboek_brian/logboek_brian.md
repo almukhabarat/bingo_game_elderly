@@ -40,3 +40,18 @@ Voorlopig nog niet maar ik zou zeker met mensen in mijn team willen overleggen h
 
 We hebben een lang weekend gehad en het is heel mooi weer vandaag (26 graden).
 
+---
+
+## 28-5-2024 
+
+**Wat heb ik gedaan?**
+
+Vorige week hadden we de sprint 2 review, deze verliep goed. Ik ben de afgelopen dagen vooral bezig met het aanpassen van de code voor de prijsautomaat en de bingo knop. Het gaat hierbij vooral om code optimalisaties, niet echt om extra functionaliteit. Daarnaast ben ik vooral bezig geweest met het schrijven van documentatie voor de steppermotor/prijsautomaat en onze netwerk infrastructuur. Vanaf gisteren was ik verder aan het werken aan mijn betoog.
+
+**Wat ga ik vandaag doen?**
+
+Ik heb vandaag een expert review met Mats, het is dan de bedoeling dat ik alle, of tenminste de meeste K's kan laten zien. Ik moet nog wat documentatie schrijven en mij voorbereiden voor de expert review dus ik denk dat ik me hier vandaag op ga focussen. Woensdag is de deadline voor het eerste concept van het betoog. Ik denk dat het project zelf tot nu toe best goed loopt dus als mijn expert review klaar is ga ik me daarop focussen denk ik.
+
+**Waar loop ik tegenaan**
+
+Ik zou nog even met Amin willen overleggen wat ik in die C4 diagram kan aanpassen en andere vragen of ik nog dingen vergeten ben voor de expert review. Daarnaast zou ik misschien bij andere willen kijken hoe ver zij zijn met het betoog en of we elkaar eventueel zouden kunnen helpen daarmee.
