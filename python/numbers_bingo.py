@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 import vision_definitions as vd
 import time
+import threading
 
 class BingoSpel:
     def __init__(self, ip="nao.local", port=9559):
@@ -13,13 +14,19 @@ class BingoSpel:
         self.speech_proxy = ALProxy("ALTextToSpeech", ip, port)
         self.autonomous_life_proxy = ALProxy("ALAutonomousLife", ip, port)
         self.video_service = ALProxy("ALVideoDevice", ip, port)
+        # Stel taal en snelheid in voor de robot
+        self.language = "Dutch"
+        self.speed = 100
+        self.speech_proxy.setLanguage(self.language)
+        self.speech_proxy.setParameter("speed", self.speed)
         # de nummers van het bingobord
         self.bingo_bord = [
             [1, 2, 3, 4, 5],
             [6, 7, 8, 9, 10],
             [11, 12, 13, 14, 15],
-            [16, 17, 18, 19]
+            [16, 17, 18, 19, None]
         ]
+        self.opgeroepen_nummers = []
 
     def start_spel(self):
         try:
@@ -35,27 +42,32 @@ class BingoSpel:
         # Starten van het Bingo spel
         self.speel_bingo()
 
-    def roep_nummer_op(self, opgeroepen_nummers):
+    def roep_nummer_op(self):
         while True:
-            # kiest een willekeurig nummer
-            nummer = random.randint(1, 25)
-            if nummer not in opgeroepen_nummers:
-                opgeroepen_nummers.append(nummer)
+            # kiest een willekeurig nummer tussen 1 en 19
+            nummer = random.randint(1, 19)
+            if nummer not in self.opgeroepen_nummers:
+                self.opgeroepen_nummers.append(nummer)
                 # Aankondigen van het nummer
                 self.speech_proxy.say("Het volgende nummer is " + str(nummer))
+                time.sleep(1)
+                # Herhaal het nummer
+                self.speech_proxy.say(str(nummer))
+                time.sleep(0.5)
                 return nummer
-
     def speel_bingo(self):
         while True:
             nummer = self.roep_nummer_op()
+            time.sleep(4)
             if self.controleer_winst():
                 self.speech_proxy.say("Bingo! We hebben een winnaar!")
                 break
 
     def controleer_winst(self):
         # Controleer of alle nummers op het bingobord in de opgeroepen nummers lijst staan
-        if all(nummer in self.opgeroepen_nummers for row in self.bingo_bord for nummer in row):
-            return True
+        for row in self.bingo_bord:
+            if all(nummer is None or nummer in self.opgeroepen_nummers for nummer in row):
+                return True
         return False
 
     def start_qr_detection(self):
@@ -117,17 +129,7 @@ def main():
     
     # Start het Bingo spel in een aparte thread
     threading.Thread(target=bingo_spel.start_spel).start()
-
-    while True:
-        user_input = input("Type '1' to trigger bingo").strip()
-        if user_input == '1':
-            bingo_spel.start_qr_detection()
-            print("Bingo called")
-        else:
-            print("Invalid input")
+    
 
 if __name__ == "__main__":
-    # melden van BingoSpel en starten van het spel
-    bingo_spel = BingoSpel()
-    bingo_spel.start_spel()
     main()
