@@ -66,3 +66,5 @@ Idee 1
         }
 ```
 
+Apart tabel maken voor bingokaart nummers
+

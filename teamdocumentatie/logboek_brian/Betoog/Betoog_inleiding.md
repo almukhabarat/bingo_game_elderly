@@ -14,7 +14,11 @@ Binnen dit onderzoek komen de volgende onderdelen aan bod om hieruit een eindcon
 
 Bij dit onderdeel wordt er ingegaan op alléén het sociaal-emotionele aspect. Er is een goede omschrijving nodig van wat eenzaamheid in de context van dit onderzoek precies inhoudt. Daarnaast moet duidelijk zijn hoe eenzaamheid zich manifesteert bij ouderen.
 
-2. **Wat voor robots kunnen er worden ingezet in verzorgshuizen, en op welke manier kunnen deze met ouderen interacteren?**
+2. **Wat voor robots kunnen er worden ingezet in verzorgshuizen**
+
+Ik wil kijken welke robots op dit moment kunnen worden ingezet binnen verzorgingshuizen en wat voor experimenten er op dit moment worden uitgevoerd.
+
+3. **Op welke manier kunnen deze met ouderen interacteren?**
 
 Hoe kunnen ouderen met robots interacteren? Kunnen zij dit doen door middel van fysieke input of kunnen zij ook hun stem gebruiken of gebaren maken? Hoe denken ouderen zelf over het interacteren met een robot binnen een verzorgingstehuis?
 

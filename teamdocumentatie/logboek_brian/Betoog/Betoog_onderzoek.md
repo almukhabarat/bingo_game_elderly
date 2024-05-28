@@ -62,6 +62,8 @@ Veel verzorgingshuizen kampen op dit moment met personeelstekorten. De vraag naa
 
 Robots die op dit moment veel gebruikt worden voor experimenten in de ouderenzorg zijn onder andere de robots van Aldebaran Robotics, het gaat hierbij vooral om de Pepper en de NAO robots. Met deze robots worden er vaak experimenten gedaan in verzorgingshuizen om te kijken hoe ouderen reageren op de robots. Het zijn vooral humanoide robots, aangezien de robots vooral zijn ontworpen voor sociale interactie met mensen. 
 
+
+
 ### Staat van inzet wat betreft robotica in verzorgingshuizen
 
 **Robots zijn duur, en vereisen nog veel middelen, mankracht en training om ze effectief in te zetten.**

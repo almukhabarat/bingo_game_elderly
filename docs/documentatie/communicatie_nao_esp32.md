@@ -4,7 +4,7 @@ In dit document wordt uitgelegd hoe de communicatie tussen de NAO robot, de ESP3
 
 Omdat we uiteindelijk met een database wilden gaan werken in het project, en op basis van feedback die we hadden gekregen van een docent hadden we toch besloten om het via een server op school te doen. Op dit moment maken we gebruik van een raspberry pi 3 die op dit moment in een serverruimte draait van HBO-ICT op de Hogeschool van Amsterdam. 
 
-Op dit moment hebben we de volgende apparaten die betrokken zijn bij de gegevens overdracht:
+>Op dit moment hebben we de volgende apparaten die betrokken zijn bij de gegevens overdracht:
 
 - ESP32-S3 Microcontroller
 - Een Wi-Fi hotspot (met internet toegang)
@@ -31,7 +31,7 @@ sequenceDiagram
 ---
 Op deze rasberry pi 3 draait een apache webserver met daarop een flask API. Het is straks de bedoeling dat de NAO robot en de microcontrollers via de API's van de webserver met elkaar kunnen communiceren. Door onze netwerk infrastructuur op deze manier op te zetten is het uiteindelijk ook zeer envoudig om de database functionaliteit in ons project te implementeren aangezien het voor de microcontrollers/NAO robot via de API's redelijk eenvoudig is om met de database te kunnen praten.
 
-Ik was van plan om de communicatie tussen de bingo knop en de NAO robot op dezelfde manier op te zetten. Ik ben echter nog aan het kijken of er ook alternatieve methodes zijn hiervoor.
+>Ik was van plan om de communicatie tussen de bingo knop en de NAO robot op dezelfde manier op te zetten. Ik ben echter nog aan het kijken of er ook alternatieve methodes zijn hiervoor.
 
 ## Communicatie tussen bingo knop en de NAO robot (CONCEPT)
 
