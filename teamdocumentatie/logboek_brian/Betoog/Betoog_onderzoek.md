@@ -117,6 +117,8 @@ Uit experimenten blijkt dat ouderen hun interactie met een zorgrobot als positie
 
 Daarnaast speelt artificial intelligence ook een belangrijke rol in robotica. De ontwikkelingen in artificial intelligence zijn in recente jaren aanzienlijk verbeterd. Robots zouden door middel van artificial intelligence in de toekomt beter kunnen interacteren met ouderen. Zorgrobots zouden hierdoor kunnen fungeren als persoonlijke assistent in het dagelijkse leven voor ouderen, bijvoorbeeld door ouderen te kunnen assisteren bij het wassen of omkleden. Tenslotte kunnen zorgrobots ouderen helpen bij het herrineren van bepaalde afspraken of gebeurtenissen. Deze complexe vorm van functionaliteit kan er toe leiden dat ouderen een positieve band kunnen ontwikkelen met een zorgrobot. 
 
+https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.00432/full
+
 https://www.jmir.org/2024/1/e50534
 
 https://link.springer.com/article/10.1007/s42087-020-00125-7
