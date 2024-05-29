@@ -33,19 +33,15 @@ Ondanks dat de mens een sociaal wezen is, moet wel benadrukt worden dat als iema
 
 In dit onderzoek wordt de nadruk primair gelegd op eenzaamheid bij ouderen in verzorgingshuizen.
 
-Er kunnen allerlei (of meerdere) redenen zijn die ervoor kunnen zorgen dat ouderen een gevoel van eenzaamheid ervaren. De voorbeelden die worden opgenoemd kunnen vooral relevant zijn bij deze groep.
+Er kunnen allerlei (of meerdere) redenen zijn die ervoor kunnen zorgen dat ouderen een gevoel van eenzaamheid ervaren. Een veel voorkomende reden dat ouderen zich eenzaam voelen komt door het verliezen van een partner. De kans dat iemand zijn of haar partner verliest is op oudere leeftijd een stuk hoger dan op jongere leeftijd, dit kan de kans op gevoel van eenzaamheid bij ouderen sterk laten toenemen. Daarnaast geldt hetzelfde voor het verliezen van vrienden of leeftijdsgenoten. door het verliezen van leeftijdgenoten kunnen sociale netwerken van ouderen kleiner worden.
 
-- **Het verliezen van een partner** De kans dat iemand zijn of haar partner verliest is op oudere leeftijd een stuk hoger dan op jongere leeftijd, dit kan de kans op gevoel van eenzaamheid bij ouderen sterk laten toenemen.
-
-- **Het verliezen van vrienden/leeftijdsgenoten** Door het verliezen van leeftijdgenoten kunnen sociale netwerken van ouderen kleiner worden.
-
-- **Verandering van woonomstandigheden** Als ouderen op een gegeven moment in een verzorgingshuis terecht komen zou het contact met familie of vrienden/kenissen kunnen afnemen.
+Een andere oorzaak is een verandering van woonomstandigheden. Als ouderen op een gegeven moment in een verzorgingshuis terecht komen zou het contact met familie of vrienden/kenissen kunnen afnemen.
 
 https://onlinelibrary.wiley.com/doi/full/10.1111/jocn.16842#jocn16842-bib-0040
 
 https://btsg.nl/eenzaamheid-bij-ouderen/ [zie: Eenzaamheid in het verzorgingshuis]
 
-- **Afname in de mentale- en fysieke functionering** Als ouderen steeds meer moeite hebben met bewegen of denken zou dit bijvoorbeeld een impact kunnen hebben op hobbies of bepaalde activiteiten. Hierdoor zouden ouderen bijvoorbeeld bepaalde kansen voor sociale interactie kunnen verliezen of mislopen.
+Bovendien komt ook er ook nog bij kijken dat de mentale- en fysieke functionering van ouderen afneemt. Als ouderen steeds meer moeite hebben met bewegen of denken zou dit bijvoorbeeld een impact kunnen hebben op hobbies of bepaalde activiteiten. Hierdoor zouden ouderen bijvoorbeeld bepaalde kansen voor sociale interactie kunnen verliezen of mislopen.
 
 - **Bepaalde normen, waarden en cultuur binnen een maatschappij** Culturele waarden zoals de toename van individualisering in het westen gepaard met de huidige economische omstandigheden zou ertoe kunnen leiden dat ouderen minder contact hebben met familie leden die voor hen kan zorgen
 
@@ -115,15 +111,17 @@ De robots die worden ingezet in verzorgingshuizen zijn niet perfect. Veel van de
 
 https://journals.sagepub.com/doi/10.1177/20556683221106917 [zie Increased workload]
 
-Anderzijds komen er ook positieve resulataten binnen vanuit experimenten met robots in de ouderenzorg. Sommige ouderen ervaren hun interactie met een zorgrobot als positief. De robots kunnen in eerste instantie entertainment bieden aan ouderen om de tijd door te  brengen. Ook kunnen ouderen door middel van de robots videobellen met familie zonder dat zij hiervoor een tablet of smartphone hoeven te bedienen. 
+Anderzijds hebben recente onderzoeken ook positieve resulataten aangetoond wat betreft de inzet van robotica in verzorgingshuizen. 
 
-Daarnaast speelt artificial intelligence ook een belangrijke rol in robotica. De ontwikkelingen in artificial intelligence zijn in recente jaren aanzienlijk verbeterd. Robots zouden door middel van artificial intelligence in de toekomt beter kunnen interacteren met ouderen
+Uit experimenten blijkt dat ouderen hun interactie met een zorgrobot als positief ervaren. De robots kunnen in eerste instantie entertainment bieden aan ouderen om de tijd door te  brengen. Ook kunnen ouderen door middel van de robots videobellen met familie zonder dat zij hiervoor een tablet of smartphone hoeven te bedienen.
+
+Daarnaast speelt artificial intelligence ook een belangrijke rol in robotica. De ontwikkelingen in artificial intelligence zijn in recente jaren aanzienlijk verbeterd. Robots zouden door middel van artificial intelligence in de toekomt beter kunnen interacteren met ouderen. Zorgrobots zouden hierdoor kunnen fungeren als persoonlijke assistent in het dagelijkse leven voor ouderen, bijvoorbeeld door ouderen te kunnen assisteren bij het wassen of omkleden. Tenslotte kunnen zorgrobots ouderen helpen bij het herrineren van bepaalde afspraken of gebeurtenissen. Deze complexe vorm van functionaliteit kan er toe leiden dat ouderen een positieve band kunnen ontwikkelen met een zorgrobot. 
+
+https://www.jmir.org/2024/1/e50534
 
 https://link.springer.com/article/10.1007/s42087-020-00125-7
 
-```
-Daarnaast zou een robot ook een praatje kunnen maken met ouderen of simpele taken voor hen kunnen verrichten. Deze complexe vorm van functionaliteit kan er toe leiden dat ouderen een band kunnen ontwikkelen met een zorgrobot. 
-```
+
 
 ## Conclusie
 
