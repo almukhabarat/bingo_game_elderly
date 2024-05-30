@@ -68,3 +68,25 @@ Idee 1
 
 Apart tabel maken voor bingokaart nummers
 
+## v3
+
+```mermaid
+    erDiagram
+        
+        BingoKaart {
+            id INT PK
+        }
+
+        BingoKaartNummer {
+            bingoKaartId INT FK
+            nummer INT
+        }
+
+        BingoWin {
+            WonId INT PK
+            bingoKaartId INT FK
+            winDatum INT
+        }
+
+
+
