@@ -10,6 +10,8 @@ class connect_db:
         self.user = user
         self.password = password
         self.database = database
+
+        # Connect to the database
         try:
             self.mydb = mysql.connector.connect(
                 host=self.host,
@@ -31,6 +33,7 @@ class connect_db:
             self.mydb.close()
         print("Database connection closed")
 
+    # run the queries to get the last_id and upload the bingocards
     def execute_query(self, query, values=None):
         try:
             if values:
@@ -43,6 +46,7 @@ class connect_db:
             print(f"Error: {err}")
 
 
+# get last_id from the database
 def fetch_data_from_db(db_connection, query):
     if not db_connection.cursor:
         print("No database connection")
@@ -87,6 +91,7 @@ class pdf_generator:
     def __init__(self):
         self.pdf = FPDF()
 
+    # layout the pdf
     def generate_pdf(self, cards):
         qr = qr_code_generator()
         self.pdf.set_auto_page_break(auto=True, margin=15)
@@ -126,6 +131,7 @@ class pdf_generator:
 
         self.pdf.output("bingo_cards.pdf")
 
+# main class to run everything
 class bingo_game:
     def __init__(self, grid_size, num_cards, last_id, db_connection):
         self.grid_size = grid_size
@@ -142,19 +148,17 @@ class bingo_game:
         pdf_gen = pdf_generator()  
         pdf_gen.generate_pdf([card for card in self.cards])
 
-        
+    # insert data into the database   
     def insert_card_data(self, card_id, card_data):
         query = "INSERT INTO BingoKaart (bingoKaartId, getal) VALUES (%s, %s)"
         for num in card_data:
             values = (card_id, num)
             self.db_connection.execute_query(query, values)
 
-        # values = [(card_id, num) for num in card_data]
-        # self.db_connection.execute_query(query, values)
-
 if __name__ == "__main__":
     db_connection = connect_db(host="localhost", user="ti3groep", password="BG32L2D", database="BingoDB")
     
+    # query to select highest id from the database
     query = "SELECT bingoKaartId FROM BingoKaart ORDER BY bingoKaartId DESC LIMIT 1"
     data = fetch_data_from_db(db_connection, query)
  
