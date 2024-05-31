@@ -19,4 +19,5 @@ De code bestaat uit verschillende classes:
 - qr_code_generator
 - pdf_generator
 - bingo_game
+- connect_db
 
