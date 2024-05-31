@@ -19,6 +19,7 @@ Container_Boundary(c1, "Bingo Game System") {
         Container(esp32_bingo, "ESP32 (Bingo Knop)", "C++", "Registreert de bingoknopdruk")
         Container(esp32_vending, "ESP32 (Snoepautomaat)", "C++", "Bestuurt de snoepautomaat spoel")
         Container(esp32_electromagnet, "ESP32 (Elektromagneet)", "C++", "Bestuurt de elektromagneet")
+        Container(esp32_molen, "ESP32 (Bingomolen)", "C++", "Bestuurt de bingomolen")
     }
 }
 
@@ -28,7 +29,8 @@ Rel(esp32_bingo, laptop, "Wi-Fi (HTTP)")
 Rel(host, esp32_bingo, "Presses bingo button")
 Rel(laptop, esp32_vending, "Wi-Fi (HTTP)")
 Rel(laptop, esp32_electromagnet, "Wi-Fi (HTTP)")
-Rel(nao_v6, rpi, "Wi-Fi (HTTP)")
+Rel(laptop, rpi, "afsgds")
+Rel(laptop, esp32_molen, "Wi-Fi (HTTP)")
 ```
 
 ## Sequence diagram, pi,database,esp,snoepautomaat

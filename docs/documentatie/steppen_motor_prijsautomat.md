@@ -1,6 +1,6 @@
 # Prijsautomaat
 
-**Inleiding**
+**Probleemomschrijving**
 
 In dit project gaan we een bingo spel maken voor ouderen met behulp van een Aldebaran NAO6 (H25) robot en verschillende geautomatiseerde spel onderdelen zoals bijvoorbeeld een bingobal die automatisch kan spinnen of een knop waarmee aan de robot kan worden aangegeven zodra er een bingo wordt gescoord . Tijdens het spelen van de bingo willen we ouderen de mogelijkheid bieden om op meerdere manieren te kunnnen interacteren met het bingospel. Het is de bedoeling dat we hiermee de ouderen kunnen entertainen door middel van de robot en de bijbehorende randapparatuur. We willen met dit project aan onze opdrachtgever en onze eindgebruiker laten zien welke mogelijkheden er zijn met de technologie waar wij op dit moment mee werken.
 
