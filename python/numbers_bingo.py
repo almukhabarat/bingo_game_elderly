@@ -1,5 +1,6 @@
 import requests
 import threading
+from builtins import Exception
 from naoqi import ALProxy
 import random
 import cv2
@@ -26,6 +27,12 @@ class BingoSpel:
         ]
         self.opgeroepen_nummers = []
         self.spel_running = False
+        self.game_thread = None
+        self.qr_thread = None
+
+        # Start polling for commands in a separate thread
+        self.poll_thread = threading.Thread(target=self.poll_for_command)
+        self.poll_thread.start()
 
     def start_spel(self):
         try:
@@ -36,30 +43,34 @@ class BingoSpel:
 
         self.speech_proxy.say("Welkom bij Bingo!")
         self.spel_running = True
-        threading.Thread(target=self.poll_for_command).start()
-        self.speel_bingo()
+        if self.game_thread is None or not self.game_thread.is_alive():
+            self.game_thread = threading.Thread(target=self.speel_bingo)
+            self.game_thread.start()
 
     def stop_spel(self):
         self.spel_running = False
+        if self.game_thread is not None:
+            self.game_thread.join()
 
     def poll_for_command(self):
-        while self.spel_running:
+        while True:
             try:
                 response = requests.get('http://145.92.8.134/get_command')
                 response.raise_for_status()  # Check if the request was successful
-                try:
-                    command = response.json().get('command')
-                except ValueError:
-                    print("Invalid JSON response received: ", response.text)
-                    continue
+                command = response.json().get('command', None)
                 
                 if command == 'bingo':
+                    print("bingo called")
                     self.stop_spel()
-                    self.start_qr_detection()
-                    self.spel_running = True  # resume the game after QR detection
+                    if self.qr_thread is None or not self.qr_thread.is_alive():
+                        self.qr_thread = threading.Thread(target=self.start_qr_detection)
+                        self.qr_thread.start()
+                elif command == 'start':
+                    print("game starting")
+                    self.start_spel()
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed: ", e)
-                time.sleep(1)  # Wait a bit before retrying
+            time.sleep(1)  # Wait a bit before retrying
 
     def roep_nummer_op(self):
         while self.spel_running:
@@ -78,6 +89,7 @@ class BingoSpel:
             time.sleep(4)
             if self.controleer_winst():
                 self.speech_proxy.say("Bingo! We hebben een winnaar!")
+                self.stop_spel()
                 break
 
     def controleer_winst(self):
@@ -92,6 +104,7 @@ class BingoSpel:
         fps = 20
         camera_index = 0
         video_client = self.video_service.subscribeCamera("python_client", camera_index, resolution, color_space, fps)
+        print("QR detection started")
 
         try:
             while True:
@@ -135,7 +148,11 @@ class BingoSpel:
 
 def main():
     bingo_spel = BingoSpel()
-    threading.Thread(target=bingo_spel.start_spel).start()
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("Shutting down...")
 
 if __name__ == "__main__":
     main()
