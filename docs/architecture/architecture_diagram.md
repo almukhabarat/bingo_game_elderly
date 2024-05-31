@@ -24,10 +24,10 @@ Container_Boundary(c1, "Bingo Game System") {
 
 Rel(host, laptop, "Controls and monitors")
 Rel(laptop, nao_v6, "Ethernet (NAOqi API)")
-Rel(esp32_bingo, nao_v6, "Wi-Fi (HTTP)")
+Rel(esp32_bingo, laptop, "Wi-Fi (HTTP)")
 Rel(host, esp32_bingo, "Presses bingo button")
-Rel(nao_v6, esp32_vending, "Wi-Fi (HTTP)")
-Rel(nao_v6, esp32_electromagnet, "Wi-Fi (HTTP)")
+Rel(laptop, esp32_vending, "Wi-Fi (HTTP)")
+Rel(laptop, esp32_electromagnet, "Wi-Fi (HTTP)")
 Rel(nao_v6, rpi, "Wi-Fi (HTTP)")
 ```
 

@@ -13,22 +13,10 @@ De bingokaarten worden gegenereerd met een python script.
 
 In het script kan aangepast worden hoeveel kaarten er moeten worden gegenereerd. Ook kan de hoeveelheid getallen aangepast worden.
 
-Met de functie play_bingo kunnen de variabelen voor de grid en het aantal kaarten aangepast worden. De functie roept de functie generate_card op, die de nummers voor de kaart in een array zet.
+De code bestaat uit verschillende classes:
 
-``` py
-# Play bingo with a given number of cards, main function
-def play_bingo(grid_size, num_cards):
-    cards = [generate_card(grid_size) for i in range(num_cards)]
-    for i, card in enumerate(cards):
-        print(f"Bingo card {i + 1}:")
-        for row in card:
-            print(' '.join([str(n).rjust(2) for n in row]))
-        print("\n")
-        
-    generate_pdf(cards)
-        
-# Play bingo with multiple cards
-play_bingo(3, 15)
-
-```
+- bingo_card_generator
+- qr_code_generator
+- pdf_generator
+- bingo_game
 
