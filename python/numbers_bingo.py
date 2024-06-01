@@ -64,7 +64,7 @@ class BingoSpel:
                     print("bingo called")
                     self.stop_spel()
                     # Houdt hoofd stil
-                    self.freezeHead()
+                    self.freezeHead(True)
 
                     if self.qr_thread is None or not self.qr_thread.is_alive():
                         self.qr_thread = threading.Thread(target=self.start_qr_detection)
