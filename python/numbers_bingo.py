@@ -72,6 +72,7 @@ class BingoSpel:
                 elif command == 'start':
                     print("game starting")
                     self.start_spel()
+                    self.freezeHead(False)
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed: ", e)
             time.sleep(1)  # Wait a bit before retrying
