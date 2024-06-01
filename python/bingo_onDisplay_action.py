@@ -23,61 +23,50 @@ class NaoInit:
         self._tts_proxy(text)
         
 class Movement(NaoInit):
-    def dance(self):
-        self._posture_proxy.goToPosture("StandInit", 0.5)
-        names = ["HeadYaw", "HeadPitch", "LShoulderPitch", "LShoulderRoll", 
-                 "RShoulderPitch", "RShoulderRoll", "HipRoll", "HipPitch"]
-        angles = [[0.5, -0.5], [0.3, -0.3], [1.0, 0.5], [0.5, -0.5], 
-                  [1.0, 0.5], [-0.5, 0.5], [0.3, -0.3], [0.3, -0.3]]
-        times = [[1.0, 2.0], [1.0, 2.0], [1.0, 2.0], [1.0, 2.0], 
-                 [1.0, 2.0], [1.0, 2.0], [1.0, 2.0], [1.0, 2.0]]
-        for name, angle, time in zip(names, angles, times):
-            self._motion_proxy.angleInterpolation(name, angle, time, True)
-        # self.speech("I love dancing!")
-    
     def wave(self):
-        # Rechter arm omhoog met hand open
-        name = ["RShoulderPitch", "RElbowYaw", "RElbowRoll"]
-        angle = [-0.5, 1.0, 1,0]
-        speed = [0.2, 0.2, 0.2]
+        # Alle namen die gebruikt worden voor het aansturen van de rechter arm 
+        wave_names = ["RShoulderPitch", "RElbowYaw", "RElbowRoll", "RWristYaw", "RShoulderRoll"]
 
-        for names, angles, speeds in zip(name, angle, speed):
-            self._motion_proxy.setAngles(names, angles, speeds)
+        # Rechter arm omhoog met hand open
+        arm_names = [wave_names[0], wave_names[1], wave_names[2]]
+        angle_up = [-0.5, 1.0, 1,0]
+        up_speeds = [0.2, 0.2, 0.2]
+
+        for name, angle, speed in zip(arm_names, angle_up, up_speeds):
+            self._motion_proxy.setAngles(name, angle, speed)
 
         self._motion_proxy.openHand("RHand")
 
-        # Zwaaibeweging (loopt 2x)
-        # for _ in range(2):  # Waving left and right twice
-        #     self._motion_proxy.setAngles("RElbowYaw", -1.0, 0.2)   # Angle, speed
-        #     time.sleep(0.5)  # Wait for a moment
-        #     self._motion_proxy.setAngles("RElbowYaw", 1.0, 0.2)    # Angle, speed
-        #     time.sleep(0.5)  # Wait for a moment
+        # Zwaai beweging door middel van elleboog en pols rotaties
+        wrist_angles = [0.3, -0.7] # Zwaaien van de hand
+        elbow_angles = [-1.0, 1.0] # Zwaaien van de elleboog
+        shoulder_angles = [0.0, -0.3] # Zwaaien van de schouder
+        wave_times = 2
+        delay_between_waves = 0.5
 
-        # ARM BEWEGINGEN
-
-        # Define the joints, angles, and speeds for the handwave
-        joint = "RWristYaw"
-        wave_angles = [0.5, -0.5]  # Angles for the wave motion
-        speed = 0.2  # Speed of the movement
-        wave_count = 2  # Number of waves
-        delay_between_waves = 0.5  # Time delay between waves
-
-        # Perform the waving motion
-        for _ in range(wave_count):
-            for angle in wave_angles:
-                self._motion_proxy.setAngles(joint, angle, speed)
+        for _ in range(wave_times):
+            for wrist_angle, elbow_angle, shoulder_angle in zip(wrist_angles, elbow_angles, shoulder_angles):
+                self._motion_proxy.setAngles(wave_names[3], wrist_angle, 0.3) # "RWristYaw", hoek, animatiesnelheid
+                self._motion_proxy.setAngles(wave_names[1], elbow_angle, 0.2) # "RElbowYaw", hoek, animatiesnelheid
+                self._motion_proxy.setAngles(wave_names[4], shoulder_angle, 0.2) # "RShoulderRoll", hoek, animatiesnelheid
                 time.sleep(delay_between_waves)
-                
-        # Optionally, return the wrist to a neutral position
-        self._motion_proxy.setAngles(joint, 0.0, speed)
+        
+        # Neutrale positionering van de rechter arm
+        reset_angles = [1.0, 0.0, 0.0, 0.0, 0.0]
+
+        for name, angle in zip(wave_names, reset_angles):
+            self._motion_proxy.setAngles(name, angle, 0.2)
                 
         self._motion_proxy.closeHand("RHand")
 
         
 
 if __name__ == "__main__":
-    ip = "127.0.0.1"  # Replace with your NAO robot's IP address
-    port = 52852
+    # ip = "nao.local"  # NAO robot via ethernet
+    # port = 9559
+    ip = "127.0.0.1"  # Virtuele robot
+    # port = 52852 # laptop
+    port = 59263 # pc
     move = Movement(ip, port)
 
     move.wake_up()
@@ -89,25 +78,3 @@ if __name__ == "__main__":
     # waving_nao.rest()
 
 #####################################################
-
-def wave():
-    # Raise right arm
-    motion_proxy.setAngles("RShoulderPitch", -0.5, 0.2)  # Angle, speed
-    motion_proxy.setAngles("RElbowYaw", 1.0, 0.2)        # Angle, speed
-    motion_proxy.setAngles("RElbowRoll", 1.0, 0.2)       # Angle, speed
-    
-    # Open hand
-    motion_proxy.openHand("RHand")
-
-    # Perform waving motion
-    for _ in range(2):  # Waving left and right twice
-        motion_proxy.setAngles("RElbowYaw", -1.0, 0.2)   # Angle, speed
-        time.sleep(0.5)  # Wait for a moment
-        motion_proxy.setAngles("RElbowYaw", 1.0, 0.2)    # Angle, speed
-        time.sleep(0.5)  # Wait for a moment
-
-    # Reset arm to default position
-    motion_proxy.setAngles("RShoulderPitch", 1.0, 0.2)   # Angle, speed
-    motion_proxy.setAngles("RElbowYaw", 0.0, 0.2)       # Angle, speed
-    motion_proxy.setAngles("RElbowRoll", 0.0, 0.2)      # Angle, speed
-    motion_proxy.closeHand("RHand")
