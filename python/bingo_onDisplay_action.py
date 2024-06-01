@@ -22,13 +22,21 @@ class NaoInit:
         self._tts_proxy(text)
         
 class IdleStanding(NaoInit):
-    def __init__(self, ip, port):
-        super().__init__(ip, port,)
-
-    def movement(self)
+    def standing(self):
+        self._posture_proxy.goToPosture("StandInit", 0.5)
+        names = ["HeadYaw", "HeadPitch", "LShoulderPitch", "LShoulderRoll", 
+                 "RShoulderPitch", "RShoulderRoll", "HipRoll", "HipPitch"]
+        angles = [[0.5, -0.5], [0.3, -0.3], [1.0, 0.5], [0.5, -0.5], 
+                  [1.0, 0.5], [-0.5, 0.5], [0.3, -0.3], [0.3, -0.3]]
+        times = [[1.0, 2.0], [1.0, 2.0], [1.0, 2.0], [1.0, 2.0], 
+                 [1.0, 2.0], [1.0, 2.0], [1.0, 2.0], [1.0, 2.0]]
+        for name, angle, time in zip(names, angles, times):
+            self._motion_proxy.angleInterpolation(name, angle, time, True)
+        self.say("I love dancing!")
 
 if __name__ == "__main__":
     ip = "127.0.0.1"  # Replace with your NAO robot's IP address
+    port = 52852
     dancing_nao = DancingNao(ip)
     waving_nao = WavingNao(ip)
 
