@@ -14,6 +14,8 @@ class BingoSpel:
         self.port = port
         self.speech_proxy = ALProxy("ALTextToSpeech", ip, port)
         self.autonomous_life_proxy = ALProxy("ALAutonomousLife", ip, port)
+        self.posture_proxy = ALProxy("ALRobotPosture", ip, port)
+        self.motion_proxy = ALProxy("ALMotion", ip, port)
         self.video_service = ALProxy("ALVideoDevice", ip, port)
         self.language = "Dutch"
         self.speed = 100
@@ -35,11 +37,10 @@ class BingoSpel:
         self.poll_thread.start()
 
     def start_spel(self):
-        try:
-            self.autonomous_life_proxy.setState("solitary")
-            print("Autonomous life started")
-        except Exception as e:
-            print("Fout bij het starten van autonomous life:", e)
+        # Wake up the robot
+        self.motion_proxy.wakeUp()
+        # Make the robot stand
+        self.posture_proxy.goToPosture("StandInit", 0.5)
 
         self.speech_proxy.say("Welkom bij Bingo!")
         self.spel_running = True
@@ -62,6 +63,9 @@ class BingoSpel:
                 if command == 'bingo':
                     print("bingo called")
                     self.stop_spel()
+                    # Houdt hoofd stil
+                    self.freezeHead()
+
                     if self.qr_thread is None or not self.qr_thread.is_alive():
                         self.qr_thread = threading.Thread(target=self.start_qr_detection)
                         self.qr_thread.start()
@@ -145,6 +149,19 @@ class BingoSpel:
         except ValueError as e:
             print("Fout bij het parsen van QR code data:", e)
             self.speech_proxy.say("Ongeldige QR code data.")
+
+    # Deze functie kan later in een aparte movement class komen
+    def freezeHead(self, freeze):
+        # Positioneerd hoofdpositie naar voren
+        if freeze:
+            head_joints = ["HeadYaw", "HeadPitch"]
+            angles = [0.0, 0.0]  # 0.0 radians means the head is centered
+            fractionMaxSpeed = 0.1
+            self.motion_proxy.setAngles(head_joints, angles, fractionMaxSpeed)
+
+            # Set stiffness of the head joints
+            stiffness = 1.0 if freeze else 0.0
+            self.motion_proxy.setStiffnesses(head_joints, stiffness)
 
 def main():
     bingo_spel = BingoSpel()

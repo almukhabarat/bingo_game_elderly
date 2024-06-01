@@ -59,6 +59,21 @@ class Movement(NaoInit):
                 
         self._motion_proxy.closeHand("RHand")
 
+    def freezeHead(self):
+        # Optionally, set the head to a specific position
+        # For example, head centered:
+        names = ["HeadYaw", "HeadPitch"]
+        angles = [0.0, 0.0]  # 0.0 radians means the head is centered
+        fractionMaxSpeed = 0.1
+        self._motion_proxy.setAngles(names, angles, fractionMaxSpeed)
+
+        # Set stiffness of the head joints to keep it in place
+        head_joints = ["HeadYaw", "HeadPitch"]
+        stiffness = 1.0
+        self._motion_proxy.setStiffnesses(head_joints, stiffness)
+
+        self._motion_proxy.setStiffnesses(head_joints, 0.0)
+
         
 
 if __name__ == "__main__":
@@ -70,6 +85,7 @@ if __name__ == "__main__":
     move = Movement(ip, port)
 
     move.wake_up()
+    move.freezeHead()
     move.wave()
     # move.rest()
 
