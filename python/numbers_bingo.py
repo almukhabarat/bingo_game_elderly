@@ -63,8 +63,7 @@ class BingoSpel:
                 if command == 'bingo':
                     print("bingo called")
                     self.stop_spel()
-                    # Houdt hoofd stil
-                    self.hoofd_stil(True)
+                    self.hoofd_stil(True) # Houdt hoofd stil zodat qr code eenvoudig gescanned kan worden
 
                     if self.qr_thread is None or not self.qr_thread.is_alive():
                         self.qr_thread = threading.Thread(target=self.start_qr_detection)
@@ -81,7 +80,9 @@ class BingoSpel:
         while self.spel_running:
             nummer = random.randint(1, 19)
             if nummer not in self.opgeroepen_nummers:
-                self.opgeroepen_nummers.append(nummer)
+                self.opgeroepen_nummers.append(nummer) # game houdt zelf bij welke nummers zijn omgeroepen
+                
+
                 self.speech_proxy.say("Het volgende nummer is " + str(nummer))
                 time.sleep(1)
                 self.speech_proxy.say(str(nummer))

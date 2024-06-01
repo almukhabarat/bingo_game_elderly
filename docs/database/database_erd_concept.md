@@ -80,7 +80,7 @@ Apart tabel maken voor bingokaart nummers
         BingoGetal {
             id INT PK
             bingoSpelId INT FK
-            getal INT
+            opgenoemd INT
         }
 
         BingoKaart {
