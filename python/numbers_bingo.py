@@ -64,7 +64,7 @@ class BingoSpel:
                     print("bingo called")
                     self.stop_spel()
                     # Houdt hoofd stil
-                    self.freezeHead(True)
+                    self.hoofd_stil(True)
 
                     if self.qr_thread is None or not self.qr_thread.is_alive():
                         self.qr_thread = threading.Thread(target=self.start_qr_detection)
@@ -72,7 +72,7 @@ class BingoSpel:
                 elif command == 'start':
                     print("game starting")
                     self.start_spel()
-                    self.freezeHead(False)
+                    self.hoofd_stil(False)
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed: ", e)
             time.sleep(1)  # Wait a bit before retrying
@@ -151,16 +151,16 @@ class BingoSpel:
             print("Fout bij het parsen van QR code data:", e)
             self.speech_proxy.say("Ongeldige QR code data.")
 
-    # Deze functie kan later in een aparte movement class komen
-    def freezeHead(self, freeze):
+    # Deze functie kan later nog in een aparte movement class komen
+    def hoofd_stil(self, freeze):
         # Positioneerd hoofdpositie naar voren
         if freeze:
             head_joints = ["HeadYaw", "HeadPitch"]
-            angles = [0.0, 0.0]  # 0.0 radians means the head is centered
+            angles = [0.0, 0.0]  # 0.0, hoofd is gecentreerd
             fractionMaxSpeed = 0.1
             self.motion_proxy.setAngles(head_joints, angles, fractionMaxSpeed)
 
-            # Set stiffness of the head joints
+            # Stijfheid van het hoofd
             stiffness = 1.0 if freeze else 0.0
             self.motion_proxy.setStiffnesses(head_joints, stiffness)
 

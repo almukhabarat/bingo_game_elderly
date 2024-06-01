@@ -58,6 +58,9 @@ class Movement(NaoInit):
             self._motion_proxy.setAngles(name, angle, 0.2)
                 
         self._motion_proxy.closeHand("RHand")
+        
+        head_joints = ["HeadYaw", "HeadPitch"]
+        self._motion_proxy.setStiffnesses(head_joints, 0.0)
 
     def freezeHead(self):
         # Optionally, set the head to a specific position
@@ -71,8 +74,6 @@ class Movement(NaoInit):
         head_joints = ["HeadYaw", "HeadPitch"]
         stiffness = 1.0
         self._motion_proxy.setStiffnesses(head_joints, stiffness)
-
-        self._motion_proxy.setStiffnesses(head_joints, 0.0)
 
         
 
