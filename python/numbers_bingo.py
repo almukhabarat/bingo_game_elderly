@@ -21,6 +21,7 @@ class BingoSpel:
         self.speed = 100
         self.speech_proxy.setLanguage(self.language)
         self.speech_proxy.setParameter("speed", self.speed)
+
         self.bingo_bord = [
             [1, 2, 3, 4, 5],
             [6, 7, 8, 9, 10],
