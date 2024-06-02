@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Post data komt binnen en wordt opgesplitst in 4 variabelen
-$query_type = $_POST['query_type']
+$query_type = $_POST['query_type'];
 $bingo_spel_id = $_POST['bingoSpelId'];
 $bingo_win_id = $_POST['bingoWinId'];
 $begin_tijd = $_POST['beginTijd'];
@@ -23,8 +23,7 @@ $eind_tijd = $_POST['eindTijd'];
 // SQL query voorbereiden
 // $stmt = $conn->prepare("INSERT INTO BingoSpel (bingoWinId, beginTijd, eindTijd) VALUES (NULL, ?, ?)");
 if ($query_type == 'post_game_begin') {
-    $stmt = $conn->prepare("INSERT INTO BingoSpel (bingoSpelId, bingoWinId, beginTijd, eindTijd) VALUES (NULL, NULL, ?, NULL)");
-    $stmt->bind_param("s", $begin_tijd);
+    $stmt = $conn->prepare("INSERT INTO BingoSpel (bingoSpelId, bingoWinId, beginTijd, eindTijd) VALUES (NULL, NULL, SELECT CURRENT_TIMESTAMP(), NULL)");
 }
 
 // Execute the statement

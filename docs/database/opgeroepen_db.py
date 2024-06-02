@@ -1,6 +1,7 @@
 import requests
 from naoqi import ALProxy
 import random
+import time
 
 class BingoSpel:
     def __init__(self, ip="nao.local", port=9559):
@@ -19,12 +20,11 @@ class BingoSpel:
         self.game_thread = None
         self.qr_thread = None
 
-        self.url = "145.92.8.134/bingo_db_post.php"
+        self.url = "http://145.92.8.134/bingo_db_post.php"
 
     def new_game_db(self):
         post_game_begin = {
             'query_type': 'post_game_begin',
-            'beginTijd': 'current_timestamp()',
         }
 
         new_game_db = requests.post(self.url, data=post_game_begin)
