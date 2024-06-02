@@ -24,7 +24,7 @@ $eind_tijd = $_POST['eindTijd'];
 // $stmt = $conn->prepare("INSERT INTO BingoSpel (bingoWinId, beginTijd, eindTijd) VALUES (NULL, ?, ?)");
 if ($query_type == 'post_game_begin') {
     $stmt = $conn->prepare("INSERT INTO BingoSpel (bingoSpelId, bingoWinId, beginTijd, eindTijd) VALUES (NULL, NULL, ?, NULL)");
-    $stmt->bind_param("ss", $begin_tijd, $eind_tijd);
+    $stmt->bind_param("s", $begin_tijd);
 }
 
 // Execute the statement

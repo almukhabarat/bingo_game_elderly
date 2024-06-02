@@ -1,12 +1,6 @@
 import requests
-import threading
-from builtins import Exception
 from naoqi import ALProxy
 import random
-import cv2
-import numpy as np
-import vision_definitions as vd
-import time
 
 class BingoSpel:
     def __init__(self, ip="nao.local", port=9559):
@@ -30,10 +24,7 @@ class BingoSpel:
     def new_game_db(self):
         post_game_begin = {
             'query_type': 'post_game_begin',
-            'bingoSpelId': 'NULL',
-            'bingoWinId': 'NULL',
             'beginTijd': 'current_timestamp()',
-            'eindTijd': 'NULL'
         }
 
         new_game_db = requests.post(self.url, data=post_game_begin)
