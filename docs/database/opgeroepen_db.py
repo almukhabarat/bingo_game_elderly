@@ -25,11 +25,40 @@ class BingoSpel:
         self.game_thread = None
         self.qr_thread = None
 
-        self.url = "145.92.8.134/bingo_db.php"
+        self.url = "145.92.8.134/bingo_db_post.php"
 
-        # Start polling for commands in a separate thread
-        self.poll_thread = threading.Thread(target=self.poll_for_command)
-        self.poll_thread.start()
+    def new_game_db(self):
+        post_game_begin = {
+            'query_type': 'post_game_begin',
+            'bingoSpelId': 'NULL',
+            'bingoWinId': 'NULL',
+            'beginTijd': 'current_timestamp()',
+            'eindTijd': 'NULL'
+        }
+
+        new_game_db = requests.post(self.url, data=post_game_begin)
+
+        if new_game_db.status_code == 200:
+            print('Data sent successfully:', new_game_db.text)
+        else:
+            print('Failed to send data:', new_game_db.status_code, new_game_db.text)
+
+
+    def start_spel(self):
+        time.sleep(2)
+        print("Welkom bij bingo!")
+        self.spel_running = True
+
+        self.new_game_db()
+
+        if self.game_thread is None or not self.game_thread.is_alive():
+            self.game_thread = threading.Thread(target=self.speel_bingo)
+            self.game_thread.start()
+
+    def stop_spel(self):
+        self.spel_running = False
+        if self.game_thread is not None:
+            self.game_thread.join()
 
     def poll_for_command(self):
         while True:
@@ -60,7 +89,7 @@ class BingoSpel:
             if nummer not in self.opgeroepen_nummers:
                 self.opgeroepen_nummers.append(nummer) # game houdt zelf bij welke nummers zijn omgeroepen
                 
-                post_getal = requests.post(self.url, data=) 
+                # post_getal = requests.post(self.url, data=) 
 
                 self.speech_proxy.say("Het volgende nummer is " + str(nummer))
                 time.sleep(1)
@@ -93,4 +122,6 @@ def main():
         print("Shutting down...")
 
 if __name__ == "__main__":
-    main()
+    # main()
+    bingo_spel = BingoSpel()
+    bingo_spel.new_game_db()
