@@ -20,7 +20,7 @@ class BingoSpel:
         self.game_thread = None
         self.qr_thread = None
 
-        self.url = "http://145.92.8.134/bingo_db_post.php"
+        self.url = "http://145.92.8.134/test_db.php"
 
     def new_game_db(self):
         post_game_begin = {
