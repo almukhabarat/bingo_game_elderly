@@ -4,7 +4,7 @@
 #include <Stepper.h>
 
 #define SERVER "http://145.92.8.134"
-#define END_POINT "/api/get_command"
+#define END_POINT "/prijsautomaat_api/get"
 
 // Defines the number of steps per rotation
 const int stepsPerRevolution = 2048;
@@ -37,8 +37,8 @@ void loop() {
     // Stuurt een HTTP GET request naar een flask api op de webserver
     String response = flaskHttp.getCommand();
 
+    Serial.println("response ontvangen: " + response);
     if (response == "geef snoepje ah zahbi") {
-      Serial.println("response ontvangen: " + response);
       // Laat motor roteren met 10 rpm
       candyMotor.setSpeed(10);
       candyMotor.step(-stepsPerRevolution);
