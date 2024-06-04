@@ -36,3 +36,6 @@ if __name__ == '__main__':
 
 # curl -X POST -H "Content-Type: application/json" -d '{"command": "geef snoepje ah zahbi"}' http://145.92.8.134/api/set_command
 
+# curl -X POST -H "Content-Type: application/json" -d '{"command": "Draaien pls"}' http://145.92.8.134/api/set_command
+
+# curl -X POST -H "Content-Type: application/json" -d '{"command": "loslaten pls"}' http://145.92.8.134/api/set_command
