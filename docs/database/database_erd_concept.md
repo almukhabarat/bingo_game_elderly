@@ -112,6 +112,4 @@ Apart tabel maken voor bingokaart nummers
         }
 ```
 
-Ik doe mijn best maar het lukt gewoon niet
-
 
