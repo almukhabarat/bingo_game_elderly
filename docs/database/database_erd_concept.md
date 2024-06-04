@@ -72,21 +72,45 @@ Apart tabel maken voor bingokaart nummers
 
 ```mermaid
     erDiagram
-        
-        BingoKaart {
+        BingoSpel ||--|| BingoWin: bevat
+        BingoWin ||--|| BingoKaart: heeft 
+        BingoSpel ||--o{ BingoGetal: heeft
+        PrijsAutomaat ||--o{ Snoep: bevat
+
+        BingoGetal {
             id INT PK
+            bingoSpelId INT FK
+            opgenoemd INT
         }
 
-        BingoKaartNummer {
-            bingoKaartId INT FK
-            nummer INT
+        BingoKaart {
+            id INT PK
+            getal VARCHAR
         }
 
         BingoWin {
-            WonId INT PK
+            id INT PK
             bingoKaartId INT FK
-            winDatum INT
+            winDatum TIMESTAMP
         }
+
+        BingoSpel {
+            id INT PK
+            bingoWinId INT FK
+            beginTijd TIMESTAMP 
+            eindTijd TIMESTAMP 
+        }
+
+        PrijsAutomaat {
+            snoepId INT FK
+        }
+
+        Snoep {
+            id INT PK
+            soort STRING
+            merk STRING
+        }
+```
 
 
 

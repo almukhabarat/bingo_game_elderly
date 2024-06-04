@@ -31,8 +31,9 @@ def get_command():
     return jsonify({'command': command})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=5000)
 
 
-# curl -X POST -H "Content-Type: application/json" -d '{"command": "geef snoepje ah zahbi"}' http://145.92.8.134/set_command
+# curl -X POST -H "Content-Type: application/json" -d '{"command": "geef snoepje ah zahbi"}' http://145.92.8.134/wsgi_verbind/set_command
+
 

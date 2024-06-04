@@ -1,5 +1,6 @@
 import requests
 import threading
+from builtins import Exception
 from naoqi import ALProxy
 import random
 import cv2
@@ -8,16 +9,20 @@ import vision_definitions as vd
 import time
 
 class BingoSpel:
-    def __init__(self, ip="nao.local", port=9559):
+    def __init__(self, ip="127.0.0.1", port=59263):
         self.ip = ip
         self.port = port
         self.speech_proxy = ALProxy("ALTextToSpeech", ip, port)
         self.autonomous_life_proxy = ALProxy("ALAutonomousLife", ip, port)
+        self.posture_proxy = ALProxy("ALRobotPosture", ip, port)
+        self.motion_proxy = ALProxy("ALMotion", ip, port)
         self.video_service = ALProxy("ALVideoDevice", ip, port)
+        self.db_url = "http://145.92.8.134/bingo_db_post.php"
         self.language = "Dutch"
         self.speed = 100
         self.speech_proxy.setLanguage(self.language)
         self.speech_proxy.setParameter("speed", self.speed)
+
         self.bingo_bord = [
             [1, 2, 3, 4, 5],
             [6, 7, 8, 9, 10],
@@ -26,46 +31,74 @@ class BingoSpel:
         ]
         self.opgeroepen_nummers = []
         self.spel_running = False
+        self.game_thread = None
+        self.qr_thread = None
+
+        # Start polling for commands in a separate thread
+        self.poll_thread = threading.Thread(target=self.poll_for_command)
+        self.poll_thread.start()
+    
+    def new_game_db(self):
+        post_game_begin = {
+            'query_type': 'post_game_begin',
+        }
+
+        new_game_db = requests.post(self.db_url, data=post_game_begin)
+
+        if new_game_db.status_code == 200:
+            print('Data sent successfully:', new_game_db.text)
+        else:
+            print('Failed to send data:', new_game_db.status_code, new_game_db.text)
 
     def start_spel(self):
-        try:
-            self.autonomous_life_proxy.setState("solitary")
-            print("Autonomous life started")
-        except Exception as e:
-            print("Fout bij het starten van autonomous life:", e)
+        # Wake up the robot
+        self.motion_proxy.wakeUp()
+        # Make the robot stand
+        self.posture_proxy.goToPosture("StandInit", 0.5)
+
+        self.new_game_db()
 
         self.speech_proxy.say("Welkom bij Bingo!")
         self.spel_running = True
-        threading.Thread(target=self.poll_for_command).start()
-        self.speel_bingo()
+        if self.game_thread is None or not self.game_thread.is_alive():
+            self.game_thread = threading.Thread(target=self.speel_bingo)
+            self.game_thread.start()
 
     def stop_spel(self):
         self.spel_running = False
+        if self.game_thread is not None:
+            self.game_thread.join()
 
     def poll_for_command(self):
-        while self.spel_running:
+        while True:
             try:
                 response = requests.get('http://145.92.8.134/get_command')
                 response.raise_for_status()  # Check if the request was successful
-                try:
-                    command = response.json().get('command')
-                except ValueError:
-                    print("Invalid JSON response received: ", response.text)
-                    continue
+                command = response.json().get('command', None)
                 
                 if command == 'bingo':
+                    print("bingo called")
                     self.stop_spel()
-                    self.start_qr_detection()
-                    self.spel_running = True  # resume the game after QR detection
+                    self.hoofd_stil(True) # Houdt hoofd stil zodat qr code eenvoudig gescanned kan worden
+
+                    if self.qr_thread is None or not self.qr_thread.is_alive():
+                        self.qr_thread = threading.Thread(target=self.start_qr_detection)
+                        self.qr_thread.start()
+                elif command == 'start':
+                    print("game starting")
+                    self.start_spel()
+                    self.hoofd_stil(False)
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed: ", e)
-                time.sleep(1)  # Wait a bit before retrying
+            time.sleep(1)  # Wait a bit before retrying
 
     def roep_nummer_op(self):
         while self.spel_running:
             nummer = random.randint(1, 19)
             if nummer not in self.opgeroepen_nummers:
-                self.opgeroepen_nummers.append(nummer)
+                self.opgeroepen_nummers.append(nummer) # game houdt zelf bij welke nummers zijn omgeroepen
+                
+
                 self.speech_proxy.say("Het volgende nummer is " + str(nummer))
                 time.sleep(1)
                 self.speech_proxy.say(str(nummer))
@@ -78,6 +111,7 @@ class BingoSpel:
             time.sleep(4)
             if self.controleer_winst():
                 self.speech_proxy.say("Bingo! We hebben een winnaar!")
+                self.stop_spel()
                 break
 
     def controleer_winst(self):
@@ -92,6 +126,7 @@ class BingoSpel:
         fps = 20
         camera_index = 0
         video_client = self.video_service.subscribeCamera("python_client", camera_index, resolution, color_space, fps)
+        print("QR detection started")
 
         try:
             while True:
@@ -133,9 +168,32 @@ class BingoSpel:
             print("Fout bij het parsen van QR code data:", e)
             self.speech_proxy.say("Ongeldige QR code data.")
 
+    # Deze functie kan later nog in een aparte movement class komen
+    def hoofd_stil(self, freeze):
+        # Positioneerd hoofdpositie naar voren
+        if freeze:
+            head_joints = ["HeadYaw", "HeadPitch"]
+            angles = [0.0, 0.0]  # 0.0, hoofd is gecentreerd
+            fractionMaxSpeed = 0.1
+            self.motion_proxy.setAngles(head_joints, angles, fractionMaxSpeed)
+
+            # Stijfheid van het hoofd
+            stiffness = 1.0 if freeze else 0.0
+            self.motion_proxy.setStiffnesses(head_joints, stiffness)
+
 def main():
     bingo_spel = BingoSpel()
-    threading.Thread(target=bingo_spel.start_spel).start()
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("Shutting down...")
 
 if __name__ == "__main__":
     main()
+
+
+
+    ip = "127.0.0.1"  # Virtuele robot
+    # port = 52852 # laptop
+    port = 59263 # pc
