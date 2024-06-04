@@ -1,16 +1,21 @@
 from flask import Flask, request, jsonify
+from queue import Queue
+from threading import Lock
 import time
 
 app = Flask(__name__)
 
-latest_command = None
+# Create a thread-safe queue and a lock for the latest command
+command_queue = Queue()
+command_lock = Lock()
 
 @app.route('/set_command', methods=['POST'])
 def set_command():
     global latest_command
     command = request.json.get('command')
     if command:
-        latest_command = command
+        with command_lock:
+            command_queue.put(command)
         return 'Command set successfully', 200
     else:
         return 'No command provided', 400
@@ -21,13 +26,13 @@ def get_command():
     start_time = time.time()
     timeout = 30  # Timeout after 30 seconds
     
-    while latest_command is None:
-        if time.time() - start_time > timeout:
-            return jsonify({'command': ''})  # Return an empty command if timeout
+    while time.time() - start_time <= timeout:
+        with command_lock:
+            if not command_queue.empty():
+                command = command_queue.get()
+                return jsonify({'command': command})
         time.sleep(0.1)  # Sleep briefly to avoid a busy wait
     
-    command = latest_command
-    latest_command = None
     return jsonify({'command': command})
 
 if __name__ == '__main__':
@@ -39,3 +44,6 @@ if __name__ == '__main__':
 # curl -X POST -H "Content-Type: application/json" -d '{"command": "Draaien pls"}' http://145.92.8.134/api/set_command
 
 # curl -X POST -H "Content-Type: application/json" -d '{"command": "loslaten pls"}' http://145.92.8.134/api/set_command
+
+#####################################################
+

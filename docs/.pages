@@ -1,0 +1,23 @@
+nav: 
+
+    - Samenwerkingsovereenkomst: documentatie/samenwerkingsovereenkomst.md
+    - Concept mindmap: documentatie/idee.md
+    - productomschrijving: documentatie/productomschrijving.md
+    - User test: documentatie/Usertest.md
+
+    
+    - architecture: architecture/architecture_diagram.md
+    - NAO python: documentatie/NAO_python_SDK_setup.md
+    - nao class diagram: documentatie/naoclassdiagram.md
+    - program UML: documentatie/UML_diagram.md
+    
+    
+    - Database: documentatie/database_erd_concept.md    
+    - Bingo kaarten: documentatie/bingokaarten.md
+    - Raspberry pi setup: documentatie/Raspberry_Pi.md
+
+  
+    - Bingo knop: documentatie/bingoknop.md
+    - Elektromagneet: documentatie/elektromagneet.md
+    - Vendingmachine: documentatie/steppen_motor_prijsautomat.md
+    - Bingomolen: documentatie/bingomolen.md
