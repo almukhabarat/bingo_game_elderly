@@ -46,7 +46,7 @@ void setup() {
 }
 
 void loop() {
-  if (WiFi.status() == WL_CONNECTED) {
+  if (WiFi.status() == WL_CONNECTED && !rotating) {
     // Stuurt een HTTP GET request naar een flask api op de webserver
     String response = flaskHttp.getCommand();
 
@@ -67,10 +67,13 @@ void loop() {
   
   if (rotating) {
     // Laat motor roteren met 10 rpm
+    Serial.println("draai nu");
     myStepper.setSpeed(10);
-    myStepper.step(oneRevolution);
+    myStepper.step(10);
     if (digitalRead(BALLPIN) == LOW) {
-    rotating = false;
+      Serial.println("Stop draaien");
+      rotating = false;
+      digitalWrite(RELAYPIN, HIGH);
     }
   }
 }
