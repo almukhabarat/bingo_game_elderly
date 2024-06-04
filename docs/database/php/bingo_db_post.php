@@ -1,38 +1,37 @@
 <?php
-$servername = "localhost"; // Change if your MySQL server is different
+$servername = "localhost";
 $username = "ti3groep";
 $password = "BG32L2D";
 $dbname = "BingoDB";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Post data komt binnen en wordt opgesplitst in 4 variabelen
-$query_type = $_POST['query_type'];
-$bingo_spel_id = $_POST['bingoSpelId'];
-$bingo_win_id = $_POST['bingoWinId'];
-$begin_tijd = $_POST['beginTijd'];
-$eind_tijd = $_POST['eindTijd'];
+$query_type = $_POST['query_type'] ?? null;
 
-
-// SQL query voorbereiden
-// $stmt = $conn->prepare("INSERT INTO BingoSpel (bingoWinId, beginTijd, eindTijd) VALUES (NULL, ?, ?)");
 if ($query_type == 'post_game_begin') {
-    $stmt = $conn->prepare("INSERT INTO BingoSpel (bingoSpelId, bingoWinId, beginTijd, eindTijd) VALUES (NULL, NULL, SELECT CURRENT_TIMESTAMP(), NULL)");
+    $stmt = $conn->prepare("INSERT INTO BingoSpel (beginTijd, eindTijd) VALUES (CURRENT_TIMESTAMP(), NULL)");
+    if ($stmt && $stmt->execute()) {
+        echo json_encode(["bingoSpelId" => $conn->insert_id]);
+    }
+    $stmt->close();
 }
 
-// Execute the statement
-if ($stmt->execute()) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $stmt->error;
+if ($query_type == 'post_number') {
+    $bingo_spel_id = $_POST['bingoSpelId'] ?? null;
+    $opgenoemd = $_POST['opgenoemd'] ?? null;
+
+    if ($bingo_spel_id && $opgenoemd) {
+        $stmt = $conn->prepare("INSERT INTO BingoGetal (bingoSpelId, opgenoemd) VALUES (?, ?)");
+        if ($stmt) {
+            $stmt->bind_param("ii", $bingo_spel_id, $opgenoemd);
+            $stmt->execute();
+            $stmt->close();
+        }
+    }
 }
 
-$stmt->close();
 $conn->close();
 ?>
