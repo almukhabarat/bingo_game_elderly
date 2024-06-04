@@ -81,7 +81,6 @@ Apart tabel maken voor bingokaart nummers
             id INT PK
             bingoSpelId INT FK
             opgenoemd INT
-            getalDatum TIMESTAMP
         }
 
         BingoKaart {
@@ -98,7 +97,8 @@ Apart tabel maken voor bingokaart nummers
         BingoSpel {
             id INT PK
             bingoWinId INT FK
-            spelDatum TIMESTAMP 
+            beginTijd TIMESTAMP 
+            eindTijd TIMESTAMP 
         }
 
         PrijsAutomaat {
@@ -111,5 +111,6 @@ Apart tabel maken voor bingokaart nummers
             merk STRING
         }
 ```
+
 
 

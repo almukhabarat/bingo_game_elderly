@@ -4,7 +4,7 @@
 #include <Stepper.h>
 
 #define SERVER "http://145.92.8.134"
-#define END_POINT "/get_command"
+#define END_POINT "/api/get_command"
 
 // Defines the number of steps per rotation
 const int stepsPerRevolution = 2048;
