@@ -8,7 +8,7 @@ import vision_definitions as vd
 import time
 
 class BingoSpel:
-    def __init__(self, ip="localhost", port=65355):
+    def __init__(self, ip="127.0.0.1", port=59263):
         self.ip = ip
         self.port = port
         self.speech_proxy = ALProxy("ALTextToSpeech", ip, port)
@@ -196,3 +196,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+    ip = "127.0.0.1"  # Virtuele robot
+    # port = 52852 # laptop
+    port = 59263 # pc

@@ -34,7 +34,7 @@ mindmap
 
 Vendingmachine:
 
-De vemdingmachine gebruikt een esp (en misschien een raspberry) om de elektromagneet en dus vending machine aan te sturen. De database wordt aangestuurt door mogelijk de esp, maar als dat niet kan dan de raspberry. De NAO 
+De vendingmachine gebruikt een esp (en misschien een raspberry) om de elektromagneet en dus vending machine aan te sturen. De database wordt aangestuurt door mogelijk de esp, maar als dat niet kan dan de raspberry. De NAO 
 
 Wat vond de opdrachtgever van wat jullie gepresenteerd hebben tijdens de Sprint Review? Wat waren de positieve punten (tops) en wat waren de verbeterpunten (tips)?
 
