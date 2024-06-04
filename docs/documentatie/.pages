@@ -2,9 +2,20 @@ nav:
     - Samenwerkingsovereenkomst: samenwerkingsovereenkomst.md
     - Concept mindmap: idee.md
     - productomschrijving: productomschrijving.md
-    - NAO python: NAO_python_SDK_setup.md
-    - program UML: UML_diagram.md
-    - nao class diagram: naoclassdiagram.md
     - User test: Usertest.md
+
+    Diagrams & setup:
+    - NAO python: NAO_python_SDK_setup.md
+    - nao class diagram: naoclassdiagram.md
+    - program UML: UML_diagram.md
+    
+    Software:
+    - Database: database_erd_concept.md    
     - Bingo kaarten: bingokaarten.md
+    - Raspberry pi setup: Raspberry_Pi.md
+
+    Hardware:
     - Bingo knop: bingoknop.md
+    - Elektromagneet: elektromagneet.md
+    - Vendingmachine: steppen_motor_prijsautomat.md
+    - Bingomolen: bingomolen.md
