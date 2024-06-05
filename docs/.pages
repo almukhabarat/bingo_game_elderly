@@ -3,14 +3,14 @@ nav:
     - Product & team:
         - Samenwerkingsovereenkomst: documentatie/samenwerkingsovereenkomst.md
         - Concept mindmap: documentatie/idee.md
-        - productomschrijving: documentatie/productomschrijving.md
+        - Productomschrijving: documentatie/productomschrijving.md
         - User test: documentatie/Usertest.md
 
     - Diagrammmen:
-        - architecture: architecture/architecture_diagram.md
+        - Architecture: architecture/architecture_diagram.md
         - NAO python: documentatie/NAO_python_SDK_setup.md
-        - nao class diagram: documentatie/naoclassdiagram.md
-        - program UML: documentatie/UML_diagram.md
+        - NAO class diagram: documentatie/naoclassdiagram.md
+        - Program UML: documentatie/UML_diagram.md
     
     - Software:
         - Database: documentatie/database_erd_concept.md    
@@ -20,5 +20,5 @@ nav:
     - Hardware:
         - Bingo knop: documentatie/bingoknop.md
         - Elektromagneet: documentatie/elektromagneet.md
-        - Vendingmachine: documentatie/steppen_motor_prijsautomat.md
-        - Bingomolen: documentatie/bingomolen.md
+        - Vendingmachine: documentatie/steppen_motor_prijsautomat
+        - Bingomolen: bingomolen.md
