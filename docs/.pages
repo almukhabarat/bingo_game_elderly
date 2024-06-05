@@ -19,21 +19,22 @@ nav:
             - Concept mindmap: documentatie/idee
             - Productomschrijving: documentatie/productomschrijving
             - User test: documentatie/Usertest
+            - 10 Heuristics of Nielsen: documentatie/Usertest_heuristics
 
-        - Diagrammen:
-            - Architecture: architecture/architecture_diagram 
-            - NAO python: documentatie/NAO_python_SDK_setup
-            - NAO class diagram: documentatie/naoclassdiagram
-            - Program UML: documentatie/UML_diagram
-            - Netwerk Infra: architecture/netwerk_infra
-        
-        - Software:
-            - Database: documentatie/database_erd_concept   
-            - Bingo kaarten: documentatie/bingokaarten
-            - Raspberry pi setup: documentatie/Raspberry_Pi
+            - Diagrammen:
+                - Architecture: architecture/architecture_diagram 
+                - NAO python: documentatie/NAO_python_SDK_setup
+                - NAO class diagram: documentatie/naoclassdiagram
+                - Program UML: documentatie/UML_diagram
+                - Netwerk Infra: architecture/netwerk_infra
+            
+            - Software:
+                - Database: documentatie/database_erd_concept   
+                - Bingo kaarten: documentatie/bingokaarten
+                - Raspberry pi setup: documentatie/Raspberry_Pi
 
-        - Hardware:
-            - Bingo knop: documentatie/bingoknop
-            - Elektromagneet: documentatie/elektromagneet
-            - Vendingmachine: documentatie/steppen_motor_prijsautomat
-            - Bingomolen: documentatie/bingomolen
+            - Hardware:
+                - Bingo knop: documentatie/bingoknop
+                - Elektromagneet: documentatie/elektromagneet
+                - Vendingmachine: documentatie/steppen_motor_prijsautomat
+                - Bingomolen: documentatie/bingomolen

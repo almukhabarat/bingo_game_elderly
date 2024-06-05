@@ -92,7 +92,7 @@ class BingoSpel(DatabaseHandler):
     def poll_for_command(self):
         while True:
             try:
-                response = requests.get('http://145.92.8.134/api/get_command')
+                response = requests.get('http://145.92.8.134/bingoknop_api/get')
                 response.raise_for_status()  # Check if the request was successful
                 command = response.json().get('command', None)
                 
