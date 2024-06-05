@@ -6,8 +6,8 @@ nav:
         - Productomschrijving: documentatie/productomschrijving
         - User test: documentatie/Usertest
 
-    - Diagrammmen:
-        - Architecture: architecture/architecture_diagram
+    - Diagrammen:
+        - Architecture: architecture/architecture_diagram 
         - NAO python: documentatie/NAO_python_SDK_setup
         - NAO class diagram: documentatie/naoclassdiagram
         - Program UML: documentatie/UML_diagram
