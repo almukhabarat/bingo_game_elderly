@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 latest_command = None
 
-@app.route('/set_command', methods=['POST'])
+@app.route('/post', methods=['POST'])
 def set_command():
     global latest_command
     command = request.json.get('command')
@@ -15,7 +15,7 @@ def set_command():
     else:
         return 'No command provided', 400
 
-@app.route('/get_command', methods=['GET'])
+@app.route('/get', methods=['GET'])
 def get_command():
     global latest_command
     start_time = time.time()
@@ -30,12 +30,4 @@ def get_command():
     latest_command = None
     return jsonify({'command': command})
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-
-
-# curl -X POST -H "Content-Type: application/json" -d '{"command": "geef snoepje ah zahbi"}' http://145.92.8.134/api/set_command
-
-# curl -X POST -H "Content-Type: application/json" -d '{"command": "Draaien pls"}' http://145.92.8.134/api/set_command
-
-# curl -X POST -H "Content-Type: application/json" -d '{"command": "loslaten pls"}' http://145.92.8.134/api/set_command
+# curl -X POST -H "Content-Type: application/json" -d '{"command": "Bingo!"}' http://145.92.8.134/api/set_command

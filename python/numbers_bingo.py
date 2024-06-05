@@ -7,7 +7,19 @@ import numpy as np
 import vision_definitions as vd
 import time
 
-class BingoSpel:
+class DatabaseHandler:
+    def __init__(self, db_url):
+        self.db_url = db_url
+
+    def post_request(self, data):
+        response = requests.post(self.db_url, data=data)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print('Failed to send data: {response.status_code}')
+            return None
+
+class BingoSpel(DatabaseHandler):
     def __init__(self, ip="127.0.0.1", port=59263):
         self.ip = ip
         self.port = port
@@ -26,7 +38,7 @@ class BingoSpel:
             [1, 2, 3, 4, 5],
             [6, 7, 8, 9, 10],
             [11, 12, 13, 14, 15],
-            [16, 17, 18, 19, None]
+            [16, 17, 18, 19]
         ]
         self.opgeroepen_nummers = []
         self.spel_running = False
@@ -42,14 +54,10 @@ class BingoSpel:
         post_game_begin = {
             'query_type': 'post_game_begin',
         }
-
-        new_game_db = requests.post(self.db_url, data=post_game_begin)
-
-        if new_game_db.status_code == 200:
-            print('Data sent successfully:', new_game_db.text)
-            self.bingo_spel_id = new_game_db.json().get('bingoSpelId')
-        else:
-            print('Failed to send data:', new_game_db.status_code, new_game_db.text)
+        response_json = self.post_request(post_game_begin)
+        if response_json:
+            self.bingo_spel_id = response_json.get('bingoSpelId')
+            print('Data sent successfully:', response_json)
 
     def save_number_to_db(self, number):
         if self.bingo_spel_id is not None:
@@ -58,13 +66,9 @@ class BingoSpel:
                 'bingoSpelId': self.bingo_spel_id,
                 'opgenoemd': number
             }
-
-            response = requests.post(self.db_url, data=post_number)
-
-            if response.status_code == 200:
-                print('Number saved successfully:', response.text)
-            else:
-                print('Failed to save number:', response.status_code, response.text)
+            response_json = self.post_request(post_number)
+            if response_json:
+                print('Number saved successfully:', response_json)
 
     def start_spel(self):
         # Wake up the robot
