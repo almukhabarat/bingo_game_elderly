@@ -78,11 +78,11 @@ class Movement(NaoInit):
         
 
 if __name__ == "__main__":
-    # ip = "nao.local"  # NAO robot via ethernet
-    # port = 9559
-    ip = "127.0.0.1"  # Virtuele robot
+    ip = "nao.local"  # NAO robot via ethernet
+    port = 9559
+    # ip = "127.0.0.1"  # Virtuele robot
     # port = 52852 # laptop
-    port = 59263 # pc
+    # port = 59263 # pc
     move = Movement(ip, port)
 
     move.wake_up()
