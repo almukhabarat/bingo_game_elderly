@@ -11,6 +11,7 @@ nav:
         - NAO python: documentatie/NAO_python_SDK_setup
         - NAO class diagram: documentatie/naoclassdiagram
         - Program UML: documentatie/UML_diagram
+        - Netwerk Infra: architecture/netwerk_infra
     
     - Software:
         - Database: documentatie/database_erd_concept   
