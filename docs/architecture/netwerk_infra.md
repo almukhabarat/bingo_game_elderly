@@ -1,4 +1,26 @@
+```mermaid
+graph TD
+  subgraph RaspberryPi
+    ApacheWebServer
+    WSGIDaemon
+    FlaskAPI
+  end
 
+  subgraph Microcontrollers
+    Microcontroller1
+    Microcontroller2
+    Microcontroller3
+  end
+
+  Microcontroller1 -->|HTTP GET/POST| ApacheWebServer
+  Microcontroller2 -->|HTTP GET/POST| ApacheWebServer
+  Microcontroller3 -->|HTTP GET/POST| ApacheWebServer
+  ApacheWebServer --> WSGIDaemon
+  WSGIDaemon --> FlaskAPI
+  FlaskAPI -->|HTTP Long Polling| Microcontroller1
+  FlaskAPI -->|HTTP Long Polling| Microcontroller2
+  FlaskAPI -->|HTTP Long Polling| Microcontroller3
+```
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcc00', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#ffcc00'}}}%%
