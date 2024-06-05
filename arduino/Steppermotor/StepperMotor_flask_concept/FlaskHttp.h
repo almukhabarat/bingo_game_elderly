@@ -8,11 +8,11 @@
 class FlaskHttp {
   private:
     const char* baseAddress;
-    const char* endPoint;
+    const char* getEndPoint;
+    const char* postEndPoint;
     HTTPClient httpClient;
   public:
-    FlaskHttp(const char* baseAddress, const char* endPoint);
-    void begin();
+    FlaskHttp(const char* baseAddress, const char* getEndPoint, const char* postEndPoint);
     String getCommand();
     void postCommand(const char* sendMessage);
 };

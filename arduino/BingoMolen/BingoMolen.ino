@@ -5,7 +5,7 @@
 
 
 #define SERVER "http://145.92.8.134"
-#define END_POINT "/api/get_command"
+#define END_POINT "/bingobal_api/get"
 
 // Defines the pinnumber of the relay
 #define RELAYPIN 6

@@ -1,6 +1,5 @@
 import requests
 import threading
-from builtins import Exception
 from naoqi import ALProxy
 import random
 import cv2
@@ -8,7 +7,19 @@ import numpy as np
 import vision_definitions as vd
 import time
 
-class BingoSpel:
+class DatabaseHandler:
+    def __init__(self, db_url):
+        self.db_url = db_url
+
+    def post_request(self, data):
+        response = requests.post(self.db_url, data=data)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print('Failed to send data: {response.status_code}')
+            return None
+
+class BingoSpel(DatabaseHandler):
     def __init__(self, ip="127.0.0.1", port=59263):
         self.ip = ip
         self.port = port
@@ -27,12 +38,13 @@ class BingoSpel:
             [1, 2, 3, 4, 5],
             [6, 7, 8, 9, 10],
             [11, 12, 13, 14, 15],
-            [16, 17, 18, 19, None]
+            [16, 17, 18, 19]
         ]
         self.opgeroepen_nummers = []
         self.spel_running = False
         self.game_thread = None
         self.qr_thread = None
+        self.bingo_spel_id = None
 
         # Start polling for commands in a separate thread
         self.poll_thread = threading.Thread(target=self.poll_for_command)
@@ -42,13 +54,21 @@ class BingoSpel:
         post_game_begin = {
             'query_type': 'post_game_begin',
         }
+        response_json = self.post_request(post_game_begin)
+        if response_json:
+            self.bingo_spel_id = response_json.get('bingoSpelId')
+            print('Data sent successfully:', response_json)
 
-        new_game_db = requests.post(self.db_url, data=post_game_begin)
-
-        if new_game_db.status_code == 200:
-            print('Data sent successfully:', new_game_db.text)
-        else:
-            print('Failed to send data:', new_game_db.status_code, new_game_db.text)
+    def save_number_to_db(self, number):
+        if self.bingo_spel_id is not None:
+            post_number = {
+                'query_type': 'post_number',
+                'bingoSpelId': self.bingo_spel_id,
+                'opgenoemd': number
+            }
+            response_json = self.post_request(post_number)
+            if response_json:
+                print('Number saved successfully:', response_json)
 
     def start_spel(self):
         # Wake up the robot
@@ -72,7 +92,7 @@ class BingoSpel:
     def poll_for_command(self):
         while True:
             try:
-                response = requests.get('http://145.92.8.134/get_command')
+                response = requests.get('http://145.92.8.134/api/get_command')
                 response.raise_for_status()  # Check if the request was successful
                 command = response.json().get('command', None)
                 
@@ -98,6 +118,7 @@ class BingoSpel:
             if nummer not in self.opgeroepen_nummers:
                 self.opgeroepen_nummers.append(nummer) # game houdt zelf bij welke nummers zijn omgeroepen
                 
+                self.save_number_to_db(nummer)
 
                 self.speech_proxy.say("Het volgende nummer is " + str(nummer))
                 time.sleep(1)
@@ -155,18 +176,6 @@ class BingoSpel:
         finally:
             self.video_service.unsubscribe(video_client)
             cv2.destroyAllWindows()
-
-    def parse_qr_data(self, data):
-        try:
-            numbers = [int(data[i:i+2]) for i in range(0, len(data), 2)]
-            print("Geparseerde nummers van QR:", numbers)
-            if all(nummer in self.opgeroepen_nummers for nummer in numbers):
-                self.speech_proxy.say("Bingo! Je hebt alle nummers!")
-            else:
-                self.speech_proxy.say("Geen bingo. Blijf proberen!")
-        except ValueError as e:
-            print("Fout bij het parsen van QR code data:", e)
-            self.speech_proxy.say("Ongeldige QR code data.")
 
     # Deze functie kan later nog in een aparte movement class komen
     def hoofd_stil(self, freeze):
