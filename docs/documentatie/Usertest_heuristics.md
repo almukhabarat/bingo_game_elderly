@@ -1,6 +1,6 @@
 # Usertest 10 Heuristics of Nielsen
 
->De 10 heuristics of Nielsen zijn algemene richtlijnen om de interactie van de gebruiker met een product te testen
+>De 10 heuristics of Nielsen zijn algemene richtlijnen om de interactie van de gebruiker met een product te testen.
 
 ## Doel van de test
 
