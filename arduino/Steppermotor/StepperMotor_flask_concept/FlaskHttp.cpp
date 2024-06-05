@@ -1,15 +1,10 @@
 #include "FlaskHttp.h"
 
-FlaskHttp::FlaskHttp(const char* baseAddress, const char* endPoint) : baseAddress(baseAddress), endPoint(endPoint) {}
-
-void FlaskHttp::begin() {
-    String url = String(baseAddress) + String(endPoint);
-    httpClient.begin(url);
-}
+FlaskHttp::FlaskHttp(const char* baseAddress, const char* getEndPoint, const char* postEndPoint) : baseAddress(baseAddress), getEndPoint(getEndPoint), postEndPoint(postEndPoint) {}
 
 // haalt JSON op door middel van HTTP GET request en decodeert het bericht, functie geeft een string terug met daarin de instructie voor het aansturen van de snoepautomaat
 String FlaskHttp::getCommand() {
-  String url = String(baseAddress) + String(endPoint);
+  String url = String(baseAddress) + String(getEndPoint);
   httpClient.begin(url);
 
   // Timeout voor HTTP long poll
@@ -50,6 +45,8 @@ String FlaskHttp::getCommand() {
 }
 
 void FlaskHttp::postCommand(const char* sendMessage) {
+  String url = String(baseAddress) + String(postEndPoint);
+  httpClient.begin(url);
 
   httpClient.addHeader("Content-Type", "application/json");
 

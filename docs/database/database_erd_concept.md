@@ -112,5 +112,4 @@ Apart tabel maken voor bingokaart nummers
         }
 ```
 
-
-
+Dit is de huidige versie voor sprint 3.
