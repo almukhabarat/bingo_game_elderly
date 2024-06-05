@@ -1,5 +1,12 @@
-nav: 
-
+nav:
+    - Opdracht:
+        - Omschrijving: opdracht/assignment.md
+        - Planning: opdracht/planning.md
+        - Opdrachtgevers: opdracht/clients.md
+        - Betoog: opdracht/research.md
+        - Criteria: opdracht/criteria.md
+        - Links: opdracht/links.md
+    
     - Product & team:
         - Samenwerkingsovereenkomst: documentatie/samenwerkingsovereenkomst
         - Concept mindmap: documentatie/idee
