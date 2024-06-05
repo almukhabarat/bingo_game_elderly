@@ -10,7 +10,7 @@ De 10 heuristics zijn:
 
 1. Visibility of system status
 2. Match between system and the real world
-3. USer control and freedom
+3. User control and freedom
 4. Consistency and standards
 5. Error prevention
 6. Recognition rather than recall
