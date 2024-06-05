@@ -7,9 +7,9 @@ Omdat we uiteindelijk met een database wilden gaan werken in het project, en op 
 >Op dit moment hebben we de volgende apparaten die betrokken zijn bij de gegevens overdracht:
 
 - ESP32-S3 Microcontroller
-- Een Wi-Fi hotspot (met internet toegang)
+- Wi-Fi hotspot met internet toegang
 - Raspberry Pi 3 (met daarop een webserver)
-- De NAO robot (met internet toegang)
+- NAO robot met internet toegang (d.m.v ethernet kabel)
 
 ## Prijsautomaat communicatie met webserver (huidige situatie)
 
@@ -49,4 +49,20 @@ sequenceDiagram
     Flask API-->>NAO robot: ontvangt HTTP response met daarin de POST van de ESP32-S3 (bingo knop) 
     note over Flask API: De Flask API houdt de GET request vast (HTTP long polling)
 ```
+---
 
+## Update 5-6-2024
+
+```mermaid
+    flowchart TB
+        c1 >a2
+        subgraph one
+        a1 >a2
+        end
+        subgraph two
+        b1 >b2
+        end
+        subgraph three
+        c1 >c2
+        end
+```

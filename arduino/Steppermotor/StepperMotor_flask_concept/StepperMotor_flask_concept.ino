@@ -4,7 +4,8 @@
 #include <Stepper.h>
 
 #define SERVER "http://145.92.8.134"
-#define END_POINT "/prijsautomaat/get"
+#define GET_END_POINT "/prijsautomaat_api/get"
+#define POST_END_POINT "/prijsautomaat_api/post"
 
 // Defines the number of steps per rotation
 const int stepsPerRevolution = 2048;
@@ -13,7 +14,7 @@ const int stepsPerRevolution = 2048;
 // In de steppermotor wordt eerst de stap waarde ingevoerd, met daarop volgend de pinnen van de motor driver in de volgorde IN1-IN3-IN2-IN4
 Stepper candyMotor = Stepper(stepsPerRevolution, 12, 10, 11, 9);
 
-FlaskHttp flaskHttp(SERVER, END_POINT);
+FlaskHttp flaskHttp(SERVER, GET_END_POINT, POST_END_POINT);
 
 void setup() {
   // Seriële monitor
@@ -28,8 +29,6 @@ void setup() {
   Serial.println("Wi-Fi verbonden.");
   Serial.println("IP adres: ");
   Serial.println(WiFi.localIP());
-
-  flaskHttp.begin();
 }
 
 void loop() {
