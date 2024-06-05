@@ -1,37 +1,39 @@
 nav:
-    - Opdracht:
-        - Omschrijving: opdracht/assignment
-        - Planning: opdracht/planning
-        - Opdrachtgevers: opdracht/clients
-        - Betoog: opdracht/research
-        - Criteria: opdracht/criteria
-        - Links: opdracht/links
-    
-    - Robots:
-        - NAO: robots/nao
-        - Pepper: robots/pepper
-        - Little Endian: robots/little-endian
+    - Opdrachtbesschrijving:
+        - Opdracht:
+            - Omschrijving: opdracht/assignment
+            - Planning: opdracht/planning
+            - Opdrachtgevers: opdracht/clients
+            - Betoog: opdracht/research
+            - Criteria: opdracht/criteria
+            - Links: opdracht/links
+        
+        - Robots:
+            - NAO: robots/nao
+            - Pepper: robots/pepper
+            - Little Endian: robots/little-endian
 
-    - Product & team:
-        - Samenwerkingsovereenkomst: documentatie/samenwerkingsovereenkomst
-        - Concept mindmap: documentatie/idee
-        - Productomschrijving: documentatie/productomschrijving
-        - User test: documentatie/Usertest
+    - Opdrachtuitvoering:
+        - Product & team:
+            - Samenwerkingsovereenkomst: documentatie/samenwerkingsovereenkomst
+            - Concept mindmap: documentatie/idee
+            - Productomschrijving: documentatie/productomschrijving
+            - User test: documentatie/Usertest
 
-    - Diagrammen:
-        - Architecture: architecture/architecture_diagram 
-        - NAO python: documentatie/NAO_python_SDK_setup
-        - NAO class diagram: documentatie/naoclassdiagram
-        - Program UML: documentatie/UML_diagram
-        - Netwerk Infra: architecture/netwerk_infra
-    
-    - Software:
-        - Database: documentatie/database_erd_concept   
-        - Bingo kaarten: documentatie/bingokaarten
-        - Raspberry pi setup: documentatie/Raspberry_Pi
+        - Diagrammen:
+            - Architecture: architecture/architecture_diagram 
+            - NAO python: documentatie/NAO_python_SDK_setup
+            - NAO class diagram: documentatie/naoclassdiagram
+            - Program UML: documentatie/UML_diagram
+            - Netwerk Infra: architecture/netwerk_infra
+        
+        - Software:
+            - Database: documentatie/database_erd_concept   
+            - Bingo kaarten: documentatie/bingokaarten
+            - Raspberry pi setup: documentatie/Raspberry_Pi
 
-    - Hardware:
-        - Bingo knop: documentatie/bingoknop
-        - Elektromagneet: documentatie/elektromagneet
-        - Vendingmachine: documentatie/steppen_motor_prijsautomat
-        - Bingomolen: documentatie/bingomolen
+        - Hardware:
+            - Bingo knop: documentatie/bingoknop
+            - Elektromagneet: documentatie/elektromagneet
+            - Vendingmachine: documentatie/steppen_motor_prijsautomat
+            - Bingomolen: documentatie/bingomolen
