@@ -57,6 +57,7 @@ We geven een demonstratie waarin de robot bezig is. Dan kan de ouder BINGO roepe
     Te snel gaan of niet duidelijk genoeg zijn. Ook kan het gebeuren dat iemand niet doorheeft dat hij of zij gewonnen heeft.
 
 **Demo**
+
 - **Spreekt de robot duidelijk genoeg?**
     
     Ja, ik kan de robot goed verstaan.
@@ -126,6 +127,7 @@ We geven een demonstratie waarin de robot bezig is. Dan kan de ouder BINGO roepe
     Het verkeerde nummer zeggen of niet duidelijk genoeg zijn.
 
 **Demo**
+
 - **Spreekt de robot duidelijk genoeg?**
     
     Ja, de robot spreekt heel duidelijk. Dat is fijn.
@@ -195,6 +197,7 @@ We geven een demonstratie waarin de robot bezig is. Dan kan de ouder BINGO roepe
     Misschien te snel gaan of niet duidelijk genoeg zijn.
 
 **Demo**
+
 - **Spreekt de robot duidelijk genoeg?**
     
     De robot spreekt redelijk duidelijk, maar soms zijn de nummers moeilijk te verstaan.
