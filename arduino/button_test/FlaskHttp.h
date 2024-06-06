@@ -3,7 +3,6 @@
 
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
-#include <ArduinoJson.hpp>
 
 class FlaskHttp {
   private:
@@ -14,7 +13,7 @@ class FlaskHttp {
   public:
     FlaskHttp(const char* baseAddress, const char* getEndPoint, const char* postEndPoint);
     String getCommand();
-    void postCommand(const char* sendMessage);
+    int postCommand(const char* sendMessage); // Changed return type to int
 };
 
 #endif
