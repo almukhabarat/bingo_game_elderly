@@ -33,14 +33,6 @@ class BingoSpel(DatabaseHandler):
         self.speed = 100
         self.speech_proxy.setLanguage(self.language)
         self.speech_proxy.setParameter("speed", self.speed)
-
-        self.bingo_bord = [
-            [1, 2, 3, 4, 5],
-            [6, 7, 8, 9, 10],
-            [11, 12, 13, 14, 15],
-            [16, 17, 18, 19]
-        ]
-
         self.opgeroepen_nummers = []
         
         self.spel_running = False
@@ -94,7 +86,7 @@ class BingoSpel(DatabaseHandler):
     def poll_for_command(self):
         while True:
             try:
-                response = requests.get('http://145.92.8.134/api/get_command')
+                response = requests.get('http://145.92.8.134/bingoknop_api/get')
                 response.raise_for_status()  # Check if the request was successful
                 command = response.json().get('command', None)
                 
@@ -194,17 +186,6 @@ class BingoSpel(DatabaseHandler):
 
 def main():
     bingo_spel = BingoSpel()
-    try:
-        while True:
-            time.sleep(1)
-    except KeyboardInterrupt:
-        print("Shutting down...")
 
 if __name__ == "__main__":
     main()
-
-
-
-    ip = "127.0.0.1"  # Virtuele robot
-    # port = 52852 # laptop
-    port = 59263 # pc
