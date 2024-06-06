@@ -8,15 +8,49 @@
 ## Inhoud
 
 > ### Opdrachtbesschrijving
->> #### Opdracht:  
->>  [Omschrijving](opdracht/assignment.md)
-[Planning](pdracht/planning.md)
-[Opdrachtgevers](opdracht/clients.md)
-[Betoog](opdracht/research.md)
-[Criteria](opdracht/criteria.md)
-[Links](opdracht/links.md)
+>
+>> #### Opdracht:
+>>
+>> - [Omschrijving](opdracht/assignment.md)
+>> - [Planning](pdracht/planning.md)
+>> - [Opdrachtgevers](opdracht/clients.md)
+>> - [Betoog](opdracht/research.md)
+>> - [Criteria](opdracht/criteria.md)
+>> - [Links](opdracht/links.md)
 >
 >> #### Robots:
->> [NAO](robots/nao.md)
-[Pepper](robots/pepper.md)
-[Little Endian](robots/little-endian.md)
+>>
+>> - [NAO](robots/nao.md)
+>> - [Pepper](robots/pepper.md)
+>> - [Little Endian](robots/little-endian.md)
+>
+> ### Opdrachtuitvoering:
+>
+>> #### Product & team:
+>>
+>> - [Samenwerkingsovereenkomst](documentatie/samenwerkingsovereenkomst.md)
+>> - [Concept mindmap](documentatie/idee.md)
+>> - [Productomschrijving](documentatie/productomschrijving.md)
+>> - [User test](documentatie/Usertest.md)
+>> - [10 Heuristics of Nielsen](documentatie/Usertest_heuristics.md)
+>
+>> #### Diagrammen:
+>>
+>> - [Architecture](architecture/architecture_diagram.md)
+>> - [NAO python](documentatie/NAO_python_SDK_setup.md)
+>> - [NAO class diagram](documentatie/naoclassdiagram.md)
+>> - [Program UML](documentatie/UML_diagram.md)
+>> - [Netwerk Infra](architecture/netwerk_infra.md)
+>
+>> #### Software:
+>>
+>> - [Database](documentatie/database_erd_concept.md)
+>> - [Bingo kaarten](documentatie/bingokaarten.md)
+>> - [Raspberry pi setup](documentatie/Raspberry_Pi.md)
+>
+>> #### Hardware:
+>>
+>> - [Bingo knop](documentatie/bingoknop.md)
+>> - [Elektromagneet](documentatie/elektromagneet.md)
+>> - [Vendingmachine](documentatie/steppen_motor_prijsautomat.md)
+>> - [Bingomolen](documentatie/bingomolen.md)
