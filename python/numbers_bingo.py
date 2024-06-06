@@ -40,7 +40,9 @@ class BingoSpel(DatabaseHandler):
             [11, 12, 13, 14, 15],
             [16, 17, 18, 19]
         ]
+
         self.opgeroepen_nummers = []
+        
         self.spel_running = False
         self.game_thread = None
         self.qr_thread = None

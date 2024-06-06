@@ -5,14 +5,19 @@ class NaoInit:
     def __init__(self, ip, port):
         self._ip = ip
         self._port = port
-        self._language = "dutch"
+        self._language = "Dutch"
         self._tts_speed = 100
         self._motion_proxy = ALProxy("ALMotion", self._ip, self._port)
         self._posture_proxy = ALProxy("ALRobotPosture", self._ip, self._port)
         self._tts_proxy = ALProxy("ALTextToSpeech", self._ip, self._port)
+        self._face_detection_proxy = ALProxy("ALFaceDetection", self._ip, self._port)
+        self._memory_proxy = ALProxy("ALMemory", self._ip, self._port)
+        self._tracker_proxy = ALProxy("ALTracker", self._ip, self._port)
+        self._life_proxy = ALProxy("ALAutonomousLife", self._ip, self._port)
 
     def wake_up(self):
         self._motion_proxy.wakeUp()
+        self.enable_autonomous_life()
 
     def rest(self):
         self._motion_proxy.rest()
@@ -20,7 +25,10 @@ class NaoInit:
     def speech(self, text):
         self._tts_proxy.setLanguage(self._language)
         self._tts_proxy.setParameter("speed", self._tts_speed)
-        self._tts_proxy(text)
+        self._tts_proxy.say(text)
+
+    def enable_autonomous_life(self):
+        self._life_proxy.setState("interactive")
         
 class Movement(NaoInit):
     def wave(self):
@@ -58,9 +66,6 @@ class Movement(NaoInit):
             self._motion_proxy.setAngles(name, angle, 0.2)
                 
         self._motion_proxy.closeHand("RHand")
-        
-        head_joints = ["HeadYaw", "HeadPitch"]
-        self._motion_proxy.setStiffnesses(head_joints, 0.0)
 
     def freezeHead(self):
         # Optionally, set the head to a specific position
@@ -74,24 +79,43 @@ class Movement(NaoInit):
         head_joints = ["HeadYaw", "HeadPitch"]
         stiffness = 1.0
         self._motion_proxy.setStiffnesses(head_joints, stiffness)
+    
+    def look_around(self):
+        self._face_detection_proxy.subscribe("Test_Face", 500, 0.0)
+        time.sleep(1)
 
-        
+        while True:
+            face_data = self._memory_proxy.getData("FaceDetected")
+            if face_data and isinstance(face_data, list) and len(face_data) > 0:
+                move.wave()
+                self.speech("Hallo, wil jij bingo met mij spelen?")
+                self.enable_autonomous_life()
+                self.track_face(str(face_data[0][0]))  # Convert face_id to string before tracking
+                break  # Exit the loop and let autonomous life take over
+            else:
+                self.enable_autonomous_life()
+                break
+
+    def track_face(self, face_id):
+        target_name = "Face"
+        face_width = 0.1  # Width of the face in meters
+        self._tracker_proxy.registerTarget(target_name, face_width)
+        self._tracker_proxy.track(target_name)
+        self._tracker_proxy.setMode("Head")  # Set tracking mode to "Head" for head movement tracking
+        self._tracker_proxy.track(face_id)  # Start tracking the specified face
 
 if __name__ == "__main__":
     ip = "nao.local"  # NAO robot via ethernet
     port = 9559
-    # ip = "127.0.0.1"  # Virtuele robot
-    # port = 52852 # laptop
-    # port = 59263 # pc
     move = Movement(ip, port)
 
     move.wake_up()
-    move.freezeHead()
-    move.wave()
-    # move.rest()
-
-    # waving_nao.wake_up()
-    # waving_nao.wave()
-    # waving_nao.rest()
+    
+    while True:
+        move.look_around()
+        # move.wave()
+        time.sleep(20)  # Look around once every 60 seconds
 
 #####################################################
+
+

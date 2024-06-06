@@ -8,7 +8,7 @@
 #define POST_END_POINT "/prijsautomaat_api/post"
 
 // Defines the number of steps per rotation
-const int stepsPerRevolution = 2048;
+const int stepsPerRevolution = 2038;
 
 // stepper class wordt ingeladen
 // In de steppermotor wordt eerst de stap waarde ingevoerd, met daarop volgend de pinnen van de motor driver in de volgorde IN1-IN3-IN2-IN4
