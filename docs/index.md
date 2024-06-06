@@ -7,22 +7,16 @@
 
 ## Inhoud
 
-### Opdrachtbesschrijving
-
-#### Opdracht:
-
-[Omschrijving](opdracht/assignment)
-            - Planning: opdracht/planning
-            - Opdrachtgevers: opdracht/clients
-            - Betoog: opdracht/research
-            - Criteria: opdracht/criteria
-            - Links: opdracht/links
-        
-        - Robots:
-            - NAO: robots/nao
-            - Pepper: robots/pepper
-            - Little Endian: robots/little-endian
-
-[Bingomolen]()
-[Snoepautomaat]()
-[Bingoknop]()
+> ### Opdrachtbesschrijving
+>> #### Opdracht:  
+>>  [Omschrijving](opdracht/assignment.md)
+[Planning](pdracht/planning.md)
+[Opdrachtgevers](opdracht/clients.md)
+[Betoog](opdracht/research.md)
+[Criteria](opdracht/criteria.md)
+[Links](opdracht/links.md)
+>
+>> #### Robots:
+>> [NAO](robots/nao.md)
+[Pepper](robots/pepper.md)
+[Little Endian](robots/little-endian.md)
