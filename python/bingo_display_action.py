@@ -104,18 +104,30 @@ class Movement(NaoInit):
         self._tracker_proxy.setMode("Head")  # Set tracking mode to "Head" for head movement tracking
         self._tracker_proxy.track(face_id)  # Start tracking the specified face
 
-if __name__ == "__main__":
+def main_loop():
     ip = "nao.local"  # NAO robot via ethernet
     port = 9559
     move = Movement(ip, port)
-
     move.wake_up()
-    
+
     while True:
         move.look_around()
         # move.wave()
         time.sleep(20)  # Look around once every 60 seconds
 
+
+if __name__ == "__main__":
+    main_loop()
+
 #####################################################
 
 
+# Uitleg OOP
+
+# Encapsulatie -> In de NaoInit class worden de ALProxy api's aangeroepen met private variables, deze worden later gebruikt in een andere class
+
+# Overerving -> class Movement(NaoInit), deze class neemt de variabelen en methodes over van de NaoInit class om hiermee de class/het object verder uit te werken.
+
+# Polymorfisme -> wordt niet echt toegepast in deze code volgens mij aangezien er een geen basis functie is gedefinieerd in de NaoInit class die wordt overschreden in een andere class.
+
+# Abstractie -> Wordt toegepast aangezien de NaoInit class zelf niet wordt gebruikt om een object te creëren maar andere classes wel afhankelijk zijn van deze class.
