@@ -34,6 +34,7 @@ class BingoSpel(DatabaseHandler):
         self.speech_proxy.setLanguage(self.language)
         self.speech_proxy.setParameter("speed", self.speed)
         self.opgeroepen_nummers = []
+        
         self.spel_running = False
         self.game_thread = None
         self.qr_thread = None

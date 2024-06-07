@@ -1,3 +1,5 @@
+
+## versie 1 
 ```mermaid
 graph TD
   subgraph RaspberryPi
@@ -7,12 +9,13 @@ graph TD
   end
 
   subgraph Microcontrollers
-    Microcontroller1
+    Microcontroller
     Microcontroller2
     Microcontroller3
   end
 
   Microcontroller1 -->|HTTP GET/POST| ApacheWebServer
+  
   Microcontroller2 -->|HTTP GET/POST| ApacheWebServer
   Microcontroller3 -->|HTTP GET/POST| ApacheWebServer
   ApacheWebServer --> WSGIDaemon
@@ -21,6 +24,37 @@ graph TD
   FlaskAPI -->|HTTP Long Polling| Microcontroller2
   FlaskAPI -->|HTTP Long Polling| Microcontroller3
 ```
+##  versie 2 (feedback)
+
+```mermaid
+graph TD
+  subgraph RaspberryPi
+    ApacheWebServer
+    WSGIDaemon
+    FlaskAPI
+  end
+
+  subgraph MicroMagneet
+    Microcontroller1
+  end
+
+  subgraph Bingoknop
+    Microcontroller2
+  end
+
+  subgraph Draairad
+    Microcontroller3
+  end
+
+  Microcontroller -->|HTTP GET/POST| ApacheWebServer
+  Microcontroller -->|HTTP GET/POST| ApacheWebServer
+  Microcontroller -->|HTTP GET/POST| ApacheWebServer
+  ApacheWebServer --> WSGIDaemon
+  WSGIDaemon --> FlaskAPI
+  FlaskAPI -->|HTTP Long Polling| Microcontroller1
+  FlaskAPI -->|HTTP Long Polling| Microcontroller2
+  FlaskAPI -->|HTTP Long Polling| Microcontroller3
+``` 
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcc00', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#ffcc00'}}}%%

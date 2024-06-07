@@ -11,29 +11,33 @@ Omdat we uiteindelijk met een database wilden gaan werken in het project, en op 
 - Raspberry Pi 3 (met daarop een webserver)
 - NAO robot met internet toegang (d.m.v ethernet kabel)
 
-## Prijsautomaat communicatie met webserver (huidige situatie)
+## Prijsautomaat communicatie met webserver (GET)
 
 ```mermaid
 sequenceDiagram
     participant ESP32-S3
     participant Wi-Fi netwerk
     participant FlaskAPI
+    participant NAO robot
 
     ESP32-S3->>Wi-Fi netwerk: Verbinden met Wi-Fi
-    ESP32-S3->>FlaskAPI: Stuurt een HTTP GET request naar /get_command
-    NAO robot->>FlaskAPI: Verstuurt een instructie met HTTP POST naar /set_command
+    Wi-Fi netwerk-->>ESP32-S3: Verbonden met netwerk
+
+    loop HTTP long polling
+        ESP32-S3->>FlaskAPI: Stuurt een HTTP GET request naar /prijsautomaat_api/get
+        FlaskAPI-->>ESP32-S3: HTTP error code -11 ("Geen response of foutmelding ontvangen.")
+    end
+
+    NAO robot->>FlaskAPI: Verstuurt een instructie met HTTP POST naar /prijsautomaat_api/post
+
     FlaskAPI-->>NAO robot: Bevestiging dat bericht is ontvangen door API
-    FlaskAPI-->>ESP32-S3: Krijgt een HTTP response terug die afkomstig is van /set_command
+    FlaskAPI-->>ESP32-S3: Krijgt een HTTP response terug die afkomstig is van /prijsautomaat_api/post
     Note over ESP32-S3: Instructie wordt ontvangen als JSON
     Note over NAO robot: Instructie wordt verzonden als JSON
     Note over FlaskAPI: De Flask API houdt de GET request vast (HTTP long polling)
 ```
 ---
-Op deze rasberry pi 3 draait een apache webserver met daarop een flask API. Het is straks de bedoeling dat de NAO robot en de microcontrollers via de API's van de webserver met elkaar kunnen communiceren. Door onze netwerk infrastructuur op deze manier op te zetten is het uiteindelijk ook zeer envoudig om de database functionaliteit in ons project te implementeren aangezien het voor de microcontrollers/NAO robot via de API's redelijk eenvoudig is om met de database te kunnen praten.
-
->Ik was van plan om de communicatie tussen de bingo knop en de NAO robot op dezelfde manier op te zetten. Ik ben echter nog aan het kijken of er ook alternatieve methodes zijn hiervoor.
-
-## Communicatie tussen bingo knop en de NAO robot (CONCEPT)
+## Communicatie tussen bingo knop en de NAO robot (POST)
 
 ```mermaid
 sequenceDiagram
@@ -42,27 +46,22 @@ sequenceDiagram
     participant Flask API
     participant NAO robot
 
-    NAO robot->>Flask API: Stuurt een HTTP GET request naar webserver
-    ESP32-S3->>Wi-Fi netwerk: verbinden met Wi-Fi
+    ESP32-S3->>Wi-Fi netwerk: Verbinden met Wi-Fi
+    Wi-Fi netwerk-->>ESP32-S3: Verbonden met netwerk
+
+    loop HTTP long polling
+    NAO robot->>Flask API: Stuurt een HTTP GET request naar /bingoknop_api/get
+    end
+
     ESP32-S3->>Flask API: Stuurt een HTTP POST request naar webserver
     Flask API-->>ESP32-S3: stuurt bevestiging naar ESP32 na succesvolle POST
     Flask API-->>NAO robot: ontvangt HTTP response met daarin de POST van de ESP32-S3 (bingo knop) 
     note over Flask API: De Flask API houdt de GET request vast (HTTP long polling)
 ```
----
 
-## Update 5-6-2024
+Op onze rasberry pi 3 draait een apache webserver met daarop een flask API. Het is straks de bedoeling dat de NAO robot en de microcontrollers via de API's van de webserver met elkaar kunnen communiceren. Door onze netwerk infrastructuur op deze manier op te zetten is het uiteindelijk ook zeer envoudig om de database functionaliteit in ons project te implementeren aangezien het voor de microcontrollers/NAO robot via de API's redelijk eenvoudig is om met de database te kunnen praten.
 
-```mermaid
-    flowchart TB
-        c1 >a2
-        subgraph one
-        a1 >a2
-        end
-        subgraph two
-        b1 >b2
-        end
-        subgraph three
-        c1 >c2
-        end
-```
+## HTTP long polling
+Voor het opzetten van de netwerk infrastructuur hadden we besloten om gebruik te maken van het HTTP protocol. We konden er ook voor kiezen om de verbinding tussen de microcontrollers en de webserver op te zetten met MQTT of websockets. Het probleem echter met MQTT en websockets is dat deze niet direct het schoolnetwerk kunnen penetreren in verband met firewalls. HTTP was het enige protocool waar ik success mee had tijdens het testen. Om ervoor te zorgen dat de actuatoren bijna in real-time kunnen worden aangestuurd door de NAO robot/het bingospel, maken we gebruik van **HTTP long polling**. In plaats van dat de server/api meteen een response terug stuurt naar de client wordt de verbinding open gehouden. Na 30 seconden wordt de verbinding afgesloten en opnieuw opgezet. De bedoeling hiervan is dat als de api tijdens die 30 seconden een bericht/instructie ontvangt van het spel, dat de api dit bericht dan meteen kan door sturen naar de client zonder eerst weer een verbinding te hoeven opzetten. Hierdoor kunnen clients berichten over het internet in bijna real-time ontvangen.
+
+Het is een vrij oude en non-conventionele manier van gegevensoverdracht en ik zou eigenlijk ook het liefst websockets of MQTT willen toepassen. Dit was echter de enige methode die werkte, en het werkt prima voor wat we willen bereiken.
