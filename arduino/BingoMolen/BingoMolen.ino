@@ -5,7 +5,8 @@
 
 
 #define SERVER "http://145.92.8.134"
-#define END_POINT "/bingobal_api/get"
+#define GET_END_POINT "/bingobal_api/get"
+#define POST_END_POINT "/bingobal_api/post"
 
 // Defines the pinnumber of the relay
 #define RELAYPIN 6
@@ -20,9 +21,11 @@ bool rotating = false;
 
 // stepper class wordt ingeladen
 // In de steppermotor wordt eerst de stap waarde ingevoerd, met daarop volgend de pinnen van de motor driver in de volgorde IN1-IN3-IN2-IN4
-Stepper myStepper = Stepper(oneRevolution, 8, 10, 9, 11);
+Stepper molenMotor = Stepper(oneRevolution, 8, 10, 9, 11);
 
-FlaskHttp flaskHttp(SERVER, END_POINT);
+WiFiMulti wifiMulti;
+
+FlaskHttp flaskHttp(SERVER, GET_END_POINT, POST_END_POINT);
 
 void setup() {
   // Seriële monitor
@@ -32,21 +35,20 @@ void setup() {
   pinMode(BALLPIN, INPUT_PULLUP);
 
   // Wifi configuratie
-  WiFi.begin("AndroidAP13C5", "rgan6339");
+  wifiMulti.addAP("AndroidAP13C5", "rgan6339");
+  wifiMulti.addAP("iotroam", "c89r5vck5i");
+  wifiMulti.addAP("iotroam", "eb8vCLgtTx");
+  wifiMulti.addAP("iotroam", "kDBRo0JKGT");
 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+  if (wifiMulti.run() == WL_CONNECTED) {
+    Serial.println("Wi-Fi verbonden.");
+    Serial.println("IP adres: ");
+    Serial.println(WiFi.localIP());
   }
-  Serial.println("Wi-Fi verbonden.");
-  Serial.println("IP adres: ");
-  Serial.println(WiFi.localIP());
-
-  flaskHttp.begin();
 }
 
 void loop() {
-  if (WiFi.status() == WL_CONNECTED && !rotating) {
+  if (wifiMulti.run() == WL_CONNECTED && !rotating) {
     // Stuurt een HTTP GET request naar een flask api op de webserver
     String response = flaskHttp.getCommand();
 
@@ -67,11 +69,9 @@ void loop() {
   
   if (rotating) {
     // Laat motor roteren met 10 rpm
-    Serial.println("draai nu");
-    myStepper.setSpeed(10);
-    myStepper.step(10);
+    molenMotor.setSpeed(10);
+    molenMotor.step(10);
     if (digitalRead(BALLPIN) == LOW) {
-      Serial.println("Stop draaien");
       rotating = false;
       digitalWrite(RELAYPIN, HIGH);
     }
