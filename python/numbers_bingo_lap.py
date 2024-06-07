@@ -133,6 +133,7 @@ class BingoSpel(DatabaseHandler):
                     print("game starting")
                     self.start_spel()
                     self.hoofd_stil(False)
+
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed: {}".format(e))
             time.sleep(1)  # Wait a bit before retrying
