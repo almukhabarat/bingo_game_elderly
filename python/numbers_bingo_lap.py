@@ -84,7 +84,7 @@ class BingoSpel(DatabaseHandler):
                     self.qr_code_numbers = list(map(int, card_numbers.split(',')))
                     print('Fetched Bingo Card Numbers: {}'.format(self.qr_code_numbers))
                 else:
-                    print('Failed to fetch bingo card numbers.')
+                    print('Failed to fetch bingo card numbers.') 
         else:
             print('Failed to fetch bingo card.')
 
