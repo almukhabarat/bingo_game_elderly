@@ -107,6 +107,12 @@ class BingoSpel(DatabaseHandler):
         if self.game_thread is not None:
             self.game_thread.join()
 
+    def resume_spel(self):
+        self.spel_running = True
+        if self.game_thread is None or not self.game_thread.is_alive():
+            self.game_thread = threading.Thread(target=self.speel_bingo)
+            self.game_thread.start()
+
     def poll_for_command(self):
         while True:
             try:
@@ -183,6 +189,7 @@ class BingoSpel(DatabaseHandler):
                 return True
 
         print("No winning condition met.")
+        self.resume_spel()
         return False
     
     def start_qr_detection(self):
