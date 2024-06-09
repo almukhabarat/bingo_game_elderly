@@ -167,13 +167,17 @@ class BingoSpel(DatabaseHandler):
             print('Failed to send POST request: {}'.format(e))
             return
         
-        while command != 'bal op positie':
+        ballNotReady = True
+        while ballNotReady:
             try:
                 # Poll for the "bal op positie" command
                 response = requests.get('http://145.92.8.134/bingobal_api/get')
                 response.raise_for_status()  # Check if the request was successful
                 command = response.json().get('command', None)
-                
+
+                if command == 'bal op positie':
+                    ballNotReady = False
+            
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed (bingobal_api): {}".format(e))
 
