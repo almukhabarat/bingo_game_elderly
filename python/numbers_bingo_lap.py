@@ -43,6 +43,7 @@ class BingoSpel(DatabaseHandler):
         self.qr_thread = None
         self.bingo_spel_id = None
         self.qr_code_numbers = []  # To store numbers from the bingo card
+        self.ball_ready_event = threading.Event()  # Event to signal when the ball is ready
 
         # Start polling for commands in a separate thread
         self.poll_thread = threading.Thread(target=self.poll_for_command)
@@ -136,6 +137,19 @@ class BingoSpel(DatabaseHandler):
 
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed (bingoknop_api): {}".format(e))
+
+            try:
+                # Poll for the "bal op positie" command
+                response = requests.get('http://145.92.8.134/bingobal_api/get')
+                response.raise_for_status()  # Check if the request was successful
+                command = response.json().get('command', None)
+                
+                if command == 'bal op positie':
+                    print("Command received: bal op positie")
+                    self.ball_ready_event.set()  # Signal that the ball is ready
+
+            except requests.exceptions.RequestException as e:
+                print("HTTP Request failed (bingobal_api): {}".format(e))
             
             time.sleep(1)  # Wait a bit before retrying
 
@@ -154,36 +168,21 @@ class BingoSpel(DatabaseHandler):
                 time.sleep(0.5)
                 return nummer
             
-    def draai_molen(self):        
-        data = {
-            "command": "Draaien pls"
-        }
+    def draai_molen(self):
+        data = {"command": "Draaien pls"}
         try:
             print("Sending POST request to start the wheel turning...")
             response = requests.post('http://145.92.8.134/bingobal_api/post', json=data)
-            response.raise_for_status() 
+            response.raise_for_status()
             print("POST request sent successfully: {}".format(response.status_code))
         except requests.exceptions.RequestException as e:
             print('Failed to send POST request: {}'.format(e))
             return
         
-        ballNotReady = True
-        while ballNotReady:
-            try:
-                # Poll for the "bal op positie" command
-                response = requests.get('http://145.92.8.134/bingobal_api/get')
-                response.raise_for_status()  # Check if the request was successful
-                command = response.json().get('command', None)
-
-                if command == 'bal op positie':
-                    ballNotReady = False
-            
-            except requests.exceptions.RequestException as e:
-                print("HTTP Request failed (bingobal_api): {}".format(e))
-
-            print("Waiting for ball to be ready...")
-            time.sleep(1)
+        print("Waiting for ball to be ready...")
+        self.ball_ready_event.wait()  # Wait for the event to be set
         print("Ball is ready!")
+        self.ball_ready_event.clear()  # Clear the event for the next round
 
     def speel_bingo(self):
         while self.spel_running:
