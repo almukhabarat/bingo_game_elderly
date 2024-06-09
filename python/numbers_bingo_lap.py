@@ -4,7 +4,6 @@ from naoqi import ALProxy
 import random
 import cv2
 import numpy as np
-from naoqi import ALProxy
 import vision_definitions as vd
 import time
 
@@ -28,8 +27,7 @@ class DatabaseHandler:
             return None
 
 class BingoSpel(DatabaseHandler):
-    def __init__(self, ip="127.0.0.1", port=61945):
-    # def __init__(self, ip="nao.local", port=9559):
+    def __init__(self, ip="127.0.0.1", port=58600):
         DatabaseHandler.__init__(self, "http://145.92.8.134/bingo_db_post.php")
         self.ip = ip
         self.port = port
@@ -120,6 +118,7 @@ class BingoSpel(DatabaseHandler):
         global ballReady
         while True:
             try:
+                # Poll for the "bingo" or "start" command
                 response = requests.get('http://145.92.8.134/bingoknop_api/get')
                 response.raise_for_status()  # Check if the request was successful
                 command = response.json().get('command', None)
@@ -139,25 +138,22 @@ class BingoSpel(DatabaseHandler):
                     self.hoofd_stil(False)
 
             except requests.exceptions.RequestException as e:
-                print("HTTP Request failed: {}".format(e))
+                print("HTTP Request failed (bingoknop_api): {}".format(e))
 
             try:
+                # Poll for the "bal op positie" command
                 response = requests.get('http://145.92.8.134/bingobal_api/get')
                 response.raise_for_status()  # Check if the request was successful
                 command = response.json().get('command', None)
                 
                 if command == 'bal op positie':
-                    print("bal op positie")
+                    print("Command received: bal op positie")
                     ballReady = True
 
-                    if self.qr_thread is None or not self.qr_thread.is_alive():
-                        self.qr_thread = threading.Thread(target=self.start_qr_detection)
-                        self.qr_thread.start()
-
             except requests.exceptions.RequestException as e:
-                print("HTTP Request failed: {}".format(e))
+                print("HTTP Request failed (bingobal_api): {}".format(e))
+            
             time.sleep(1)  # Wait a bit before retrying
-
 
     def roep_nummer_op(self):
         while self.spel_running:
@@ -180,10 +176,19 @@ class BingoSpel(DatabaseHandler):
         data = {
             "command": "Draaien pls"
         }
-        requests.post('http://145.92.8.134/bingobal_api/post', json=data)
+        try:
+            print("Sending POST request to start the wheel turning...")
+            response = requests.post('http://145.92.8.134/bingobal_api/post', json=data)
+            response.raise_for_status() 
+            print("POST request sent successfully: {}".format(response.status_code))
+        except requests.exceptions.RequestException as e:
+            print('Failed to send POST request: {}'.format(e))
+            return
+        
         while not ballReady:
-            print(".")
-            time.sleep(0.1) # Wait a bit before retrying
+            print("Waiting for ball to be ready...")
+            time.sleep(1)
+        print("Ball is ready!")
         ballReady = False
 
     def speel_bingo(self):
