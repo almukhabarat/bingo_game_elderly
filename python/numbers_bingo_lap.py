@@ -28,7 +28,8 @@ class DatabaseHandler:
             return None
 
 class BingoSpel(DatabaseHandler):
-    def __init__(self, ip="nao.local", port=9559):
+    def __init__(self, ip="127.0.0.1", port=61945):
+    # def __init__(self, ip="nao.local", port=9559):
         DatabaseHandler.__init__(self, "http://145.92.8.134/bingo_db_post.php")
         self.ip = ip
         self.port = port
@@ -116,6 +117,7 @@ class BingoSpel(DatabaseHandler):
             self.game_thread.start()
 
     def poll_for_command(self):
+        global ballReady
         while True:
             try:
                 response = requests.get('http://145.92.8.134/bingoknop_api/get')
@@ -173,15 +175,16 @@ class BingoSpel(DatabaseHandler):
                 return nummer
             
     def draai_molen(self):
+        global ballReady
+        
         data = {
             "command": "Draaien pls"
         }
         requests.post('http://145.92.8.134/bingobal_api/post', json=data)
         while not ballReady:
+            print(".")
             time.sleep(0.1) # Wait a bit before retrying
         ballReady = False
-            
-
 
     def speel_bingo(self):
         while self.spel_running:

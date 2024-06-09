@@ -105,8 +105,8 @@ class Movement(NaoInit):
         self._tracker_proxy.track(face_id)  # Start tracking the specified face
 
 def main_loop():
-    ip = "nao.local"  # NAO robot via ethernet
-    port = 9559
+    ip = "127.0.0.1"  # NAO robot via ethernet
+    port = 61945
     move = Movement(ip, port)
     move.wake_up()
 
