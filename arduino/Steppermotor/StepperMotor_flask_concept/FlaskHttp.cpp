@@ -1,6 +1,7 @@
 #include "FlaskHttp.h"
 
-FlaskHttp::FlaskHttp(const char* baseAddress, const char* getEndPoint, const char* postEndPoint) : baseAddress(baseAddress), getEndPoint(getEndPoint), postEndPoint(postEndPoint) {}
+FlaskHttp::FlaskHttp(const char* baseAddress, const char* getEndPoint, const char* postEndPoint) 
+  : baseAddress(baseAddress), getEndPoint(getEndPoint), postEndPoint(postEndPoint) {}
 
 // haalt JSON op door middel van HTTP GET request en decodeert het bericht, functie geeft een string terug met daarin de instructie voor het aansturen van de snoepautomaat
 String FlaskHttp::getCommand() {
@@ -44,7 +45,7 @@ String FlaskHttp::getCommand() {
   return decodedString;
 }
 
-void FlaskHttp::postCommand(const char* sendMessage) {
+int FlaskHttp::postCommand(const char* sendMessage) {
   String url = String(baseAddress) + String(postEndPoint);
   httpClient.begin(url);
 
@@ -63,7 +64,11 @@ void FlaskHttp::postCommand(const char* sendMessage) {
   if (httpResponseCode > 0) {
     Serial.print("HTTP Response code: ");
     Serial.println(httpResponseCode);
-
+  } else {
+    Serial.print("Error on sending POST: ");
+    Serial.println(httpResponseCode);
   }
   httpClient.end();
+  
+  return httpResponseCode; // Return the HTTP response code
 }
