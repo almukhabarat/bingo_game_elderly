@@ -1,4 +1,5 @@
 # Choregraphe bezier export in Python.
+from naoqi import ALProxy
 
 names = list()
 times = list()
