@@ -145,11 +145,18 @@ class BingoSpel(DatabaseHandler):
                 
                 self.save_number_to_db(nummer)
 
+                self.draai_molen()
                 self.speech_proxy.say("Het volgende nummer is {}".format(nummer))
                 time.sleep(1)
                 self.speech_proxy.say(str(nummer))
                 time.sleep(0.5)
                 return nummer
+
+    def draai_molen(self):
+        data = {
+            "command": "draaien pls"
+        }
+        response = requests.post('http://145.92.8.134/bingobal_api/post', json=data)
 
     def speel_bingo(self):
         while self.spel_running:
