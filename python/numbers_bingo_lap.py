@@ -84,7 +84,7 @@ class BingoSpel(DatabaseHandler):
                     self.qr_code_numbers = list(map(int, card_numbers.split(',')))
                     print('Fetched Bingo Card Numbers: {}'.format(self.qr_code_numbers))
                 else:
-                    print('Failed to fetch bingo card numbers.')
+                    print('Failed to fetch bingo card numbers.') 
         else:
             print('Failed to fetch bingo card.')
 
@@ -107,6 +107,12 @@ class BingoSpel(DatabaseHandler):
         if self.game_thread is not None:
             self.game_thread.join()
 
+    def resume_spel(self):
+        self.spel_running = True
+        if self.game_thread is None or not self.game_thread.is_alive():
+            self.game_thread = threading.Thread(target=self.speel_bingo)
+            self.game_thread.start()
+
     def poll_for_command(self):
         while True:
             try:
@@ -127,6 +133,7 @@ class BingoSpel(DatabaseHandler):
                     print("game starting")
                     self.start_spel()
                     self.hoofd_stil(False)
+
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed: {}".format(e))
             time.sleep(1)  # Wait a bit before retrying
@@ -138,12 +145,19 @@ class BingoSpel(DatabaseHandler):
                 self.opgeroepen_nummers.append(nummer)  # game houdt zelf bij welke nummers zijn omgeroepen
                 
                 self.save_number_to_db(nummer)
+                self.draai_molen()
 
                 self.speech_proxy.say("Het volgende nummer is {}".format(nummer))
                 time.sleep(1)
                 self.speech_proxy.say(str(nummer))
                 time.sleep(0.5)
                 return nummer
+            
+    def draai_molen(self):
+        data = {
+            "command": "Draaien pls"
+        }
+        requests.post('http://145.92.8.134/bingobal_api/post', json=data)
 
     def speel_bingo(self):
         while self.spel_running:
@@ -183,6 +197,7 @@ class BingoSpel(DatabaseHandler):
                 return True
 
         print("No winning condition met.")
+        self.resume_spel()
         return False
     
     def start_qr_detection(self):
