@@ -40,9 +40,12 @@ class BingoSpel(DatabaseHandler):
         self.qr_code_numbers = []  # To store numbers from the bingo card
         self.ball_ready_event = threading.Event()  # Event to signal when the ball is ready
 
-        # Start polling for commands in a separate thread
-        self.poll_thread = threading.Thread(target=self.poll_for_command)
-        self.poll_thread.start()
+        # Start polling for commands in separate threads
+        self.command_thread = threading.Thread(target=self.poll_command, args=("http://145.92.8.134/bingoknop_api/get", self.handle_command_response))
+        self.ball_position_thread = threading.Thread(target=self.poll_command, args=("http://145.92.8.134/bingobal_api/get", self.handle_ball_response))
+
+        self.command_thread.start()
+        self.ball_position_thread.start()
 
     def new_game_db(self):
         post_game_begin = {
@@ -108,45 +111,38 @@ class BingoSpel(DatabaseHandler):
             self.game_thread = threading.Thread(target=self.speel_bingo)
             self.game_thread.start()
 
-    def poll_for_command(self):
+    def poll_command(self, url, handler):
         while True:
             try:
-                # Poll for the "bingo" or "start" command
-                response = requests.get('http://145.92.8.134/bingoknop_api/get')
-                response.raise_for_status()  # Check if the request was successful
-                command = response.json().get('command', None)
-                
-                if command == 'bingo':
-                    print("bingo called")
-                    self.stop_spel()
-                    self.hoofd_stil(True)  # Houdt hoofd stil zodat qr code eenvoudig gescanned kan worden
-
-                    if self.qr_thread is None or not self.qr_thread.is_alive():
-                        self.qr_thread = threading.Thread(target=self.start_qr_detection)
-                        self.qr_thread.start()
-
-                elif command == 'start':
-                    print("game starting")
-                    self.start_spel()
-                    self.hoofd_stil(False)
-
+                response = requests.get(url)
+                response.raise_for_status()
+                handler(response.json())
             except requests.exceptions.RequestException as e:
-                print("HTTP Request failed (bingoknop_api): {}".format(e))
+                print("HTTP Request failed ({url}): {e}")
 
-            try:
-                # Poll for the "bal op positie" command
-                response = requests.get('http://145.92.8.134/bingobal_api/get')
-                response.raise_for_status()  # Check if the request was successful
-                command = response.json().get('command', None)
-                
-                if command == 'bal op positie':
-                    print("Command received: bal op positie")
-                    self.ball_ready_event.set()  # Signal that the ball is ready
+    def handle_command_response(self, response_json):
+        command = response_json.get('command', None)
+        
+        if command == 'bingo':
+            print("bingo called")
+            self.stop_spel()
+            self.hoofd_stil(True)  # Houdt hoofd stil zodat qr code eenvoudig gescanned kan worden
 
-            except requests.exceptions.RequestException as e:
-                print("HTTP Request failed (bingobal_api): {}".format(e))
-            
-            time.sleep(1)  # Wait a bit before retrying
+            if self.qr_thread is None or not self.qr_thread.is_alive():
+                self.qr_thread = threading.Thread(target=self.start_qr_detection)
+                self.qr_thread.start()
+
+        elif command == 'start':
+            print("game starting")
+            self.start_spel()
+            self.hoofd_stil(False)
+
+    def handle_ball_response(self, response_json):
+        command = response_json.get('command', None)
+        
+        if command == 'bal op positie':
+            print("Command received: bal op positie")
+            self.ball_ready_event.set()  # Signal that the ball is ready
 
     def roep_nummer_op(self):
         while self.spel_running:
@@ -164,7 +160,9 @@ class BingoSpel(DatabaseHandler):
                 return nummer
             
     def draai_molen(self):
-        data = {"command": "Draaien pls"}
+        data = {
+            "command": "Draaien pls"
+        }
         try:
             print("Sending POST request to start the wheel turning...")
             response = requests.post('http://145.92.8.134/bingobal_api/post', json=data)
