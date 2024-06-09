@@ -8,6 +8,8 @@ from naoqi import ALProxy
 import vision_definitions as vd
 import time
 
+ballReady = False
+
 class DatabaseHandler:
     def __init__(self, db_url):
         self.db_url = db_url
@@ -26,7 +28,8 @@ class DatabaseHandler:
             return None
 
 class BingoSpel(DatabaseHandler):
-    def __init__(self, ip="nao.local", port=9559):
+    def __init__(self, ip="127.0.0.1", port=61945):
+    # def __init__(self, ip="nao.local", port=9559):
         DatabaseHandler.__init__(self, "http://145.92.8.134/bingo_db_post.php")
         self.ip = ip
         self.port = port
@@ -114,6 +117,7 @@ class BingoSpel(DatabaseHandler):
             self.game_thread.start()
 
     def poll_for_command(self):
+        global ballReady
         while True:
             try:
                 response = requests.get('http://145.92.8.134/bingoknop_api/get')
@@ -136,7 +140,24 @@ class BingoSpel(DatabaseHandler):
 
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed: {}".format(e))
+
+            try:
+                response = requests.get('http://145.92.8.134/bingobal_api/get')
+                response.raise_for_status()  # Check if the request was successful
+                command = response.json().get('command', None)
+                
+                if command == 'bal op positie':
+                    print("bal op positie")
+                    ballReady = True
+
+                    if self.qr_thread is None or not self.qr_thread.is_alive():
+                        self.qr_thread = threading.Thread(target=self.start_qr_detection)
+                        self.qr_thread.start()
+
+            except requests.exceptions.RequestException as e:
+                print("HTTP Request failed: {}".format(e))
             time.sleep(1)  # Wait a bit before retrying
+
 
     def roep_nummer_op(self):
         while self.spel_running:
@@ -145,8 +166,8 @@ class BingoSpel(DatabaseHandler):
                 self.opgeroepen_nummers.append(nummer)  # game houdt zelf bij welke nummers zijn omgeroepen
                 
                 self.save_number_to_db(nummer)
-                self.draai_molen()
 
+                self.draai_molen()
                 self.speech_proxy.say("Het volgende nummer is {}".format(nummer))
                 time.sleep(1)
                 self.speech_proxy.say(str(nummer))
@@ -154,10 +175,16 @@ class BingoSpel(DatabaseHandler):
                 return nummer
             
     def draai_molen(self):
+        global ballReady
+        
         data = {
             "command": "Draaien pls"
         }
         requests.post('http://145.92.8.134/bingobal_api/post', json=data)
+        while not ballReady:
+            print(".")
+            time.sleep(0.1) # Wait a bit before retrying
+        ballReady = False
 
     def speel_bingo(self):
         while self.spel_running:

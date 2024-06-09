@@ -36,6 +36,8 @@ void setup() {
 
   // Wifi configuratie
   wifiMulti.addAP("AndroidAP13C5", "rgan6339");
+  wifiMulti.addAP("Pokimane, mijn knuffelmarokkaan!", "i7mgmz3sahu3c7f");
+  wifiMulti.addAP("iPhone van Amin", "12345678!?");
   wifiMulti.addAP("iotroam", "c89r5vck5i");
   wifiMulti.addAP("iotroam", "eb8vCLgtTx");
   wifiMulti.addAP("iotroam", "kDBRo0JKGT");
@@ -72,6 +74,7 @@ void loop() {
     molenMotor.setSpeed(10);
     molenMotor.step(10);
     if (digitalRead(BALLPIN) == LOW) {
+      flaskHttp.postCommand("bal op positie");
       rotating = false;
       digitalWrite(RELAYPIN, HIGH);
     }
