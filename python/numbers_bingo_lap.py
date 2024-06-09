@@ -136,7 +136,7 @@ class DatabaseHandler:
             return None
 
 class BingoSpel(DatabaseHandler):
-    def __init__(self, ip="127.0.0.1", port=57759):
+    def __init__(self, ip="127.0.0.1", port=58600):
         DatabaseHandler.__init__(self, "http://145.92.8.134/bingo_db_post.php")
         self.ip = ip
         self.port = port
