@@ -7,8 +7,6 @@ import numpy as np
 import vision_definitions as vd
 import time
 
-ballReady = False
-
 class DatabaseHandler:
     def __init__(self, db_url):
         self.db_url = db_url
@@ -115,7 +113,6 @@ class BingoSpel(DatabaseHandler):
             self.game_thread.start()
 
     def poll_for_command(self):
-        global ballReady
         while True:
             try:
                 # Poll for the "bingo" or "start" command
@@ -139,19 +136,6 @@ class BingoSpel(DatabaseHandler):
 
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed (bingoknop_api): {}".format(e))
-
-            try:
-                # Poll for the "bal op positie" command
-                response = requests.get('http://145.92.8.134/bingobal_api/get')
-                response.raise_for_status()  # Check if the request was successful
-                command = response.json().get('command', None)
-                
-                if command == 'bal op positie':
-                    print("Command received: bal op positie")
-                    ballReady = True
-
-            except requests.exceptions.RequestException as e:
-                print("HTTP Request failed (bingobal_api): {}".format(e))
             
             time.sleep(1)  # Wait a bit before retrying
 
@@ -170,9 +154,7 @@ class BingoSpel(DatabaseHandler):
                 time.sleep(0.5)
                 return nummer
             
-    def draai_molen(self):
-        global ballReady
-        
+    def draai_molen(self):        
         data = {
             "command": "Draaien pls"
         }
@@ -185,11 +167,19 @@ class BingoSpel(DatabaseHandler):
             print('Failed to send POST request: {}'.format(e))
             return
         
-        while not ballReady:
+        while command != 'bal op positie':
+            try:
+                # Poll for the "bal op positie" command
+                response = requests.get('http://145.92.8.134/bingobal_api/get')
+                response.raise_for_status()  # Check if the request was successful
+                command = response.json().get('command', None)
+                
+            except requests.exceptions.RequestException as e:
+                print("HTTP Request failed (bingobal_api): {}".format(e))
+
             print("Waiting for ball to be ready...")
             time.sleep(1)
         print("Ball is ready!")
-        ballReady = False
 
     def speel_bingo(self):
         while self.spel_running:
