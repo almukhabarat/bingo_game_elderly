@@ -73,15 +73,13 @@ Om te beginnen met de nursing robots categorie. In deze categorie vallen robots 
 
 Zo wordt in Austin vanaf 2017 de robot 'Moxi' ingezet in verzorgingshuizen om zorgpersoneel te assisteren. Deze robot heeft vooral een logistieke rol. De robot kan onder meer medicijnen en maaltijden rond brengen, vuilnis opbrengen en lab monsters verzamelen. Zowel patiënten als zorgpersoneel waren onder de indruk van de robot aangezien deze door middel van een display en spraakherkenning met mensen op een vriendelijke manier kan communiceren (Tietze & Mcbride, 2020).
 
-In Nederland wordt er geëxperimenteerd met de zorgrobot van SARA Robotics. Het is geavanceerde robot met spraakherkenning en een tablet om mee te interacteren. De robot is onder meer ingezet bij drie zorginstituten in Nederland (Zorggroep Elde Maasduinen, tanteLouise and Het Laar). Deze robot kan ondersteuning bieden bij ouderen met dementie door middel van cognitieve- en fysieke oefeningen. Daarnaast kan deze robot verschillende vormen van entertainment bieden aan ouderen, zoals video's, spelletjes en muziek. Bovendien kan de robot bepaalde repetitieve taken voor zorgpersoneel overnemen zoals het rondbrengen van medicijnen en het welzijn van patiënten monitoren (Getson & Nejat, 2021).
+In Nederland wordt er geëxperimenteerd met de zorgrobot van SARA Robotics. Het is een geavanceerde robot met spraakherkenning en een tablet om mee te interacteren. De robot is onder meer ingezet bij drie zorginstituten in Nederland (Zorggroep Elde Maasduinen, tanteLouise and Het Laar). Deze robot kan ondersteuning bieden bij ouderen met dementie door middel van cognitieve- en fysieke oefeningen. Daarnaast kan deze robot verschillende vormen van entertainment bieden aan ouderen, zoals video's, spelletjes en muziek. Bovendien kan de robot bepaalde repetitieve taken voor zorgpersoneel overnemen zoals het rondbrengen van medicijnen en het welzijn van patiënten monitoren (Getson & Nejat, 2021).
 
 Daarnaast is er de assistive robots categorie. Deze robot heeft meer een specifiek doel. Het kan gaan om robots die ouderen kunnen helpen in fysieke interacties, bijvoorbeeld om ouderen te kunnen helpen of ondersteunen met bewegen. Anderzijds gaat het om robots die ouderen kunnen helpen via sociale interacties met als doel de mentale- of fysieke gezondheid te verbeteren (Christoforou et al., 2020). 
 
-Robots die op dit moment veel gebruikt worden voor experimenten in de ouderenzorg zijn onder andere de robots van Aldebaran Robotics, het gaat hierbij vooral om de Pepper en de NAO robots. Het zijn humanoïde robots vanwege hun menselijk uiterlijk aangezien de robots namelijk vooral zijn ontworpen voor sociale interacties met mensen. De robots zouden bijvoorbeeld een spelletje kunnen spelen met ouderen of op een bepaalde manier met hen kunnen interacteren.
+Robots die op dit moment veel gebruikt worden voor experimenten in de ouderenzorg zijn onder andere de robots van Aldebaran Robotics, het gaat hierbij vooral om de Pepper en de NAO robots. Het zijn humanoïde robots vanwege hun menselijk uiterlijk aangezien de robots namelijk vooral zijn ontworpen voor sociale interacties met mensen. De robots zouden bijvoorbeeld een spelletje kunnen spelen met ouderen of op een bepaalde manier met hen kunnen interacteren. Uit onderzoeken blijkt in eerste instantie ook dat deze robots een lichte positieve indruk maken bij ouderen in verzorgingshuizen (Vandemeulebroucke et al., 2021). 
 
-Een gemeenschappelijk aspect van de robots uit beide categorieën is dat de interactie met hen menselijk overkomt. De robots in de opgenoemde voorbeelden beschikken over spraakherkenning en kunnen hierdoor een simpel gesprek voeren en bepaalde instructies volgen. Uit onderzoeken blijkt in eerste instantie ook dat deze robots een lichte positieve indruk maken bij ouderen in verzorgingshuizen (Vandemeulebroucke et al., 2021). 
-
-Zowel nursing robots als assistive robots kunnen worden ingezet om de werkdruk te verlichten in verzorgingshuizen. De robots kunnen via spraakherkenning met ouderen en zorgpersoneel communiceren en daarbij simpele of repetitieve taken voor hen uitvoeren. Ondanks dat de ontwikkelingen op het gebied van kunstmatige intelligentie veel voortgang boekt, blijft het nog echter de vraag of deze robots een oplossing kunnen bieden voor eenzaamheid bij ouderen. 
+Een gemeenschappelijk aspect van de robots uit beide categorieën is dat de interactie met hen menselijk overkomt. De robots in de opgenoemde voorbeelden beschikken over spraakherkenning en kunnen hierdoor een simpel gesprek voeren en bepaalde instructies volgen. Zowel nursing robots als assistive robots kunnen worden ingezet om de werkdruk te verlichten in verzorgingshuizen. De robots kunnen via spraakherkenning met ouderen en zorgpersoneel communiceren en daarbij simpele of repetitieve taken voor hen uitvoeren. Ondanks dat de ontwikkelingen op het gebied van kunstmatige intelligentie veel voortgang boekt, blijft het nog echter de vraag of deze robots een oplossing kunnen bieden voor eenzaamheid bij ouderen. 
 
 ---
 
@@ -188,5 +186,21 @@ Hoe robots de eenzaamheid van ouderen in de zorg kan beïnvloeden is dus afhanke
 `Robotica:` De robotica is de tak van de wetenschap die zich met het ontwikkelen en bestuderen van robots bezighoudt. 
 
 `Artificial Intelligence:` Kunstmatige intelligentie of AI is een verzamelnaam voor applicaties die complexe taken uitvoeren waarvoor voorheen menselijke input, was vereist, zoals bij de online communicatie met klanten of een potje schaken. 
+
+
+
+
+preview feedback
+
+http://markdown.pioul.fr/
+
+# feedback concept Pieta Harsveld
+
+Hai Brian,
+
+<span style="color:green">Je bent goed op weg. <br> <br>Je Nederlands en schrijfvaardigheid zijn op niveau. Je weet je over het algemeen helder uit te drukken en je stemt je tekst redelijk goed af op het doel en de doelgroep ervan. Er staan wel nog wat (schoonheids)fouten in je tekst.<br><br>Je inleiding doet wat die moet doen: de lezer krijgt een redelijk beeld van de context en weet wat je wilt gaan onderzoeken en hoe je van plan bent dat te gaan doen. Ook is duidelijk dat het een literatuuronderzoek betreft.</span>
+
+<span style="color:orange">Je mag het ethische vraagstuk nog wat duidelijker naar voren laten komen. Het wordt nog onvoldoende duidelijk dat het onderzoek zich echt op het ethische aspect richt.<br><br>Zorg ervoor dat je vragen echt enkelvoudig zijn.<br><br>Zorg ervoor dat je zowel in je tekst als in je literatuurlijst naar bronnen verwijst volgens APA.<br><br>Let op de structuur van je tekst. Zorg ervoor dat iedere paragraaf ook weer een korte inleiding, een inhoudelijke kern en een deelconclusie bevat.<br><br> Zorg er ook voor dat de deelconclusie daadwerkelijk inhoud heeft en niet alleen iets zegt over hoe je de verschillende paragrafen met elkaar in verband brengt.<br><br>De conclusie lijkt nog niet af. Als de lezer alleen de conclusie leest, moet die een goed beeld hebben van de hoofdlijnen van het hele stuk.</span>
+
 
 
