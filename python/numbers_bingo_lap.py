@@ -15,11 +15,6 @@ class DatabaseHandler:
         try:
             response = requests.post(self.db_url, data=data)
             response.raise_for_status()  # Raises an error for bad status codes
-            try:
-                return response.json()
-            except ValueError:
-                print('Response is not in JSON format: {}'.format(response.text))
-                return None
         except requests.exceptions.RequestException as e:
             print('Failed to send data: {}'.format(e))
             return None
