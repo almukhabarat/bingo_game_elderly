@@ -55,3 +55,19 @@ Ik heb vandaag een expert review met Mats, het is dan de bedoeling dat ik alle, 
 **Waar loop ik tegenaan**
 
 Ik zou nog even met Amin willen overleggen wat ik in die C4 diagram kan aanpassen en andere vragen of ik nog dingen vergeten ben voor de expert review. Daarnaast zou ik misschien bij andere willen kijken hoe ver zij zijn met het betoog en of we elkaar eventueel zouden kunnen helpen daarmee.
+
+---
+
+## 10-6-2024
+
+Vandaag gaan we ons eindproduct van ons project opleveren. Het is bedoeling dat we vandaag naar het Amstelhuis gaan. We hebben gezamenlijk afgesproken om rond 10 uur op school te zijn. Ik had vannochtend net aan m'n trein gemist (ik wilde de trein van 08:15 nemen), dus ik had de trein genomen van 08:45. Hierdoor kom ik waarschijnlijk 10 minuten later aan op school. Ik moet mijn teamgenoten zo nog even informeren over mijn vertraging. Anyway, de reden dat ik dit opschrijf is omdat ik me vandaag echt slecht voel, ik voel me kut. Niet dat er iets ergs is gebeurd, maar gewoon omdat ik helemaal kapot ben. Over een paar dagen hebben we het einde van blok 4 bereikt, en dan zit het erop voor dit jaar. Dan we zijn we klaar. Tenminste de meeste van ons. Het is dat ik vanwege een gebrek aan slaap me echt rot voel, en dat ik nog een aantal moet dingen doen. Ik kan nog even geen feest vieren, we moeten nog even kort door rammen, maar daarna is het afgelopen. 
+
+**Dingen die nog (vandaag) moeten gebeuren**
+
+- Laatste code schrijven en problemen oplossen
+- Voorbereiding
+- Project oplevering
+- Betoog (moet vandaag worden ingeleverd)
+
+Ik moet nog dus wat doen, en het is veel omdat ik moe ben. Het gaat lukken, ik moet nog even de laatste precision strike plaatsen.
+
