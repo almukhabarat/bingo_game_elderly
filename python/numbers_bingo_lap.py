@@ -132,6 +132,7 @@ class BingoSpel(DatabaseHandler):
                 elif command == 'start':
                     print("game starting")
                     self.start_spel()
+                    self.wave()
                     self.hoofd_stil(False)
             except requests.exceptions.RequestException as e:
                 print("HTTP Request failed: {}".format(e))
@@ -261,6 +262,42 @@ class BingoSpel(DatabaseHandler):
             # Stijfheid van het hoofd
             stiffness = 1.0 if freeze else 0.0
             self.motion_proxy.setStiffnesses(head_joints, stiffness)
+
+    def wave(self):
+        # Alle namen die gebruikt worden voor het aansturen van de rechter arm 
+        wave_names = ["RShoulderPitch", "RElbowYaw", "RElbowRoll", "RWristYaw", "RShoulderRoll"]
+
+        # Rechter arm omhoog met hand open
+        arm_names = [wave_names[0], wave_names[1], wave_names[2]]
+        angle_up = [-0.5, 1.0, 1,0]
+        up_speeds = [0.2, 0.2, 0.2]
+
+        for name, angle, speed in zip(arm_names, angle_up, up_speeds):
+            self.motion_proxy.setAngles(name, angle, speed)
+
+        self.motion_proxy.openHand("RHand")
+
+        # Zwaai beweging door middel van elleboog en pols rotaties
+        wrist_angles = [0.3, -0.7] # Zwaaien van de hand
+        elbow_angles = [-1.0, 1.0] # Zwaaien van de elleboog
+        shoulder_angles = [0.0, -0.3] # Zwaaien van de schouder
+        wave_times = 2
+        delay_between_waves = 0.5
+
+        for _ in range(wave_times):
+            for wrist_angle, elbow_angle, shoulder_angle in zip(wrist_angles, elbow_angles, shoulder_angles):
+                self.motion_proxy.setAngles(wave_names[3], wrist_angle, 0.3) # "RWristYaw", hoek, animatiesnelheid
+                self.motion_proxy.setAngles(wave_names[1], elbow_angle, 0.2) # "RElbowYaw", hoek, animatiesnelheid
+                self.motion_proxy.setAngles(wave_names[4], shoulder_angle, 0.2) # "RShoulderRoll", hoek, animatiesnelheid
+                time.sleep(delay_between_waves)
+        
+        # Neutrale positionering van de rechter arm
+        reset_angles = [1.0, 0.0, 0.0, 0.0, 0.0]
+
+        for name, angle in zip(wave_names, reset_angles):
+            self.motion_proxy.setAngles(name, angle, 0.2)
+                
+        self.motion_proxy.closeHand("RHand")
 
 def main():
     bingo_spel = BingoSpel()
