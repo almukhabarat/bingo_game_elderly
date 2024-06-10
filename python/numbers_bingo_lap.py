@@ -4,6 +4,7 @@ from naoqi import ALProxy
 import random
 import cv2
 import numpy as np
+from naoqi import ALProxy
 import vision_definitions as vd
 import time
 
@@ -25,7 +26,7 @@ class DatabaseHandler:
             return None
 
 class BingoSpel(DatabaseHandler):
-    def __init__(self, ip="127.0.0.1", port=58600):
+    def __init__(self, ip="nao.local", port=9559):
         DatabaseHandler.__init__(self, "http://145.92.8.134/bingo_db_post.php")
         self.ip = ip
         self.port = port
@@ -83,7 +84,7 @@ class BingoSpel(DatabaseHandler):
                     self.qr_code_numbers = list(map(int, card_numbers.split(',')))
                     print('Fetched Bingo Card Numbers: {}'.format(self.qr_code_numbers))
                 else:
-                    print('Failed to fetch bingo card numbers.') 
+                    print('Failed to fetch bingo card numbers.')
         else:
             print('Failed to fetch bingo card.')
 
@@ -115,7 +116,6 @@ class BingoSpel(DatabaseHandler):
     def poll_for_command(self):
         while True:
             try:
-                # Poll for the "bingo" or "start" command
                 response = requests.get('http://145.92.8.134/bingoknop_api/get')
                 response.raise_for_status()  # Check if the request was successful
                 command = response.json().get('command', None)
@@ -124,6 +124,7 @@ class BingoSpel(DatabaseHandler):
                     print("bingo called")
                     self.stop_spel()
                     self.hoofd_stil(True)  # Houdt hoofd stil zodat qr code eenvoudig gescanned kan worden
+                    self.wave()
 
                     if self.qr_thread is None or not self.qr_thread.is_alive():
                         self.qr_thread = threading.Thread(target=self.start_qr_detection)
@@ -132,11 +133,10 @@ class BingoSpel(DatabaseHandler):
                 elif command == 'start':
                     print("game starting")
                     self.start_spel()
+                    self.wave()
                     self.hoofd_stil(False)
-
             except requests.exceptions.RequestException as e:
-                print("HTTP Request failed (bingoknop_api): {}".format(e))
-            
+                print("HTTP Request failed: {}".format(e))
             time.sleep(1)  # Wait a bit before retrying
 
     def roep_nummer_op(self):
@@ -146,44 +146,14 @@ class BingoSpel(DatabaseHandler):
                 self.opgeroepen_nummers.append(nummer)  # game houdt zelf bij welke nummers zijn omgeroepen
                 
                 self.save_number_to_db(nummer)
-
                 self.draai_molen()
+
                 self.speech_proxy.say("Het volgende nummer is {}".format(nummer))
-                time.sleep(1)
-                self.speech_proxy.say(str(nummer))
-                time.sleep(0.5)
                 return nummer
             
-    def draai_molen(self):        
-        data = {
-            "command": "Draaien pls"
-        }
-        try:
-            print("Sending POST request to start the wheel turning...")
-            response = requests.post('http://145.92.8.134/bingobal_api/post', json=data)
-            response.raise_for_status() 
-            print("POST request sent successfully: {}".format(response.status_code))
-        except requests.exceptions.RequestException as e:
-            print('Failed to send POST request: {}'.format(e))
-            return
-        
-        ballNotReady = True
-        while ballNotReady:
-            try:
-                # Poll for the "bal op positie" command
-                response = requests.get('http://145.92.8.134/bingobal_api/get')
-                response.raise_for_status()  # Check if the request was successful
-                command = response.json().get('command', None)
-
-                if command == 'bal op positie':
-                    ballNotReady = False
-            
-            except requests.exceptions.RequestException as e:
-                print("HTTP Request failed (bingobal_api): {}".format(e))
-
-            print("Waiting for ball to be ready...")
-            time.sleep(1)
-        print("Ball is ready!")
+    def draai_molen(self):
+        data = {"command": "Draaien pls"}
+        requests.post('http://145.92.8.134/bingobal_api/post', json=data)
 
     def speel_bingo(self):
         while self.spel_running:
@@ -220,11 +190,21 @@ class BingoSpel(DatabaseHandler):
             
             if all(number in self.opgeroepen_nummers for number in condition_numbers):
                 print("Winning condition met: {}".format(condition))
+                self.send_prize_request()  # Send the prize request
                 return True
 
         print("No winning condition met.")
         self.resume_spel()
         return False
+    
+    def send_prize_request(self):
+        prize_data = {"command": "geef snoepje ah zahbi"}
+        try:
+            response = requests.post('http://145.92.8.134/prijsautomaat_api/post', json=prize_data)
+            response.raise_for_status()
+            print("Prize POST request sent successfully: {}".format(response.status_code))
+        except requests.exceptions.RequestException as e:
+            print('Failed to send prize POST request: {}'.format(e))
     
     def start_qr_detection(self):
 
@@ -261,9 +241,9 @@ class BingoSpel(DatabaseHandler):
 
                     # Check for win after scanning the QR code
                     if self.controleer_winst():
-                        self.speech_proxy.say("Bingo! We hebben een winnaar!")
+                        self.speech_proxy.say("Bingo! We hebben een winnaar! Ga naar de automaat om je prijs te ontvangen.")
                     else:
-                        self.speech_proxy.say("Geen Bingo! Probeer opnieuw.")
+                        self.speech_proxy.say("Je hebt een valse bingo! Probeer later opnieuw.")
                     break
 
                 time.sleep(1)
@@ -283,6 +263,42 @@ class BingoSpel(DatabaseHandler):
             # Stijfheid van het hoofd
             stiffness = 1.0 if freeze else 0.0
             self.motion_proxy.setStiffnesses(head_joints, stiffness)
+
+    def wave(self):
+        # Alle namen die gebruikt worden voor het aansturen van de rechter arm 
+        wave_names = ["RShoulderPitch", "RElbowYaw", "RElbowRoll", "RWristYaw", "RShoulderRoll"]
+
+        # Rechter arm omhoog met hand open
+        arm_names = [wave_names[0], wave_names[1], wave_names[2]]
+        angle_up = [-0.5, 1.0, 1,0]
+        up_speeds = [0.2, 0.2, 0.2]
+
+        for name, angle, speed in zip(arm_names, angle_up, up_speeds):
+            self.motion_proxy.setAngles(name, angle, speed)
+
+        self.motion_proxy.openHand("RHand")
+
+        # Zwaai beweging door middel van elleboog en pols rotaties
+        wrist_angles = [0.3, -0.7] # Zwaaien van de hand
+        elbow_angles = [-1.0, 1.0] # Zwaaien van de elleboog
+        shoulder_angles = [0.0, -0.3] # Zwaaien van de schouder
+        wave_times = 2
+        delay_between_waves = 0.5
+
+        for _ in range(wave_times):
+            for wrist_angle, elbow_angle, shoulder_angle in zip(wrist_angles, elbow_angles, shoulder_angles):
+                self.motion_proxy.setAngles(wave_names[3], wrist_angle, 0.3) # "RWristYaw", hoek, animatiesnelheid
+                self.motion_proxy.setAngles(wave_names[1], elbow_angle, 0.2) # "RElbowYaw", hoek, animatiesnelheid
+                self.motion_proxy.setAngles(wave_names[4], shoulder_angle, 0.2) # "RShoulderRoll", hoek, animatiesnelheid
+                time.sleep(delay_between_waves)
+        
+        # Neutrale positionering van de rechter arm
+        reset_angles = [1.0, 0.0, 0.0, 0.0, 0.0]
+
+        for name, angle in zip(wave_names, reset_angles):
+            self.motion_proxy.setAngles(name, angle, 0.2)
+                
+        self.motion_proxy.closeHand("RHand")
 
 def main():
     bingo_spel = BingoSpel()

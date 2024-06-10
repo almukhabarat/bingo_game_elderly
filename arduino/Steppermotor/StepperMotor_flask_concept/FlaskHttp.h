@@ -14,7 +14,7 @@ class FlaskHttp {
   public:
     FlaskHttp(const char* baseAddress, const char* getEndPoint, const char* postEndPoint);
     String getCommand();
-    void postCommand(const char* sendMessage);
+    int postCommand(const char* sendMessage);
 };
 
 #endif

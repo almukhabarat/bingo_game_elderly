@@ -41,8 +41,12 @@ if ($query_type == 'get_bingo_card') {
             $stmt->bind_param("i", $bingo_kaart_id);
             if ($stmt->execute()) {
                 $stmt->bind_result($getal);
-                if ($stmt->fetch()) {
-                    echo json_encode(["getal" => $getal]);
+                $results = [];
+                while ($stmt->fetch()) {
+                    $results[] = $getal;
+                }
+                if (!empty($results)) {
+                    echo json_encode(["getal" => implode(',', $results)]);
                 } else {
                     echo json_encode(["error" => "Bingo card not found"]);
                 }
