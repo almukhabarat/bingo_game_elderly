@@ -46,7 +46,7 @@ void loop() {
       Serial.println("response ontvangen: " + response);
       // Laat motor roteren met 10 rpm
       candyMotor.setSpeed(10);
-      candyMotor.step(-stepsPerRevolution);
+      candyMotor.step(-stepsPerRevolution * 2);
 
     } else if (response.isEmpty()) {
       Serial.println("Geen response of foutmelding ontvangen.");
