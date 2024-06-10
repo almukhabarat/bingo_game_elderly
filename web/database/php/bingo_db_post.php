@@ -33,5 +33,34 @@ if ($query_type == 'post_number') {
     }
 }
 
+if ($query_type == 'get_bingo_card') {
+    $bingo_kaart_id = $_POST['bingoKaartId'] ?? null;
+    if ($bingo_kaart_id) {
+        $stmt = $conn->prepare("SELECT getal FROM BingoKaart WHERE bingoKaartId = ?");
+        if ($stmt) {
+            $stmt->bind_param("i", $bingo_kaart_id);
+            if ($stmt->execute()) {
+                $stmt->bind_result($getal);
+                $results = [];
+                while ($stmt->fetch()) {
+                    $results[] = $getal;
+                }
+                if (!empty($results)) {
+                    echo json_encode(["getal" => implode(',', $results)]);
+                } else {
+                    echo json_encode(["error" => "Bingo card not found"]);
+                }
+            } else {
+                echo json_encode(["error" => "Failed to execute statement"]);
+            }
+            $stmt->close();
+        } else {
+            echo json_encode(["error" => "Failed to prepare statement"]);
+        }
+    } else {
+        echo json_encode(["error" => "Invalid bingoKaartId"]);
+    }
+}
+
 $conn->close();
 ?>

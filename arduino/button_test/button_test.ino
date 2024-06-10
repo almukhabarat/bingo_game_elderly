@@ -4,8 +4,8 @@
 #include "MijnGeheim.h"
 
 #define SERVER "http://145.92.8.134/"
-#define GET_END_POINT "bingoknop_api/get"
-#define POST_END_POINT "bingoknop_api/post"
+#define GET_END_POINT "bingobal_api/get"
+#define POST_END_POINT "bingobal_api/post"
 #define START_BUTTON_PIN 7
 #define BINGO_BUTTON_PIN 5
 
