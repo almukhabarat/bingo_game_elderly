@@ -124,6 +124,7 @@ class BingoSpel(DatabaseHandler):
                     print("bingo called")
                     self.stop_spel()
                     self.hoofd_stil(True)  # Houdt hoofd stil zodat qr code eenvoudig gescanned kan worden
+                    self.wave()
 
                     if self.qr_thread is None or not self.qr_thread.is_alive():
                         self.qr_thread = threading.Thread(target=self.start_qr_detection)
