@@ -102,7 +102,7 @@ void loop() {
         setLEDColor(253, 115, 255); // Purple color for success
         delay(3000);
       }
-      delay(500);
+      delay(500); 
     }
   } else {
     setLEDColor(255, 0, 0); // Red color to indicate Wi-Fi is not connected
