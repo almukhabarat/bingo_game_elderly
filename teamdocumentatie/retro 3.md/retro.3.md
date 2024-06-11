@@ -34,6 +34,7 @@ We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embe
 
 **Welke User Stories hebben jullie af kunnen ronden tijdens deze sprint? Geef een overzicht.**
 
+- Als gebruiker wil ik dat de robot beweegt zodat ik meer interactie heb ermee
 - Als gebruiker wil ik dat de esp32 een call ontvangt om een bal los te laten in een bakje
 - Als gebruiker wil ik dat de esp32 een call ontvangt om een bal te pakken met behulp van een elektromagneet
 - Als gebruiker wil ik dat de NAO kan draaien aan de bingomolen
@@ -47,7 +48,6 @@ We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embe
 
 **Welke User Stories hebben jullie niet af kunnen ronden tijdens deze sprint? Geef een overzicht, geef ook aan welke aanpassingen jullie hier nog aan moeten maken.**
 
-- Als gebruiker wil ik dat de robot beweegt zodat ik meer interactie heb ermee
 - Als gebruiker wil ik dat de esp32 een call ontvangt om een ball los te laten in een bakje
 - Als gebruiker wil ik dat de esp32 een call ontvangt om een ball te pakken met behulp van een elektromagneet
 - Als gebruiker wil ik dat de nao robot kan draaien aan de bingomolen
