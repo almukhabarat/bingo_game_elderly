@@ -34,25 +34,36 @@ We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embe
 
 **Welke User Stories hebben jullie af kunnen ronden tijdens deze sprint? Geef een overzicht.**
 
-- Als gebruiker wil ik dat de esp32 een call ontvangt om een bal los te laten in een bakje
-- Als gebruiker wil ik dat de esp32 een call ontvangt om een bal te pakken met behulp van een elektromagneet
-- Als gebruiker wil ik dat de NAO kan draaien aan de bingomolen
 - Als gebruiker wil ik dat er genoeg bingokaarten zijn voor alle spelers
+    - Er is een python script geschreven die elke keer 10 bingo kaarten met unieke qr-code genereert en die toevoegt aan de database.
 - Als gebruiker wil ik dat ik een prijs kan winnen als ik bingo heb
+    - We hebben een vendingmachine gemaakt die bij elke winst iets van snoepgoed afgeeft.
 - Als gebruiker wil ik dat ik op een knop kan drukken als ik bingo heb
-- Als gebruiker wil ik dat de NAO een QR code kan scannen door middel van zijn ogen, zodat de robot bingokaarten kan herkennen
+    - Er is een uitnodigende box gemaakt waar mensen op moeten drukken om hun bingo te laten valideren.
+- Als gebruiker wil ik dat de NAO een QR code kan scannen door middel van zijn ogen, zodat de robot bingokaarten kan herkennen.
+    - Er is een qr-code aan de achterkant van de bingo kaarten toegevoegd die de NAO kan scannen met zijn camera.
 - Als gebruiker wil ik dat spel data van de bingo in een database kan worden opgeslagen
+    - Alle genoemde nummers worden naar de database gestuurd met bij behorende game id, zodat wij weten welke nummers eerst worden genoemd en in welke volgorde.
+- Als gebruiker wil ik dat de robot beweegt zodat ik meer interactie heb ermee
+    - De NAO die zwaait bij het beginnen van een bingo spel en random op andere momenten.
 
 ## User Stories die niet afgerond zijn
 
 **Welke User Stories hebben jullie niet af kunnen ronden tijdens deze sprint? Geef een overzicht, geef ook aan welke aanpassingen jullie hier nog aan moeten maken.**
 
-- Als gebruiker wil ik dat de robot beweegt zodat ik meer interactie heb ermee
-- Als gebruiker wil ik dat de esp32 een call ontvangt om een ball los te laten in een bakje
-- Als gebruiker wil ik dat de esp32 een call ontvangt om een ball te pakken met behulp van een elektromagneet
 - Als gebruiker wil ik dat de nao robot kan draaien aan de bingomolen
-- Als gebruiker wil ik dat de robot de balletjes kan oppakken dmv een electromagneet
+    - De nao robot kan niet draaien aan het kleine wiel dat wij hadden.
 - Als gebruiker wil ik dat de NAO een show kan geven zodat hij de aandacht van andere kan trekken om bingo te spelen
+    - De wave die wij hebben toegevoegd is wel iets van beweging, maar we hebben niet een event gemaakt om mensen uittenodigen. Dat komt omdat we geen tijd meer hadden.
+
+## User Stories die gedropt zijn
+
+- Als gebruiker wil ik dat de robot de balletjes kan oppakken dmv een electromagneet
+    - Bij het makken van de keyframes is het de eerste keer mogelijk om de bal op te pakken. Alleen heeft de NAO teveel slack om accuraat te blijven nadat alle keyframes uitgevoerd zijn en het later opnieuw moet beginnen.
+- Als gebruiker wil ik dat de esp32 een call ontvangt om een ball los te laten in een bakje
+    - Deze user storie is afgemaakt alleen hebben wij heb gedropt. Dit is omdat de NAO robot niet accuraat genoeg is.
+- Als gebruiker wil ik dat de esp32 een call ontvangt om een ball te pakken met behulp van een elektromagneet
+    - De user storie hebben wij af gekregen alleen had deze geen waarde meer aangezien we de elektromagneet het laatste moment niet meer hebben gebruikt.
 
 ## Retrospective
 
