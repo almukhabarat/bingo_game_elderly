@@ -61,19 +61,24 @@ We hebben heel snel heel veel voor elkaar gekregen. Het programmeren van de NAO 
 
 Wind:
 
-- Laatste loodjes nog  daardoor hadden we motivatie
+- Laatste loodjes nog daardoor hadden we motivatie
 - We moesten alles afmaken dus niks meer starten
 - Duidelijk doel
+- Sterk team
 
 Anker:
 
 - Het betoog en zelfontwikkelingsplan (nogsteeds)
 - Database dilema (nogsteeds)
 - Elektromagneet
+- Robot die niet accuraat werkt
+- NAO die snel oververhit raakt
 
 Rotsen:
 - Dat we niet meer zo veel tijd hadden
 - Scrum board toepassen
+- http request kwamen soms niet aan
+- batterijen leeg
 
 Eiland:
 (het is klaar dus miss dat we nog zouden kunnen doen als we meer tijd hadden)
