@@ -84,3 +84,4 @@ Eiland:
 (het is klaar dus miss dat we nog zouden kunnen doen als we meer tijd hadden)
 - Verbeterd product
 - Betere behuizing versieren
+- Doos met knoppen werkend krijgen
