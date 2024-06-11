@@ -25,23 +25,24 @@ Het ontwerp moet mooier en meer presentabel. De vending machine moet een "klepje
 
 **Welke User Stories hebben jullie af kunnen ronden tijdens deze sprint? Geef een overzicht.**
 
-- Ik wil QR code herkenning hebben via een laptop camera
-- Als gebruiker wil ik dat de robot beweegt zodat ik meer interactie heb ermee
-- Als student wil ik leren hoe ik mijn ontwikkeling inzichtelijk maak, zodat ik anderen kan betrekken bij mijn leerproces.
-- Als gebruiker wil ik dat ik op een knop kan drukken als ik bingo heb.
-- Als gebruiker wil ik dat ik een prijs kan winnen als ik bingo heb
+- Als gebruiker wil ik dat de esp32 een call ontvangt om een bal los te laten in een bakje
+- Als gebruiker wil ik dat de esp32 een call ontvangt om een bal te pakken met behulp van een elektromagneet
+- Als gebruiker wil ik dat de NAO kan draaien aan de bingomolen
 - Als gebruiker wil ik dat er genoeg bingokaarten zijn voor alle spelers
-- Als student wil ik leren over ethiek, zodat ik op basis van die kennis bewuste keuzes kan maken
-- Als gebruiker wil ik dat de robot de spel bingo kan leiden zodat ik het kan spelen zonder enig probleem
+- Als gebruiker wil ik dat ik een prijs kan winnen als ik bingo heb
+- Als gebruiker wil ik dat ik op een knop kan drukken als ik bingo heb
+- Als gebruiker wil ik dat de NAO een QR code kan scannen door middel van zijn ogen, zodat de robot bingokaarten kan herkennen
+- Als gebruiker wil ik dat spel data van de bingo in een database kan worden opgeslagen
 
 ## User Stories die niet afgerond zijn
 
 **Welke User Stories hebben jullie niet af kunnen ronden tijdens deze sprint? Geef een overzicht, geef ook aan welke aanpassingen jullie hier nog aan moeten maken.**
 
+- Als gebruiker wil ik dat de robot beweegt zodat ik meer interactie heb ermee
+- Als gebruiker wil ik dat de esp32 een call ontvangt om een ball los te laten in een bakje
+- Als gebruiker wil ik dat de esp32 een call ontvangt om een ball te pakken met behulp van een elektromagneet
 - Als gebruiker wil ik dat de nao robot kan draaien aan de bingomolen
-- Als gebruiker wil ik dat de nao robot de barcodes kan onthouden
 - Als gebruiker wil ik dat de robot de balletjes kan oppakken dmv een electromagneet
-- Als gebruiker wil ik dat er is onderzocht wat de behoeften zijn van de bewoners van het amstelhuis
 - Als gebruiker wil ik dat de NAO een show kan geven zodat hij de aandacht van andere kan trekken om bingo te spelen
 
 ## Nieuwe User Stories
