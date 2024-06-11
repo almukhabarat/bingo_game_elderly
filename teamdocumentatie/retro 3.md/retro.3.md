@@ -19,16 +19,21 @@ We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embe
 
 **Wat vond de opdrachtgever van wat jullie gepresenteerd hebben tijdens de Sprint Review? Wat waren de positieve punten (tops) en wat waren de verbeterpunten (tips)?**
 
-1: Ouderen zijn niet zo snel, ze vinden het soms moeilijk om onderscheid te maken tussen bepaalde getallen. 
+- Het project ziet er goed uit. Vooral omdat het een werkend product is waar de mensen al van kunnen genieten
+
+## Feedback doelgroep
+
+- Ouderen zijn niet zo snel, ze vinden het soms moeilijk om onderscheid te maken tussen bepaalde getallen. 
     - De herhaal functie kan dus wel handig zijn
 
-2: Misschien kan de robot nog wat enthousiaster bingo roepen! 
+- Misschien kan de robot nog wat enthousiaster bingo roepen! 
     - Uitbundiger zijn bij het winnen van een bingo spel door bewegingen en misschien een liedje/geluid.
 
-3: Humor toevoegen in de bingo.
+- Humor toevoegen in de bingo.
 
-4: De stem van de NAO moet wat duidelijker en misschien wat langzamer praten.
+- De stem van de NAO moet wat duidelijker en misschien wat langzamer praten.
 
+- Het had misschien leuk geweest als de robot een meer menselijke stem zou hebben.
 
 ## Sprint behaalde doelen
 
@@ -71,14 +76,12 @@ We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embe
 
 
 Wind:
-
 - Laatste loodjes nog daardoor hadden we motivatie
 - We moesten alles afmaken dus niks meer starten
 - Duidelijk doel
 - Sterk team
 
 Anker:
-
 - Het betoog en zelfontwikkelingsplan (nogsteeds)
 - Database dilema (nogsteeds)
 - Elektromagneet
@@ -91,8 +94,8 @@ Rotsen:
 - http request kwamen soms niet aan
 - batterijen leeg
 
-Eiland:
-(het is klaar dus miss dat we nog zouden kunnen doen als we meer tijd hadden)
+Eiland:  
+(fictief vierde blok)
 - Verbeterd product
 - Betere behuizing versieren
 - Doos met knoppen werkend krijgen
