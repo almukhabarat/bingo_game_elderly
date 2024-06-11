@@ -1,10 +1,10 @@
 # Sprint Report - Sprint 3
 
-**Opdracht**: NAO Robot
-**Sprint**: Sprint 3
-**Team**: 3
-**Auteurs**:  Brian, Tyler, Amin, Tess, Ana
-**Datum**:  11-6-2024
+**Opdracht**: NAO Robot  
+**Sprint**: Sprint 3  
+**Team**: 3  
+**Auteurs**:  Brian, Tyler, Amin, Tess, Ana  
+**Datum**:  11-6-2024  
 **Versie**: v1
 
 ---
@@ -13,7 +13,7 @@
 
 **Schrijf hier een inleiding voor het sprint report. Wat is jullie opgevallen tijdens deze sprint?**
 
-We hebben heel snel heel veel voor elkaar gekregen. Het programmeren van de NAO verloopt goed. En we hebben verschillende verbeteringen gemaakt aan ons productdesign. Het schrijven van een betoog hindert ons uiteindelijk niet zo veel. We hebben ook veel verschillende toevoegingen gemaakt qua embedded hardware.
+We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embedded hardware, dit is ons geluk met behulp van de gemaakte flask api. Onze NAO is voorzien van software die de game host en samen met de vending machine, het bingorat en de Bingo knop een compleet spel vormt.
 
 ## Feedback opdrachtgever
 
