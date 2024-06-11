@@ -1,10 +1,10 @@
-# Sprint Report - Sprint 2
+# Sprint Report - Sprint 3
 
 **Opdracht**: NAO Robot
-**Sprint**: Sprint 2
+**Sprint**: Sprint 3
 **Team**: 3
 **Auteurs**:  Brian, Tyler, Amin, Tess, Ana
-**Datum**:  24-5-2024
+**Datum**:  11-6-2024
 **Versie**: v1
 
 ---
