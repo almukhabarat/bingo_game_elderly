@@ -9,6 +9,8 @@
 
 ---
 
+![Groepsfoto](groepsfoto.jpg)
+
 ## Inleiding
 
 **Schrijf hier een inleiding voor het sprint report. Wat is jullie opgevallen tijdens deze sprint?**
@@ -72,7 +74,6 @@ We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embe
 
 ## Retrospective
 
-
 Wind:
 - Laatste loodjes nog daardoor hadden we motivatie
 - We moesten alles afmaken dus niks meer starten
@@ -97,3 +98,13 @@ Eiland:
 - Verbeterd product
 - Betere behuizing versieren
 - Doos met knoppen werkend krijgen
+
+## Fotos resultaat
+
+![1](1.jpg)
+![2](2.jpg)
+![3](3.jpg)
+![4](4.png)
+![5](5.png)
+![6](6.png)
+![7](7.png)
