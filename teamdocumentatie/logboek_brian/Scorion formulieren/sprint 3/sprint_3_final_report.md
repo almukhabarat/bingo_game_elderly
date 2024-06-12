@@ -1,4 +1,4 @@
-# Sprint Report - Sprint 3
+# Sprint Report - Sprint 3 | Brian Kirchoff
 
 **Opdracht**: NAO Robot  
 **Sprint**: Sprint 3  
@@ -41,14 +41,19 @@ We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embe
 
 - Als gebruiker wil ik dat er genoeg bingokaarten zijn voor alle spelers
     - Er is een python script geschreven die elke keer 10 bingo kaarten met unieke qr-code genereert en die toevoegt aan de database.
+
 - Als gebruiker wil ik dat ik een prijs kan winnen als ik bingo heb
     - We hebben een vendingmachine gemaakt die bij elke winst iets van snoepgoed afgeeft.
+
 - Als gebruiker wil ik dat ik op een knop kan drukken als ik bingo heb
     - Er is een uitnodigende box gemaakt waar mensen op moeten drukken om hun bingo te laten valideren.
+
 - Als gebruiker wil ik dat de NAO een QR code kan scannen door middel van zijn ogen, zodat de robot bingokaarten kan herkennen.
     - Er is een qr-code aan de achterkant van de bingo kaarten toegevoegd die de NAO kan scannen met zijn camera.
+    
 - Als gebruiker wil ik dat spel data van de bingo in een database kan worden opgeslagen
     - Alle genoemde nummers worden naar de database gestuurd met bij behorende game id, zodat wij weten welke nummers eerst worden genoemd en in welke volgorde.
+
 - Als gebruiker wil ik dat de robot beweegt zodat ik meer interactie heb ermee
     - De NAO die zwaait bij het beginnen van een bingo spel en random op andere momenten.
 
@@ -72,8 +77,8 @@ We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embe
 
 ## Retrospective
 
-**Voeg hier een afbeelding toe van jullie retrospective. Beschrijf wat jullie hebben besproken en wat jullie gaan aanpassen voor de volgende sprint.**
-
+<!-- Afbeelding van eindresultaat -->
+![Eind resultaat blok 4](teamfoto.jpg)
 
 Wind:
 - Laatste loodjes nog daardoor hadden we motivatie
@@ -99,3 +104,9 @@ Eiland:
 - Verbeterd product
 - Betere behuizing versieren
 - Doos met knoppen werkend krijgen
+
+# Eigen reflectie op sprint 3 en blok 4 (Brian Kirchoff)
+
+***Wat vond ik bij mezelf goed gaan tijdens deze sprint?***
+
+Voor sprint 3 werkte ik aan mijn SMART-doel voor het documenteren. 
