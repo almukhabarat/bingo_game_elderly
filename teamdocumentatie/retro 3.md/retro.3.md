@@ -13,7 +13,7 @@
 
 **Schrijf hier een inleiding voor het sprint report. Wat is jullie opgevallen tijdens deze sprint?**
 
-We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embedded hardware, dit is ons geluk met behulp van de gemaakte flask api. Onze NAO is voorzien van software die de game host en samen met de vending machine, het bingorat en de Bingo knop een compleet spel vormt.
+We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embedded hardware, dit is ons geluk met behulp van de gemaakte flask api. Onze NAO is voorzien van software die de game host en samen met de vending machine, het bingorat en de Bingo knop een compleet spel vormt. Er waren een paar low priority toevoegingen die we uiteindelijk niet hebben uitgewerkt
 
 ## Feedback opdrachtgever
 
@@ -57,7 +57,7 @@ We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embe
 **Welke User Stories hebben jullie niet af kunnen ronden tijdens deze sprint? Geef een overzicht, geef ook aan welke aanpassingen jullie hier nog aan moeten maken.**
 
 - Als gebruiker wil ik dat de nao robot kan draaien aan de bingomolen
-    - De nao robot kan niet draaien aan het kleine wiel dat wij hadden.
+    - De nao robot is niet in staat om aan het kleine wiel te draaien dat wij hadden. In plaats daarvan draait een stepper motor de bingomolen.
 - Als gebruiker wil ik dat de NAO een show kan geven zodat hij de aandacht van andere kan trekken om bingo te spelen
     - De wave die wij hebben toegevoegd is wel iets van beweging, maar we hebben niet een event gemaakt om mensen uittenodigen. Dat komt omdat we geen tijd meer hadden.
 
@@ -71,8 +71,6 @@ We hebben in onze laatste sprint gewerkt aan het samenvoegen van alle losse embe
     - De user storie hebben wij af gekregen alleen had deze geen waarde meer aangezien we de elektromagneet het laatste moment niet meer hebben gebruikt.
 
 ## Retrospective
-
-**Voeg hier een afbeelding toe van jullie retrospective. Beschrijf wat jullie hebben besproken en wat jullie gaan aanpassen voor de volgende sprint.**
 
 
 Wind:
@@ -95,7 +93,7 @@ Rotsen:
 - batterijen leeg
 
 Eiland:  
-(fictief vierde blok)
+(voor een fictieve vierde sprint)
 - Verbeterd product
 - Betere behuizing versieren
 - Doos met knoppen werkend krijgen
