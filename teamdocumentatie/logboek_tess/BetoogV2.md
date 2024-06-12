@@ -87,3 +87,24 @@ De vergrijzing in Nederland verhoogt snel de werkdruk in de ouderenzorg. Robots 
 Het gebruik van robots brengt wel ethische en praktische uitdagingen met zich mee. Er is een risico op verminderd menselijk contact, wat de eenzaamheid van ouderen kan verergeren. Daarnaast kunnen de hoge kosten van robots leiden tot ongelijkheden in de zorg. Ook varieert de acceptatie van robots bij ouderen en zorgverleners en moet privacy en veiligheid goed in de gaten worden gehouden.
 
 Kortom, robots kunnen een waardevolle aanvulling zijn in de ouderenzorg, mits ze als hulpmiddel worden gezien en niet als vervanging van menselijke zorg. 
+
+## Bronnen
+
+Bolders, L., & Schreinemachers, N. (2018). TINYBOT TESSA: Hoe kan Tessa bijdragen aan het vergroten van de zelfredzaamheid? [Tilburg: HAN University of Applied Sciences]. https://hbo-kennisbank.nl/resolve/hogeschoolarnhemnijmegen/eyJ1IjogImh0dHBzOi8vc3VyZnNoYXJla2l0Lm5sL29iamVjdHN0b3JlL2NmYTdkZThhLWIzZWItNDNkOS04YjY1LTM4NmM4MzIyN2UwNCIsICJpIjogbnVsbCwgImgiOiAiOTJhZmU1MTJiN2VmYTViYTIwMDA5ZmRlMDlmMGY2YzY5NDY5NGU3OTdhZDExYTM4MGRjNGZjNDFmYjIyZWUxNSJ9
+
+Broekens, J., Heerink, M., Rosendal, H., Delft University of Technology, University of Applied Sciences, Amsterdam, & University of Applied Sciences, Leiden. (n.d.). Assistive social robots in elderly care: a review [Journal-article]. https://ii.tudelft.nl/~joostb/files/Broekens%20Heerink%20Rosendal%202009.pdf
+
+Centraal Bureau voor de Statistiek. (z.d.). Ouderen. Centraal Bureau Voor De Statistiek. https://www.cbs.nl/nl-nl/visualisaties/dashboard-bevolking/leeftijd/ouderen
+
+Development of a nursing-care assistant robot RIBA that can lift a human in its arms. (2010, October 1). IEEE Conference Publication | IEEE Xplore. https://ieeexplore.ieee.org/abstract/document/5651735
+
+Johansson-Pajala, R. M., & Gustafsson, C. (2020). Significant challenges when introducing care robots in Swedish elder care. Disability and Rehabilitation: Assistive Technology, 17(2), 166–176. https://doi.org/10.1080/17483107.2020.1773549
+
+PARO Therapeutic Robot. (n.d.). http://www.parorobots.com/
+Mukai, T., Hirano, S., Nakashima, H., Kato, Y., Sakaida, Y., Guo, S., & Hosoe, S. (2010). Development of a nursing-care assistant robot RIBA that can lift a human in its arms. Ieee Xplore. https://doi.org/10.1109/iros.2010.5651735
+
+SER-verkenning Zorg voor de toekomst. (2020, Juni 19). www.ser.nl. https://www.ser.nl/nl/Publicaties/zorg-voor-de-toekomst
+
+Tessa ondersteunt zelfregie, zelfstandig wonen en biedt zorg. (n.d.). https://www.tinybots.nl/
+
+Vercelli, A., Rainero, I., Ciferri, L., Boido, M., & Pirri, F. (2018). Robots in Elderly Care. DigitCult - Scientific Journal On Digital Cultures, 2(2), 37-50. doi:10.4399/97888255088954
