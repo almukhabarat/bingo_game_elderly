@@ -6,7 +6,7 @@ This project consisted of 3 sprints (of 3 weaks each) in which we gradually work
 
 Most of our code was written in Python since the development tools/SDK of the NAO robot only supported Python or C++.
 
-You can find all our code, related project files and documentation inside this repository (https://github.com/almukhabarat/bingo_game_elderly/tree/main).
+You can find all of our code, related project files and documentation inside this repository (https://github.com/almukhabarat/bingo_game_elderly/tree/main).
 
 ## Photos of the project:
 
